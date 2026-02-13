@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
+import Navbar from "./components/Navbar";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -21,7 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={outfit.variable}>
-      <body className="font-sans overflow-x-hidden">{children}</body>
+      <body className="font-sans overflow-x-hidden">
+        <Navbar />
+        <main>{children}</main>
+      </body>
     </html>
   );
 }
