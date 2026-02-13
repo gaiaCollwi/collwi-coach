@@ -1,26 +1,77 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  body {
+    @apply text-brand-navy bg-white antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  ::selection {
+    @apply bg-brand-teal/20 text-brand-navy;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .mesh-gradient {
+    background:
+      radial-gradient(ellipse at 15% 30%, rgba(78, 205, 196, 0.10) 0%, transparent 50%),
+      radial-gradient(ellipse at 85% 20%, rgba(124, 92, 191, 0.10) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 80%, rgba(247, 201, 72, 0.07) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 60%, rgba(244, 132, 95, 0.05) 0%, transparent 40%),
+      #ffffff;
+  }
+
+  .mesh-gradient-intense {
+    background:
+      radial-gradient(ellipse at 15% 30%, rgba(78, 205, 196, 0.18) 0%, transparent 50%),
+      radial-gradient(ellipse at 85% 20%, rgba(124, 92, 191, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 85%, rgba(247, 201, 72, 0.12) 0%, transparent 50%),
+      #ffffff;
+  }
+
+  .mesh-gradient-dark {
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(78, 205, 196, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(124, 92, 191, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 80%, rgba(247, 201, 72, 0.10) 0%, transparent 50%),
+      #1A1F36;
+  }
+
+  .text-gradient-teal {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #4ECDC4, #3BAFA8);
+  }
+
+  .text-gradient-purple {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #7C5CBF, #9B7DD4);
+  }
+
+  .text-gradient-warm {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #F4845F, #F7C948);
+  }
+
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl;
+  }
+
+  .glass-dark {
+    @apply bg-brand-navy/80 backdrop-blur-xl;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .card-hover:hover {
+    @apply -translate-y-1 shadow-soft-lg;
+  }
 }
