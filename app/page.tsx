@@ -15,15 +15,21 @@ export default function CoachesPage() {
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center pt-28 pb-20">
           <FadeIn delay={0.15}>
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-sans font-light leading-[1.05] mb-8">
-              Scale Your Impact.
+              You're an Exceptional Coach.
               <br />
-              Build Your Practice.
+              So Why Can't You Find Paying Clients?
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.3}>
-            <p className="text-2xl md:text-3xl text-brand-navy/70 font-light mb-12">
-              CollWi helps certified coaches deliver group coaching programs that change lives—without burning out on 1:1 sessions.
+            <p className="text-2xl md:text-3xl text-brand-navy/70 font-light mb-6">
+              You've tried everything—free discovery sessions, networking, posting on social media. Your website is beautiful. It's brought you zero clients.
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={0.4}>
+            <p className="text-xl md:text-2xl text-brand-navy/60 mb-12">
+              You love coaching. You hate the business side. We've solved that for you.
             </p>
           </FadeIn>
 
@@ -50,10 +56,12 @@ export default function CoachesPage() {
 
           <StaggerContainer className="space-y-6">
             {[
-              "Wants to scale beyond 1:1 sessions without losing the personal touch",
-              "Believes in the power of community and peer support",
-              "Is ready to help people who are overwhelmed, isolated, and ready for real change",
-              "Values connection, emotional safety, and transformation over quick fixes"
+              "Has delivered countless free sessions and still can't find paying clients",
+              "Is stuck in the 1:1 trap—trading time for money with no path to scale",
+              "Spent thousands on websites and branding that brought zero business",
+              "Feels like you're failing despite being an excellent coach",
+              "Is exhausted from 'hopeful' social media posts and networking events",
+              "Knows coaching is powerful but can't get people to understand its value"
             ].map((item, i) => (
               <StaggerItem key={i} index={i}>
                 <div className="flex items-start gap-4 group">
@@ -65,6 +73,12 @@ export default function CoachesPage() {
               </StaggerItem>
             ))}
           </StaggerContainer>
+
+          <FadeIn delay={0.5}>
+            <p className="text-xl md:text-2xl text-center font-medium text-brand-navy/80 mt-16">
+              You're one of the 82% of coaches who struggle—not because your coaching isn't good enough, but because client acquisition is a different skill set. CollWi solves that.
+            </p>
+          </FadeIn>
         </div>
       </section>
 
@@ -72,9 +86,17 @@ export default function CoachesPage() {
       <section className="py-24 md:py-32 px-6 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <h2 className="text-3xl md:text-5xl font-sans font-light leading-tight mb-16 text-center">
-              Why Coach on CollWi?
+            <h2 className="text-3xl md:text-5xl font-sans font-light leading-tight mb-6 text-center">
+              Why CollWi Works When
+              <br />
+              Everything Else Hasn't
             </h2>
+          </FadeIn>
+
+          <FadeIn delay={0.1}>
+            <p className="text-lg md:text-xl text-brand-navy/60 text-center mb-16 max-w-2xl mx-auto">
+              You've tried free sessions, networking, social media. You've spent money on websites and courses. Nothing worked. Here's why CollWi is different:
+            </p>
           </FadeIn>
 
           <StaggerContainer className="grid md:grid-cols-2 gap-8">
@@ -82,26 +104,26 @@ export default function CoachesPage() {
               {
                 icon: TrendingUp,
                 color: "bg-brand-coral/10 text-brand-coral",
-                title: "Reach More People",
-                desc: "Deliver group programs that serve multiple clients at once—without sacrificing quality or impact."
+                title: "We Bring Clients To You",
+                desc: "Stop chasing clients. CollWi matches you with people actively looking for group coaching. No more cold outreach. No more free discovery sessions that go nowhere."
               },
               {
                 icon: Users,
                 color: "bg-brand-teal/10 text-brand-teal",
-                title: "Built-In Community",
-                desc: "Your participants get peer support between sessions, creating momentum and accountability."
+                title: "Scale Without Burning Out",
+                desc: "You're stuck trading time for money in 1:1 sessions. Group coaching lets you serve 8-12 people at once—multiply your income without multiplying your hours."
               },
               {
                 icon: Settings,
                 color: "bg-brand-purple/10 text-brand-purple",
-                title: "Platform & Support",
-                desc: "We handle the tech, marketing, and logistics. You focus on coaching."
+                title: "We Handle What You Hate",
+                desc: "Marketing. Tech. Logistics. Client acquisition. The stuff that keeps you up at night? We've solved it. You focus on coaching. We handle the rest."
               },
               {
                 icon: Heart,
                 color: "bg-brand-coral/10 text-brand-coral",
-                title: "Mission-Driven",
-                desc: "You're not just building a business—you're helping solve the loneliness crisis affecting millions."
+                title: "You're Not Alone Anymore",
+                desc: "Join a community of coaches who get it. Who've struggled like you have. Who are building financially viable coaching businesses—finally."
               }
             ].map((benefit, i) => {
               const Icon = benefit.icon
@@ -125,37 +147,43 @@ export default function CoachesPage() {
       <section className="py-24 md:py-32 px-6 bg-gradient-to-br from-brand-teal/5 via-white to-brand-purple/5">
         <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <h2 className="text-3xl md:text-5xl font-sans font-light leading-tight mb-16 text-center">
+            <h2 className="text-3xl md:text-5xl font-sans font-light leading-tight mb-6 text-center">
               How It Works
             </h2>
+          </FadeIn>
+
+          <FadeIn delay={0.1}>
+            <p className="text-xl md:text-2xl text-center text-brand-navy/60 mb-16">
+              Simple. Sustainable. No Marketing Required.
+            </p>
           </FadeIn>
 
           <StaggerContainer className="space-y-8">
             {[
               {
                 number: "1",
-                title: "Design Your Program",
-                desc: "Create group coaching experiences aligned with your expertise"
+                title: "Design Your Group Coaching Program",
+                desc: "We help you package your expertise into a transformative group experience"
               },
               {
                 number: "2",
-                title: "Launch Your Cohort",
-                desc: "We help you attract the right participants"
+                title: "We Match You With Participants",
+                desc: "No cold outreach. No free sessions. We bring clients actively seeking group coaching to you."
               },
               {
                 number: "3",
-                title: "Lead & Facilitate",
-                desc: "Guide live sessions with small groups (typically 8-12 people)"
+                title: "Lead Small Groups (8-12 People)",
+                desc: "Guide live sessions. Build community. Make the impact you've always wanted."
               },
               {
                 number: "4",
-                title: "Build Community",
-                desc: "Foster peer connections that extend beyond sessions"
+                title: "Earn Sustainably",
+                desc: "Scale your income without scaling your hours. Build the financially viable practice you deserve."
               },
               {
                 number: "5",
-                title: "Grow Your Practice",
-                desc: "Scale your impact while maintaining quality"
+                title: "Grow Alongside Other Coaches",
+                desc: "You're part of a community now. No more struggling alone."
               }
             ].map((step, i) => (
               <StaggerItem key={i} index={i}>
@@ -178,9 +206,15 @@ export default function CoachesPage() {
       <section className="py-24 md:py-32 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <h2 className="text-3xl md:text-5xl font-sans font-light leading-tight mb-12 text-center">
+            <h2 className="text-3xl md:text-5xl font-sans font-light leading-tight mb-6 text-center">
               Who We're Looking For
             </h2>
+          </FadeIn>
+
+          <FadeIn delay={0.1}>
+            <p className="text-xl md:text-2xl text-center text-brand-navy/70 mb-12 max-w-3xl mx-auto">
+              <strong>We're selective.</strong> We only work with qualified, ethical coaches who are committed to transformation—for their clients AND themselves.
+            </p>
           </FadeIn>
 
           <StaggerContainer className="space-y-6">
@@ -188,7 +222,8 @@ export default function CoachesPage() {
               "Certified coaches (ICF, BCC, or equivalent credential)",
               "Experience with group facilitation (or willingness to learn)",
               "Commitment to emotional safety and inclusive practices",
-              "Belief in the power of collective wisdom and peer support"
+              "Belief in the power of collective wisdom and peer support",
+              "Ready to stop chasing clients and start building a real business"
             ].map((item, i) => (
               <StaggerItem key={i} index={i}>
                 <div className="flex items-start gap-4 group">
@@ -208,24 +243,36 @@ export default function CoachesPage() {
         <div className="max-w-3xl mx-auto text-center">
           <FadeIn>
             <h2 className="text-3xl md:text-5xl font-sans font-light leading-tight mb-8">
-              Ready to Make a Bigger Impact?
+              Ready to Stop Struggling?
             </h2>
           </FadeIn>
 
           <FadeIn delay={0.15}>
-            <p className="text-xl md:text-2xl text-brand-navy/70 mb-12">
-              Join CollWi's community of coaches who are transforming lives through group coaching.
+            <p className="text-xl md:text-2xl text-brand-navy/70 mb-6 leading-relaxed">
+              Join CollWi and finally build the financially viable coaching practice you deserve. No more free discovery sessions. No more 'hopeful' social media posts. No more wondering what you're doing wrong.
             </p>
           </FadeIn>
 
           <FadeIn delay={0.25}>
+            <p className="text-lg md:text-xl text-brand-navy/60 mb-12">
+              You're an exceptional coach. You just needed the other half of the equation. We've got it.
+            </p>
+          </FadeIn>
+
+          <FadeIn delay={0.35}>
             <a
               href="https://collwi.com/register"
               className="group inline-flex items-center gap-2.5 px-10 py-5 bg-brand-teal text-white font-semibold text-xl rounded-full shadow-teal hover:bg-brand-teal-dark hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
-              Apply to Coach
+              Apply to Coach With CollWi
               <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
             </a>
+          </FadeIn>
+
+          <FadeIn delay={0.5}>
+            <p className="text-sm text-brand-navy/50 mt-6">
+              Selective application process. We work with qualified, committed coaches ready to scale their impact.
+            </p>
           </FadeIn>
         </div>
       </section>
@@ -236,14 +283,19 @@ export default function CoachesPage() {
           <FadeIn>
             <div className="bg-gradient-to-br from-brand-teal/5 via-white to-brand-purple/5 rounded-2xl p-10 shadow-soft">
               <h3 className="text-3xl font-semibold text-brand-navy mb-6">About CollWi</h3>
-              <div className="space-y-4 text-lg text-brand-navy/70 leading-relaxed">
+              <div className="space-y-6 text-lg text-brand-navy/70 leading-relaxed">
                 <p>
-                  CollWi is a social platform that turns personal growth from a lonely journey into a shared, 
-                  guided experience through live group coaching and community. We're addressing the loneliness 
-                  crisis by bringing people together with certified coaches in small, supportive groups.
+                  <strong className="text-brand-navy">CollWi solves two problems at once:</strong>
+                </p>
+                <p>
+                  For CollWiers (participants), we turn personal growth from a lonely journey into a shared, 
+                  guided experience. For coaches, we solve the client acquisition problem that causes 82% of coaches to fail.
+                </p>
+                <p>
+                  Certified coaches get matched with people actively seeking transformation. Small groups. Real community. Sustainable income.
                 </p>
                 <p className="text-xl font-semibold text-brand-teal">
-                  Our mission: make growth social, accessible, and transformative.
+                  Our mission: Make growth social, accessible, and transformative—for everyone.
                 </p>
               </div>
             </div>
