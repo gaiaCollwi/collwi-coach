@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, TrendingUp, Users, Settings, Heart } from 'lucide-react'
 import { FadeIn, StaggerContainer, StaggerItem } from './components/AnimatedSection'
 
 export default function CoachesPage() {
@@ -80,34 +80,43 @@ export default function CoachesPage() {
           <StaggerContainer className="grid md:grid-cols-2 gap-8">
             {[
               {
-                icon: "📈",
+                icon: TrendingUp,
+                color: "bg-brand-coral/10 text-brand-coral",
                 title: "Reach More People",
                 desc: "Deliver group programs that serve multiple clients at once—without sacrificing quality or impact."
               },
               {
-                icon: "👥",
+                icon: Users,
+                color: "bg-brand-teal/10 text-brand-teal",
                 title: "Built-In Community",
                 desc: "Your participants get peer support between sessions, creating momentum and accountability."
               },
               {
-                icon: "🛠️",
+                icon: Settings,
+                color: "bg-brand-purple/10 text-brand-purple",
                 title: "Platform & Support",
                 desc: "We handle the tech, marketing, and logistics. You focus on coaching."
               },
               {
-                icon: "💜",
+                icon: Heart,
+                color: "bg-brand-coral/10 text-brand-coral",
                 title: "Mission-Driven",
                 desc: "You're not just building a business—you're helping solve the loneliness crisis affecting millions."
               }
-            ].map((benefit, i) => (
-              <StaggerItem key={i} index={i}>
-                <div className="bg-white rounded-2xl p-8 shadow-soft hover:shadow-soft-lg transition-all card-hover">
-                  <div className="text-5xl mb-4">{benefit.icon}</div>
-                  <h3 className="text-2xl font-semibold text-brand-navy mb-3">{benefit.title}</h3>
-                  <p className="text-lg text-brand-navy/70 leading-relaxed">{benefit.desc}</p>
-                </div>
-              </StaggerItem>
-            ))}
+            ].map((benefit, i) => {
+              const Icon = benefit.icon
+              return (
+                <StaggerItem key={i} index={i}>
+                  <div className="bg-white rounded-2xl p-8 shadow-soft hover:shadow-soft-lg transition-all card-hover h-full flex flex-col">
+                    <div className={`w-14 h-14 rounded-2xl ${benefit.color} flex items-center justify-center mb-4`}>
+                      <Icon size={28} strokeWidth={1.5} />
+                    </div>
+                    <h3 className="text-2xl font-semibold text-brand-navy mb-3">{benefit.title}</h3>
+                    <p className="text-lg text-brand-navy/70 leading-relaxed">{benefit.desc}</p>
+                  </div>
+                </StaggerItem>
+              )
+            })}
           </StaggerContainer>
         </div>
       </section>
