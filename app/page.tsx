@@ -277,27 +277,96 @@ export default function CoachesPage() {
         </div>
       </section>
 
-      {/* ─── ABOUT COLLWI ─── */}
-      <section className="py-24 md:py-32 px-6 bg-white">
-        <div className="max-w-3xl mx-auto">
+      {/* ─── HOW IT WORKS ─── */}
+      <section className="py-24 md:py-32 px-6 bg-surface-warm">
+        <div className="max-w-4xl mx-auto">
           <FadeIn>
-            <div className="bg-gradient-to-br from-brand-teal/5 via-white to-brand-purple/5 rounded-2xl p-10 shadow-soft">
-              <h3 className="text-3xl font-semibold text-brand-navy mb-6">About CollWi</h3>
-              <div className="space-y-6 text-lg text-brand-navy/70 leading-relaxed">
-                <p>
-                  <strong className="text-brand-navy">CollWi solves two problems at once:</strong>
-                </p>
-                <p>
-                  For CollWiers (participants), we turn personal growth from a lonely journey into a shared, 
-                  guided experience. For coaches, we solve the client acquisition problem that causes 82% of coaches to fail.
-                </p>
-                <p>
-                  Certified coaches get matched with people actively seeking transformation. Small groups. Real community. Sustainable income.
-                </p>
-                <p className="text-xl font-semibold text-brand-teal">
-                  Our mission: Make growth social, accessible, and transformative—for everyone.
+            <div className="text-center mb-16">
+              <span className="inline-block px-4 py-1.5 bg-brand-purple/10 text-brand-purple text-xs font-bold tracking-[0.15em] uppercase rounded-full mb-5">
+                Getting Started
+              </span>
+              <h2 className="text-4xl md:text-5xl font-sans font-light">
+                How CollWi <em className="text-brand-purple italic">works for coaches</em>
+              </h2>
+            </div>
+          </FadeIn>
+
+          <div className="grid sm:grid-cols-2 gap-6">
+            {[
+              { num: '01', title: 'Apply to Join', desc: 'Quick application for certified coaches ready to scale through group coaching' },
+              { num: '02', title: 'Design Your Program', desc: 'We help you package your expertise into a transformative group experience' },
+              { num: '03', title: 'Get Matched with Clients', desc: 'We bring participants actively seeking coaching directly to you—no marketing required' },
+              { num: '04', title: 'Lead & Earn', desc: 'Facilitate small groups (8-12 people), scale your impact, build sustainable income' },
+            ].map((step, i) => (
+              <FadeIn key={i} delay={i * 0.1}>
+                <div className="bg-white rounded-2xl p-8 shadow-soft hover:shadow-lg transition-all duration-300 h-full">
+                  <span className="text-4xl font-sans font-light text-brand-teal/20 mb-4 block">{step.num}</span>
+                  <h3 className="text-xl font-bold mb-3 text-brand-navy">{step.title}</h3>
+                  <p className="text-brand-navy/60 leading-relaxed">{step.desc}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
+          <FadeIn delay={0.3}>
+            <p className="text-center text-xl font-semibold text-brand-navy/60 mt-14">
+              No more cold outreach. No more unpaid discovery sessions. Just coaching.
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ─── ABOUT COLLWI ─── */}
+      <section className="py-24 md:py-32 px-6 mesh-gradient-intense">
+        <div className="max-w-5xl mx-auto">
+          <FadeIn>
+            <div className="text-center mb-16">
+              <span className="inline-block px-4 py-1.5 bg-brand-teal/10 text-brand-teal text-xs font-semibold tracking-[0.15em] uppercase rounded-full mb-5">
+                About Us
+              </span>
+              <h2 className="text-4xl md:text-5xl font-sans font-light leading-tight">
+                What CollWi <em className="text-brand-teal italic">is</em>
+              </h2>
+            </div>
+          </FadeIn>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
+            <FadeIn delay={0.1}>
+              <div className="bg-white rounded-2xl p-8 shadow-soft hover:shadow-lg transition-all duration-300 h-full">
+                <div className="w-14 h-14 bg-brand-teal/10 rounded-2xl flex items-center justify-center mb-6">
+                  <Users size={26} className="text-brand-teal" />
+                </div>
+                <h3 className="text-xl font-semibold mb-4 text-brand-navy">For CollWiers (Participants)</h3>
+                <p className="text-lg text-brand-navy/60 leading-relaxed">
+                  We turn personal growth from a lonely journey into a shared, guided experience. 
+                  Small groups. Professional coaches. Real transformation.
                 </p>
               </div>
+            </FadeIn>
+
+            <FadeIn delay={0.2}>
+              <div className="bg-white rounded-2xl p-8 shadow-soft hover:shadow-lg transition-all duration-300 h-full">
+                <div className="w-14 h-14 bg-brand-purple/10 rounded-2xl flex items-center justify-center mb-6">
+                  <TrendingUp size={26} className="text-brand-purple" />
+                </div>
+                <h3 className="text-xl font-semibold mb-4 text-brand-navy">For Coaches (You!)</h3>
+                <p className="text-lg text-brand-navy/60 leading-relaxed">
+                  We solve the client acquisition problem that causes 82% of coaches to fail. 
+                  Certified coaches get matched with people actively seeking transformation.
+                </p>
+              </div>
+            </FadeIn>
+          </div>
+
+          <FadeIn delay={0.3}>
+            <div className="text-center">
+              <p className="text-xl md:text-2xl text-brand-navy/60 leading-relaxed max-w-3xl mx-auto mb-6">
+                CollWi is a platform, yes, but more than that, it's a <span className="text-brand-navy font-medium">movement</span>. 
+                A community where coaches can thrive and people can transform—together.
+              </p>
+              <p className="text-2xl font-semibold text-brand-teal">
+                Our mission: Make growth social, accessible, and transformative—for everyone.
+              </p>
             </div>
           </FadeIn>
         </div>
