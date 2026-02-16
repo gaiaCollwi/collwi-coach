@@ -56,12 +56,12 @@ export default function CoachesPage() {
 
           <StaggerContainer className="space-y-6">
             {[
-              "Has delivered countless free sessions and still can't find paying clients",
+              "Spends more time creating content and marketing than actually coaching",
               "Is stuck in the 1:1 trap—trading time for money with no path to scale",
-              "Spent thousands on websites and branding that brought zero business",
-              "Feels like you're failing despite being an excellent coach",
-              "Is exhausted from 'hopeful' social media posts and networking events",
-              "Knows coaching is powerful but can't get people to understand its value"
+              "Feels like you need to be a full-time marketer just to get a few clients",
+              "Is exhausted from trying to master social media, sales, and business development",
+              "Trained to help people transform, not to become a content creator",
+              "Knows coaching is powerful but hates the constant hustle to prove it"
             ].map((item, i) => (
               <StaggerItem key={i} index={i}>
                 <div className="flex items-start gap-4 group">
