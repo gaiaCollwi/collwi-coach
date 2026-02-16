@@ -14,7 +14,7 @@ export default function CoachesPage() {
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center pt-28 pb-20">
           <FadeIn delay={0.15}>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-sans font-light leading-[1.05] mb-8">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-sans font-light leading-[1.1] mb-8">
               You're an Exceptional Coach.
               <br />
               So Why Is It So Hard to Find Paying Clients?
