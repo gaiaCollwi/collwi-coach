@@ -23,13 +23,13 @@ export default function CoachesPage() {
 
           <FadeIn delay={0.3}>
             <p className="text-2xl md:text-3xl text-brand-navy/70 font-light mb-6">
-              You've tried everything—free discovery sessions, networking, posting on social media. Your website is beautiful. Yet you still struggle to get clients consistently.
+              You trained to be a coach—not a marketer, not a social media manager, not a content creator. Yet you're spending more time on Instagram than with clients.
             </p>
           </FadeIn>
 
           <FadeIn delay={0.4}>
             <p className="text-xl md:text-2xl text-brand-navy/60 mb-12">
-              You love coaching. You hate the business side. We've solved that for you.
+              You love coaching. You hate having to become good at marketing, sales, and business development just to survive. We've solved that for you.
             </p>
           </FadeIn>
 
