@@ -17,13 +17,13 @@ export default function CoachesPage() {
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-sans font-light leading-[1.05] mb-8">
               You're an Exceptional Coach.
               <br />
-              So Why Can't You Find Paying Clients?
+              So Why Is It So Hard to Find Paying Clients?
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.3}>
             <p className="text-2xl md:text-3xl text-brand-navy/70 font-light mb-6">
-              You've tried everything—free discovery sessions, networking, posting on social media. Your website is beautiful. It's brought you zero clients.
+              You've tried everything—free discovery sessions, networking, posting on social media. Your website is beautiful. Yet you still struggle to get clients consistently.
             </p>
           </FadeIn>
 
