@@ -100,12 +100,12 @@ function App() {
               {
                 emoji: '🛠️',
                 title: 'We Handle What You Hate',
-                description: 'Marketing. Tech. Logistics. Client acquisition. The stuff that keeps you up at night? We've solved it. You focus on coaching. We handle the rest.'
+                description: "Marketing. Tech. Logistics. Client acquisition. The stuff that keeps you up at night? We've solved it. You focus on coaching. We handle the rest."
               },
               {
                 emoji: '👥',
-                title: 'You're Not Alone Anymore',
-                description: 'Join a community of coaches who get it. Who've struggled like you have. Who are building financially viable coaching businesses—finally.'
+                title: "You're Not Alone Anymore",
+                description: "Join a community of coaches who get it. Who've struggled like you have. Who are building financially viable coaching businesses—finally."
               },
               {
                 emoji: '💜',
@@ -146,7 +146,7 @@ function App() {
               {
                 num: '3',
                 title: 'Lead Small Groups (8-12 People)',
-                desc: 'Guide live sessions. Build community. Make the impact you've always wanted.'
+                desc: "Guide live sessions. Build community. Make the impact you've always wanted."
               },
               {
                 num: '4',
@@ -156,7 +156,7 @@ function App() {
               {
                 num: '5',
                 title: 'Grow Alongside Other Coaches',
-                desc: 'You're part of a community now. No more struggling alone.'
+                desc: "You're part of a community now. No more struggling alone."
               }
             ].map((step) => (
               <div key={step.num} className="text-center">
