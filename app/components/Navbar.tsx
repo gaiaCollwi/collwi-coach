@@ -5,10 +5,10 @@ import { Menu, X } from 'lucide-react'
 import Logo from './Logo'
 
 const navLinks = [
+  { label: 'How It Works', href: '/how-it-works' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Blog', href: '/blog' },
   { label: 'For Members', href: 'https://collwi.com' },
-  { label: 'About Us', href: 'https://collwi.com/about' },
-  { label: 'Events', href: 'https://collwi.com/events' },
-  { label: 'Blog', href: 'https://collwi.com/blog' },
 ]
 
 export default function Navbar() {

@@ -579,12 +579,13 @@ Master these practices, and your impact becomes unmistakable.`
   }
 }
 
-export default function BlogPostPage({
+export default async function BlogPostPage({
   params,
 }: {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }) {
-  const post = blogContent[params.slug]
+  const { slug } = await params
+  const post = blogContent[slug]
 
   if (!post) {
     return (
