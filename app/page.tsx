@@ -56,12 +56,12 @@ export default function CoachesPage() {
 
           <StaggerContainer className="space-y-6">
             {[
-              "Delivering real transformations, but struggling to maintain a steady stream of clients",
-              "Stuck in 1:1 sessions with no clear way to scale beyond your current hours",
-              "Spending more time creating content than actually coaching clients",
-              "Tired of the constant hustle just to keep your calendar full",
-              "Already fully booked but want to reach more people without working more",
-              "Great at what you do, but exhausted from having to prove it every single day"
+              "Delivers real transformations, but struggles to maintain a steady stream of clients",
+              "Is stuck in 1:1 sessions with no clear way to scale beyond current hours",
+              "Spends more time creating content than actually coaching clients",
+              "Is tired of the constant hustle just to keep the calendar full",
+              "Is already fully booked but wants to reach more people without working more",
+              "Is great at what they do, but exhausted from having to prove it every single day"
             ].map((item, i) => (
               <StaggerItem key={i} index={i}>
                 <div className="flex items-start gap-4 group">
@@ -104,8 +104,8 @@ export default function CoachesPage() {
               {
                 icon: TrendingUp,
                 color: "bg-brand-coral/10 text-brand-coral",
-                title: "We Bring Clients To You",
-                desc: "Stop chasing clients. CollWi matches you with people actively looking for group coaching. No more cold outreach. No more free discovery sessions that go nowhere."
+                title: "We Connect You With Women Seeking Growth",
+                desc: "Stop chasing clients. CollWi connects you with women actively seeking growth and community support. No more cold outreach. No more endless free discovery sessions."
               },
               {
                 icon: Users,
@@ -122,8 +122,8 @@ export default function CoachesPage() {
               {
                 icon: Heart,
                 color: "bg-brand-coral/10 text-brand-coral",
-                title: "You're Not Alone Anymore",
-                desc: "Join a community of coaches who get it. Who've struggled like you have. Who are building financially viable coaching businesses—finally."
+                title: "Join a Growing Network",
+                desc: "Connect with other coaches on the platform who understand the journey. Build your practice alongside others who are scaling their impact."
               }
             ].map((benefit, i) => {
               const Icon = benefit.icon
@@ -162,13 +162,13 @@ export default function CoachesPage() {
             {[
               {
                 number: "1",
-                title: "Design Your Group Coaching Program",
-                desc: "We help you package your expertise into a transformative group experience"
+                title: "Create Your Group Coaching Program",
+                desc: "Quickly and easily set up your program on our platform. You decide the price, schedule, and structure."
               },
               {
                 number: "2",
-                title: "We Match You With Participants",
-                desc: "No cold outreach. No free sessions. We bring clients actively seeking group coaching to you."
+                title: "Women Find You",
+                desc: "Members browse programs and choose what fits their needs. No more cold outreach. (Some introductory sessions may still be helpful, but no more spending all your time giving away free coaching.)"
               },
               {
                 number: "3",
@@ -182,8 +182,8 @@ export default function CoachesPage() {
               },
               {
                 number: "5",
-                title: "Grow Alongside Other Coaches",
-                desc: "You're part of a community now. No more struggling alone."
+                title: "Join a Growing Network",
+                desc: "Connect with other coaches on the platform who understand the journey."
               }
             ].map((step, i) => (
               <StaggerItem key={i} index={i}>
@@ -264,14 +264,14 @@ export default function CoachesPage() {
               href="https://collwi.com/register"
               className="group inline-flex items-center gap-2.5 px-10 py-5 bg-brand-teal text-white font-semibold text-xl rounded-full shadow-teal hover:bg-brand-teal-dark hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
-              Apply to Coach With CollWi
+              Register as a Coach With CollWi
               <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
             </a>
           </FadeIn>
 
           <FadeIn delay={0.5}>
             <p className="text-sm text-brand-navy/50 mt-6">
-              Selective application process. We work with qualified, committed coaches ready to scale their impact.
+              Join our growing network of certified coaches offering group programs.
             </p>
           </FadeIn>
         </div>
@@ -293,9 +293,9 @@ export default function CoachesPage() {
 
           <div className="grid sm:grid-cols-2 gap-6">
             {[
-              { num: '01', title: 'Apply to Join', desc: 'Quick application for certified coaches ready to scale through group coaching' },
-              { num: '02', title: 'Design Your Program', desc: 'We help you package your expertise into a transformative group experience' },
-              { num: '03', title: 'Get Matched with Clients', desc: 'We bring participants actively seeking coaching directly to you—no marketing required' },
+              { num: '01', title: 'Register as a Coach', desc: 'Quick registration for certified coaches ready to offer group programs' },
+              { num: '02', title: 'Create Your Program', desc: 'Easy, quick process to set up your group coaching program. You set your own pricing and schedule' },
+              { num: '03', title: 'Women Find You', desc: 'Members browse programs and choose what fits their needs—no marketing required on your end' },
               { num: '04', title: 'Lead & Earn', desc: 'Facilitate small groups (8-12 people), scale your impact, build sustainable income' },
             ].map((step, i) => (
               <FadeIn key={i} delay={i * 0.1}>

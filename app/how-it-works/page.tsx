@@ -9,36 +9,36 @@ import { FadeIn, StaggerContainer, StaggerItem } from '../components/AnimatedSec
 
 const faqs = [
   {
-    q: 'How much do I earn per session?',
-    a: 'You keep 70% of group coaching revenue after payment processing fees. Groups typically range from 8-12 participants at $49-149/month depending on your coaching focus. That means one full group can generate $3,000-12,000+ monthly in recurring revenue.',
+    q: 'How do I set my pricing?',
+    a: 'You decide your own pricing for your group coaching programs. The platform handles all payment processing through Stripe or PayPal.',
   },
   {
-    q: 'Do I need to handle marketing and enrollment?',
-    a: 'No. CollWi handles everything: marketing, participant recruitment, enrollment, and payment processing. You focus on what you do best—coaching. We promote your groups through our platform and community channels.',
+    q: 'Do I need to handle marketing?',
+    a: 'Your programs appear in the platform catalog where members can browse and choose what fits their needs. You focus on creating great programs and coaching.',
   },
   {
     q: 'What if I already have 1:1 clients?',
-    a: 'Many coaches run both. Group coaching complements 1:1 work beautifully. You can offer group programs to different cohorts, expand your reach, and create passive income without trading more hours. Some coaches transition entirely to group work once they see the results.',
+    a: 'Many coaches run both. Group coaching complements 1:1 work beautifully. You can offer group programs to different cohorts and expand your reach.',
   },
   {
     q: 'How much time does this take?',
-    a: 'A group coaching program typically requires 1-2 hours per week for the live session plus prep time. You set the schedule that works for you. No more managing endless 1:1 calendars. One group replaces 10-15 individual clients.',
+    a: 'A group coaching program typically requires 1-2 hours per week for the live session plus prep time. You set the schedule that works for you.',
   },
   {
     q: 'What qualifications do I need?',
-    a: 'You need an active coaching certification (ICF, BCC, or equivalent) and a proven track record of client transformations. We vet every coach to ensure CollWi members get exceptional guidance.',
+    a: 'You need an active coaching certification (ICF, BCC, or equivalent). We want qualified, ethical coaches who are committed to transformation.',
   },
   {
     q: 'Can I run multiple groups?',
-    a: 'Absolutely. Many coaches start with one group and scale to 3-5 groups with different niches or focuses. Each group is independent, so you can specialize and reach different audiences without overextending yourself.',
+    a: 'Absolutely. Many coaches start with one group and scale to multiple groups with different niches or focuses. Each group is independent, so you can specialize and reach different audiences.',
   },
   {
     q: 'What support does CollWi provide?',
-    a: 'Complete support: platform hosting, marketing, enrollment, payment processing, member management, session recordings, and ongoing coaching resources. You get a dedicated coach support portal with best practices, templates, and training.',
+    a: 'Platform hosting, payment processing, and member management. A group chat is automatically created for each program so participants can stay connected between sessions.',
   },
   {
     q: 'How do I get started?',
-    a: 'Apply as a coach, tell us about your background and coaching niche. We\'ll review your application and schedule a call to discuss your goals. Once approved, we\'ll help you launch your first group within 2-4 weeks.',
+    a: 'Register as a coach, add your profile and credentials, connect your payment method (Stripe or PayPal), then create your first group program. Simple and quick.',
   },
 ]
 
@@ -113,14 +113,14 @@ export default function HowItWorksPage() {
             {[
               {
                 icon: <Users size={26} />,
-                title: 'Pre-Qualified Members',
-                desc: 'We handle recruitment and enrollment. Your groups fill with engaged, ready-to-transform participants.',
+                title: 'Members Find You',
+                desc: 'Women browse programs on the platform and choose what fits their needs. You focus on creating great programs.',
                 color: 'teal',
               },
               {
                 icon: <BarChart3 size={26} />,
-                title: 'Recurring Revenue',
-                desc: 'Monthly subscriptions create predictable income. One group generates consistent revenue month after month.',
+                title: 'Build Your Practice',
+                desc: 'Create group programs that align with your expertise. Set your own pricing and schedule.',
                 color: 'purple',
               },
               {
@@ -156,7 +156,7 @@ export default function HowItWorksPage() {
           <FadeIn>
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-sans font-light leading-tight mb-6">
-                Your path from <em className="text-brand-teal italic">application to impact</em>
+                Your path from <em className="text-brand-teal italic">registration to impact</em>
               </h2>
             </div>
           </FadeIn>
@@ -165,38 +165,38 @@ export default function HowItWorksPage() {
             {[
               {
                 step: 1,
-                title: 'Apply as a Coach',
-                desc: 'Tell us about your background, certifications, coaching niche, and why you want to build group programs. We review applications within 5 business days.',
+                title: 'Register as a Coach',
+                desc: 'Quick registration process. Add your profile, coaching credentials/certifications, and connect your preferred payment method (Stripe or PayPal). Then you\'re ready to create programs.',
                 icon: <CheckCircle size={28} />,
               },
               {
                 step: 2,
-                title: 'Get Approved & Onboarded',
-                desc: 'Once approved, we schedule a call to discuss your coaching focus, target audience, and program structure. We provide templates and best practices to help you launch.',
+                title: 'Create Your Program',
+                desc: 'Set up your group coaching program: name, description, focus area, session schedule, and pricing. You control everything about your program.',
                 icon: <Sparkles size={28} />,
               },
               {
                 step: 3,
-                title: 'Create Your Group Profile',
-                desc: 'Set your group name, description, focus area, session schedule, and pricing. We\'ll help you craft messaging that resonates with your ideal participants.',
+                title: 'Members Find You',
+                desc: 'Women on the platform browse programs and choose what fits their needs. Your program appears in the platform catalog.',
                 icon: <TrendingUp size={28} />,
               },
               {
                 step: 4,
-                title: 'We Market & Recruit',
-                desc: 'Our marketing team promotes your group through CollWi\'s platform, community channels, and targeted outreach. Participants apply and get approved.',
+                title: 'Host Your Sessions',
+                desc: 'Lead your live group sessions. A group chat is automatically created for participants (and you, if you like) to stay connected and grow together between sessions.',
                 icon: <Users size={28} />,
               },
               {
                 step: 5,
-                title: 'Host Your First Session',
-                desc: 'Deliver your first live group session. We handle all technology, recordings, and follow-up logistics. You focus on coaching and connection.',
+                title: 'Build Your Practice',
+                desc: 'As you build momentum, you can launch additional groups with different focuses or niches. Scale at your own pace.',
                 icon: <MessageCircle size={28} />,
               },
               {
                 step: 6,
-                title: 'Build Recurring Revenue',
-                desc: 'Participants renew monthly. Your group becomes a stable, predictable income stream. Scale by launching additional groups as you grow.',
+                title: 'Earn Sustainably',
+                desc: 'You set your pricing. Platform handles all payments. Build the financially viable practice you deserve.',
                 icon: <BarChart3 size={28} />,
               },
             ].map((item) => (
@@ -221,90 +221,6 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      {/* ─── What This Looks Like in Practice ─── */}
-      <section className="py-24 md:py-32 px-6 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <FadeIn>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-sans font-light leading-tight mb-6">
-                What this looks like <em className="text-brand-purple italic">in practice</em>
-              </h2>
-              <p className="text-lg text-brand-navy/50 max-w-2xl mx-auto">
-                Real numbers from coaches running groups on CollWi
-              </p>
-            </div>
-          </FadeIn>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                group: 'Leadership for Female Executives',
-                members: 10,
-                price: '$99/month',
-                monthly: '$990',
-                yourShare: '$693',
-                note: 'Fully booked within 3 weeks',
-              },
-              {
-                group: 'Career Transition Coaching',
-                members: 12,
-                price: '$79/month',
-                monthly: '$948',
-                yourShare: '$663',
-                note: 'Waitlist of 8 people',
-              },
-              {
-                group: 'Relationship & Boundaries',
-                members: 9,
-                price: '$69/month',
-                monthly: '$621',
-                yourShare: '$435',
-                note: 'Expanding to second cohort',
-              },
-              {
-                group: 'Confidence & Self-Worth',
-                members: 11,
-                price: '$89/month',
-                monthly: '$979',
-                yourShare: '$685',
-                note: 'Highest retention rate',
-              },
-            ].map((item, i) => (
-              <FadeIn key={i} delay={i * 0.1}>
-                <div className="rounded-2xl p-8 border border-gray-100 bg-gradient-to-br from-gray-50 to-white">
-                  <h3 className="text-xl font-semibold text-brand-navy mb-4">{item.group}</h3>
-                  <div className="space-y-4 mb-6">
-                    <div className="flex justify-between items-center pb-4 border-b border-gray-200">
-                      <span className="text-brand-navy/60">Members</span>
-                      <span className="font-semibold text-brand-navy">{item.members}</span>
-                    </div>
-                    <div className="flex justify-between items-center pb-4 border-b border-gray-200">
-                      <span className="text-brand-navy/60">Price per member</span>
-                      <span className="font-semibold text-brand-navy">{item.price}</span>
-                    </div>
-                    <div className="flex justify-between items-center pb-4 border-b border-gray-200">
-                      <span className="text-brand-navy/60">Monthly group revenue</span>
-                      <span className="font-semibold text-brand-navy">{item.monthly}</span>
-                    </div>
-                    <div className="flex justify-between items-center pt-2">
-                      <span className="text-brand-teal font-semibold">Your monthly earnings</span>
-                      <span className="text-2xl font-bold text-brand-teal">{item.yourShare}</span>
-                    </div>
-                  </div>
-                  <p className="text-sm text-brand-navy/50 italic">{item.note}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-
-          <FadeIn delay={0.4}>
-            <p className="text-center mt-12 text-lg text-brand-navy/60">
-              That's $2,476 monthly from just 4 groups, with one hour of weekly coaching per group.
-            </p>
-          </FadeIn>
-        </div>
-      </section>
-
       {/* ─── Key Benefits ─── */}
       <section className="py-24 md:py-32 px-6 mesh-gradient-intense">
         <div className="max-w-4xl mx-auto">
@@ -319,12 +235,8 @@ export default function HowItWorksPage() {
           <StaggerContainer className="grid md:grid-cols-2 gap-6" staggerDelay={0.08}>
             {[
               {
-                title: 'Predictable Income',
-                desc: 'Monthly subscriptions beat the inconsistency of 1:1 coaching. Know what you\'ll earn and plan accordingly.',
-              },
-              {
                 title: 'Scale Without Burnout',
-                desc: 'One group session replaces 10-15 individual clients. Help more people in less time.',
+                desc: 'One group session reaches multiple people at once. Help more women in less time.',
               },
               {
                 title: 'Deeper Transformations',
@@ -332,15 +244,19 @@ export default function HowItWorksPage() {
               },
               {
                 title: 'Less Marketing Stress',
-                desc: 'No more cold outreach, social media hustle, or networking pressure. We bring qualified participants.',
+                desc: 'Your programs appear in the platform catalog where members can find you. No more cold outreach or social media hustle.',
               },
               {
                 title: 'Community of Practice',
-                desc: 'Connect with other coaches in the CollWi network. Share best practices, templates, and learning.',
+                desc: 'Connect with other coaches on the platform. Share experiences and grow together.',
               },
               {
                 title: 'Full Platform Support',
-                desc: 'Video hosting, recordings, member management, payments, and support—all handled for you.',
+                desc: 'Video hosting, member management, payments, and group chat—all handled for you.',
+              },
+              {
+                title: 'You Control Your Practice',
+                desc: 'Set your own pricing, schedule, and program structure. Build the practice you want.',
               },
             ].map((item, i) => (
               <StaggerItem key={i}>
@@ -394,10 +310,10 @@ export default function HowItWorksPage() {
           </FadeIn>
           <FadeIn delay={0.1}>
             <p className="text-xl text-white/80 mb-4">
-              Join coaches earning $2,000-5,000+ monthly with CollWi.
+              Join our growing network of certified coaches offering group programs.
             </p>
             <p className="text-lg text-white/60 mb-12">
-              Apply today. Launch within 4 weeks.
+              Register today. Start creating your programs quickly.
             </p>
           </FadeIn>
           <FadeIn delay={0.2}>
