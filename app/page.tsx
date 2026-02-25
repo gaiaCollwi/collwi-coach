@@ -14,7 +14,7 @@ export default function CoachesPage() {
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center pt-28 pb-20">
           <FadeIn delay={0.15}>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-sans font-light leading-[1.1] mb-8">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-light leading-[1.1] mb-8">
               You're an Exceptional Coach.
               <br />
               So Why Is It So Hard to Find Paying Clients?
@@ -22,13 +22,13 @@ export default function CoachesPage() {
           </FadeIn>
 
           <FadeIn delay={0.3}>
-            <p className="text-2xl md:text-3xl text-brand-navy/70 font-light mb-6">
+            <p className="text-xl md:text-2xl text-brand-navy/70 font-light mb-6">
               You've tried everything—free discovery sessions, networking, posting on social media. Your website is beautiful. Yet you still struggle to get clients consistently.
             </p>
           </FadeIn>
 
           <FadeIn delay={0.4}>
-            <p className="text-xl md:text-2xl text-brand-navy/60 mb-12">
+            <p className="text-lg md:text-xl text-brand-navy/60 mb-12">
               You love coaching. You hate the business side. We've solved that for you.
             </p>
           </FadeIn>
@@ -104,8 +104,8 @@ export default function CoachesPage() {
               {
                 icon: TrendingUp,
                 color: "bg-brand-coral/10 text-brand-coral",
-                title: "We Connect You With Women Seeking Growth",
-                desc: "Stop chasing clients. CollWi connects you with women actively seeking growth and community support. No more cold outreach. No more endless free discovery sessions."
+                title: "We Connect You With Members Seeking Growth",
+                desc: "Stop chasing clients. CollWi connects you with members actively seeking growth and community support. No more cold outreach. No more endless free discovery sessions."
               },
               {
                 icon: Users,
@@ -167,7 +167,7 @@ export default function CoachesPage() {
               },
               {
                 number: "2",
-                title: "Women Find You",
+                title: "Members Find You",
                 desc: "Members browse programs and choose what fits their needs. No more cold outreach. (Some introductory sessions may still be helpful, but no more spending all your time giving away free coaching.)"
               },
               {
@@ -295,7 +295,7 @@ export default function CoachesPage() {
             {[
               { num: '01', title: 'Register as a Coach', desc: 'Quick registration for certified coaches ready to offer group programs' },
               { num: '02', title: 'Create Your Program', desc: 'Easy, quick process to set up your group coaching program. You set your own pricing and schedule' },
-              { num: '03', title: 'Women Find You', desc: 'Members browse programs and choose what fits their needs—no marketing required on your end' },
+              { num: '03', title: 'Members Find You', desc: 'Members browse programs and choose what fits their needs—no marketing required on your end' },
               { num: '04', title: 'Lead & Earn', desc: 'Facilitate small groups (8-12 people), scale your impact, build sustainable income' },
             ].map((step, i) => (
               <FadeIn key={i} delay={i * 0.1}>

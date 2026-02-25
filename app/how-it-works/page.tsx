@@ -114,7 +114,7 @@ export default function HowItWorksPage() {
               {
                 icon: <Users size={26} />,
                 title: 'Members Find You',
-                desc: 'Women browse programs on the platform and choose what fits their needs. You focus on creating great programs.',
+                desc: 'Members browse programs on the platform and choose what fits their needs. You focus on creating great programs.',
                 color: 'teal',
               },
               {
@@ -178,7 +178,7 @@ export default function HowItWorksPage() {
               {
                 step: 3,
                 title: 'Members Find You',
-                desc: 'Women on the platform browse programs and choose what fits their needs. Your program appears in the platform catalog.',
+                desc: 'Members on the platform browse programs and choose what fits their needs. Your program appears in the platform catalog.',
                 icon: <TrendingUp size={28} />,
               },
               {
@@ -236,7 +236,7 @@ export default function HowItWorksPage() {
             {[
               {
                 title: 'Scale Without Burnout',
-                desc: 'One group session reaches multiple people at once. Help more women in less time.',
+                desc: 'One group session reaches multiple people at once. Help more members in less time.',
               },
               {
                 title: 'Deeper Transformations',
