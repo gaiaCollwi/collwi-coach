@@ -14,14 +14,12 @@ export default function CoachRegister() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    // API integration here
     console.log('Coach registration:', { email, password });
     setTimeout(() => setIsLoading(false), 1500);
   };
 
   const handleGoogleAuth = async () => {
     setIsLoadingGoogle(true);
-    // Google OAuth here
     setTimeout(() => setIsLoadingGoogle(false), 1500);
   };
 
@@ -55,25 +53,49 @@ export default function CoachRegister() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-orange-50">
+    <div 
+      className="min-h-screen"
+      style={{
+        background: 'linear-gradient(180deg, #EDE7F8 0%, #FFFFFF 50%, #FFE4D2 100%)'
+      }}
+    >
+      <style jsx global>{`
+        @import url('https://fonts.googleapis.com/css2?family=Crete+Round&family=Nunito:wght@400;600;700&display=swap');
+        
+        .font-crete { font-family: 'Crete Round', serif; }
+        .font-nunito { font-family: 'Nunito', sans-serif; }
+      `}</style>
+
       {/* Hero Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-20 pb-16">
         <div className="text-center mb-12 sm:mb-16">
           <Link href="/" className="inline-block mb-8">
-            <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-pink-500 rounded-2xl mx-auto"></div>
+            <div 
+              className="w-16 h-16 mx-auto rounded-2xl flex items-center justify-center"
+              style={{
+                background: 'linear-gradient(135deg, #7C3AED 0%, #6DCFD0 50%, #F87823 100%)'
+              }}
+            >
+              <span className="text-white text-2xl font-bold">C</span>
+            </div>
           </Link>
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
+          <h1 className="font-crete text-3xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
             You're an Exceptional Coach.
             <br />
-            <span className="bg-gradient-to-r from-purple-600 via-teal-500 to-orange-500 bg-clip-text text-transparent">
+            <span 
+              className="bg-clip-text text-transparent"
+              style={{
+                backgroundImage: 'linear-gradient(to right, #97C9CA, #AE6EDE, #FA9F56)'
+              }}
+            >
               Why Struggle to Find Clients?
             </span>
           </h1>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed px-4">
+          <p className="font-nunito text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed px-4">
             You've tried everything—free discovery sessions, networking, posting on social media. 
             Your website is beautiful. Yet you still struggle to get clients consistently.
           </p>
-          <p className="text-lg sm:text-xl font-semibold text-gray-800">
+          <p className="font-nunito text-lg sm:text-xl font-semibold text-gray-800">
             You love coaching. You hate the business side. We've solved that for you.
           </p>
         </div>
@@ -83,25 +105,41 @@ export default function CoachRegister() {
           {benefits.map((benefit, index) => (
             <div 
               key={index}
-              className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-purple-200 hover:-translate-y-1 group"
+              className="bg-white rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 group"
+              style={{
+                boxShadow: '0 4px 16px rgba(124, 58, 237, 0.08)',
+                border: '1px solid rgba(124, 58, 237, 0.08)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.boxShadow = '0 8px 24px rgba(124, 58, 237, 0.12)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = '0 4px 16px rgba(124, 58, 237, 0.08)';
+              }}
             >
               <div className="mb-4 transform group-hover:scale-110 transition-transform duration-300">
                 {benefit.icon}
               </div>
-              <h3 className="text-lg font-bold mb-2">{benefit.title}</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">{benefit.description}</p>
+              <h3 className="font-nunito text-lg font-bold mb-2">{benefit.title}</h3>
+              <p className="font-nunito text-sm text-gray-600 leading-relaxed">{benefit.description}</p>
             </div>
           ))}
         </div>
 
         {/* Stats Bar */}
         <div className="max-w-4xl mx-auto mb-12 sm:mb-16 px-4">
-          <div className="bg-gradient-to-r from-purple-100 via-teal-50 to-orange-100 rounded-2xl p-6 sm:p-8 backdrop-blur-sm border border-purple-200">
+          <div 
+            className="rounded-2xl p-6 sm:p-8"
+            style={{
+              background: 'linear-gradient(to right, rgba(124,58,237,0.08), rgba(109,207,208,0.08), rgba(248,120,35,0.08))',
+              border: '1px solid rgba(124, 58, 237, 0.1)'
+            }}
+          >
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               {stats.map((stat, index) => (
                 <div key={index} className="flex items-center gap-3 justify-center sm:justify-start">
                   <div className="flex-shrink-0">{stat.icon}</div>
-                  <span className="text-sm font-semibold text-gray-700">
+                  <span className="font-nunito text-sm font-semibold text-gray-700">
                     {stat.label}
                   </span>
                 </div>
@@ -111,19 +149,25 @@ export default function CoachRegister() {
         </div>
 
         {/* Registration Form Section */}
-        <div className="max-w-lg mx-auto bg-white rounded-3xl shadow-2xl p-6 sm:p-10 border-4 border-white hover:border-purple-100 transition-all duration-300">
+        <div 
+          className="max-w-lg mx-auto bg-white rounded-3xl p-6 sm:p-10 transition-all duration-300"
+          style={{
+            boxShadow: '0 8px 32px rgba(124, 58, 237, 0.08)',
+            border: '1px solid rgba(124, 58, 237, 0.08)'
+          }}
+        >
           <div className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-3">
+            <h2 className="font-crete text-2xl sm:text-3xl font-bold mb-3">
               Join CollWi as a Coach
             </h2>
-            <p className="text-gray-600">
+            <p className="font-nunito text-gray-600">
               Start building your coaching practice today. No approval needed.
             </p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="email" className="font-nunito block text-sm font-semibold text-gray-700 mb-2">
                 Email Address
               </label>
               <input
@@ -132,14 +176,14 @@ export default function CoachRegister() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 border-2 border-gray-200 rounded-2xl focus:outline-none focus:ring-4 focus:ring-purple-100 focus:border-purple-500 transition-all duration-300 text-gray-900 bg-gray-50 hover:bg-white"
+                className="font-nunito w-full px-4 py-3.5 border-2 border-gray-200 rounded-2xl focus:outline-none focus:ring-4 focus:ring-purple-100 focus:border-purple-500 transition-all duration-300 text-gray-900 bg-gray-50 hover:bg-white"
                 placeholder="you@example.com"
                 disabled={isLoading || isLoadingGoogle}
               />
             </div>
 
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="password" className="font-nunito block text-sm font-semibold text-gray-700 mb-2">
                 Password
               </label>
               <div className="relative">
@@ -149,7 +193,7 @@ export default function CoachRegister() {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-3 pr-12 border-2 border-gray-200 rounded-2xl focus:outline-none focus:ring-4 focus:ring-purple-100 focus:border-purple-500 transition-all duration-300 text-gray-900 bg-gray-50 hover:bg-white"
+                  className="font-nunito w-full px-4 py-3.5 pr-12 border-2 border-gray-200 rounded-2xl focus:outline-none focus:ring-4 focus:ring-purple-100 focus:border-purple-500 transition-all duration-300 text-gray-900 bg-gray-50 hover:bg-white"
                   placeholder="••••••••"
                   disabled={isLoading || isLoadingGoogle}
                 />
@@ -157,6 +201,7 @@ export default function CoachRegister() {
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-purple-600 transition-colors"
+                  aria-label={showPassword ? 'Hide password' : 'Show password'}
                 >
                   {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                 </button>
@@ -166,7 +211,19 @@ export default function CoachRegister() {
             <button
               type="submit"
               disabled={isLoading || isLoadingGoogle}
-              className="w-full bg-gradient-to-r from-purple-600 to-purple-500 text-white font-bold py-4 px-8 rounded-2xl hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-base sm:text-lg"
+              className="font-nunito w-full text-white font-bold py-4 px-8 rounded-full hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-base sm:text-lg"
+              style={{
+                background: 'linear-gradient(135deg, #7C3AED 0%, #6DCFD0 100%)',
+                boxShadow: '0 4px 16px rgba(124, 58, 237, 0.25)'
+              }}
+              onMouseEnter={(e) => {
+                if (!isLoading && !isLoadingGoogle) {
+                  e.currentTarget.style.boxShadow = '0 8px 24px rgba(124, 58, 237, 0.35)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.boxShadow = '0 4px 16px rgba(124, 58, 237, 0.25)';
+              }}
             >
               {isLoading ? (
                 <div className="flex items-center justify-center gap-3">
@@ -183,7 +240,7 @@ export default function CoachRegister() {
                 <div className="w-full border-t border-gray-200"></div>
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-4 bg-white text-gray-500">
+                <span className="font-nunito px-4 bg-white text-gray-500">
                   Or continue with
                 </span>
               </div>
@@ -193,7 +250,7 @@ export default function CoachRegister() {
               type="button"
               onClick={handleGoogleAuth}
               disabled={isLoading || isLoadingGoogle}
-              className="w-full bg-white border-2 border-gray-200 text-gray-700 font-semibold py-4 px-8 rounded-2xl hover:border-teal-400 hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
+              className="font-nunito w-full bg-white border-2 border-gray-200 text-gray-700 font-semibold py-4 px-8 rounded-full hover:border-teal-400 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
             >
               {isLoadingGoogle ? (
                 <>
@@ -213,20 +270,20 @@ export default function CoachRegister() {
               )}
             </button>
 
-            <p className="text-xs text-gray-500 text-center mt-6 leading-relaxed">
+            <p className="font-nunito text-xs text-gray-500 text-center mt-6 leading-relaxed">
               By creating an account you agree to CollWi's{' '}
-              <Link href="https://collwi.com/terms" target="_blank" className="text-purple-600 font-semibold hover:underline">
+              <Link href="https://collwi.com/terms" target="_blank" className="font-semibold hover:underline" style={{ color: '#7C3AED' }}>
                 Terms of Service
               </Link>{' '}
               and{' '}
-              <Link href="https://collwi.com/privacy" target="_blank" className="text-purple-600 font-semibold hover:underline">
+              <Link href="https://collwi.com/privacy" target="_blank" className="font-semibold hover:underline" style={{ color: '#7C3AED' }}>
                 Privacy Policy
               </Link>
             </p>
 
-            <div className="text-center mt-6">
+            <div className="font-nunito text-center mt-6">
               Already have an account?{' '}
-              <Link href="https://collwi.com/login" className="text-purple-600 font-bold hover:underline">
+              <Link href="https://collwi.com/login" className="font-bold hover:underline" style={{ color: '#7C3AED' }}>
                 Log in
               </Link>
             </div>
@@ -237,16 +294,16 @@ export default function CoachRegister() {
         <div className="mt-12 sm:mt-16 text-center px-4">
           <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 text-sm sm:text-base text-gray-600">
             <div className="flex items-center gap-2">
-              <CheckCircle className="text-teal-500" size={24} />
-              <span>Free to join</span>
+              <CheckCircle size={20} style={{ color: '#6DCFD0' }} />
+              <span className="font-nunito">Free to join</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle className="text-teal-500" size={24} />
-              <span>No approval process</span>
+              <CheckCircle size={20} style={{ color: '#6DCFD0' }} />
+              <span className="font-nunito">No approval process</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle className="text-teal-500" size={24} />
-              <span>Start earning immediately</span>
+              <CheckCircle size={20} style={{ color: '#6DCFD0' }} />
+              <span className="font-nunito">Start earning immediately</span>
             </div>
           </div>
         </div>
