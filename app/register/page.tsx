@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { TrendingUp, People, Schedule, AutoAwesome, CheckCircle, EmojiEvents, Handshake, ShowChart, Eye, EyeOff } from 'lucide-react';
+import { TrendingUp, Users, Calendar, Sparkles, CheckCircle, Trophy, Handshake, TrendingUpIcon, Eye, EyeOff } from 'lucide-react';
 
 export default function CoachRegister() {
   const [email, setEmail] = useState('');
@@ -32,26 +32,26 @@ export default function CoachRegister() {
       description: 'Keep what you earn. We only take 18% to maintain the platform.'
     },
     {
-      icon: <People className="text-teal-500" size={40} />,
+      icon: <Users className="text-teal-500" size={40} />,
       title: 'Built-In Client Pipeline',
       description: 'Stop chasing leads. Clients come to you through our marketplace.'
     },
     {
-      icon: <Schedule className="text-orange-500" size={40} />,
+      icon: <Calendar className="text-orange-500" size={40} />,
       title: 'Total Autonomy',
       description: 'Set your own rates, schedule, and coaching approach. Your practice, your rules.'
     },
     {
-      icon: <AutoAwesome className="text-purple-600" size={40} />,
+      icon: <Sparkles className="text-purple-600" size={40} />,
       title: 'Simple Setup',
       description: 'No applications or vetting. Create profile, set availability, start coaching.'
     }
   ];
 
   const stats = [
-    { icon: <EmojiEvents className="text-orange-500" />, label: 'Top coaches earn $10k+/mo' },
+    { icon: <Trophy className="text-orange-500" />, label: 'Top coaches earn $10k+/mo' },
     { icon: <Handshake className="text-teal-500" />, label: 'Average 15 clients/month' },
-    { icon: <ShowChart className="text-purple-600" />, label: '82% revenue share' }
+    { icon: <TrendingUpIcon className="text-purple-600" />, label: '82% revenue share' }
   ];
 
   return (
