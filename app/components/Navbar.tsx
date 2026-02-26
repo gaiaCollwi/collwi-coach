@@ -58,13 +58,13 @@ export default function Navbar() {
 
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="https://collwi.com/login"
+              href="/login"
               className="text-sm font-medium text-brand-navy/70 hover:text-brand-navy transition-colors"
             >
               Log in
             </a>
             <a
-              href="https://collwi.com/register"
+              href="/register"
               className="inline-flex items-center gap-2 px-6 py-2.5 bg-brand-teal text-white text-sm font-semibold rounded-full hover:bg-brand-teal-dark shadow-teal hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
             >
               Apply to Coach
@@ -110,13 +110,13 @@ export default function Navbar() {
 
             <div className="mt-auto pb-12 space-y-4">
               <a
-                href="https://collwi.com/login"
+                href="/login"
                 className="block text-center px-6 py-3 text-brand-navy/70 font-medium rounded-full border border-gray-200 hover:border-brand-teal transition-colors"
               >
                 Log in
               </a>
               <a
-                href="https://collwi.com/register"
+                href="/register"
                 className="block text-center px-6 py-3.5 bg-brand-teal text-white font-semibold rounded-full shadow-teal hover:bg-brand-teal-dark transition-all"
               >
                 Apply to Coach
