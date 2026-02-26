@@ -35,7 +35,7 @@ export default function CoachesPage() {
 
           <FadeIn delay={0.45}>
             <a
-              href="https://collwi.com/register"
+              href="/register"
               className="group inline-flex items-center gap-2.5 px-9 py-4 bg-brand-teal text-white font-semibold text-lg rounded-full shadow-teal hover:bg-brand-teal-dark hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
             >
               Join as a Coach
@@ -261,7 +261,7 @@ export default function CoachesPage() {
 
           <FadeIn delay={0.35}>
             <a
-              href="https://collwi.com/register"
+              href="/register"
               className="group inline-flex items-center gap-2.5 px-10 py-5 bg-brand-teal text-white font-semibold text-xl rounded-full shadow-teal hover:bg-brand-teal-dark hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
               Register as a Coach With CollWi
