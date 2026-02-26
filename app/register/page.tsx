@@ -2,63 +2,69 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { TrendingUp, Users, Calendar, Sparkles, CheckCircle, Trophy, Handshake, TrendingUpIcon, Eye, EyeOff } from 'lucide-react';
+import { ArrowRight, Eye, EyeOff, DollarSign, Calendar, TrendingUp } from 'lucide-react';
+
+const coachPerks = [
+  {
+    icon: <DollarSign size={22} />,
+    title: 'Keep 82% of earnings',
+    desc: 'Industry-leading take rate. You built your expertise — keep what you earn.',
+    color: 'purple',
+  },
+  {
+    icon: <Calendar size={22} />,
+    title: 'Your schedule, your rules',
+    desc: 'Set availability that works with your life. No minimums, no penalties.',
+    color: 'teal',
+  },
+  {
+    icon: <TrendingUp size={22} />,
+    title: 'Built-in client pipeline',
+    desc: 'We bring the members to you. Focus on coaching, not marketing.',
+    color: 'coral',
+  },
+];
+
+const specialties = [
+  { value: 'career', label: 'Career & Professional Growth', desc: 'Job transitions, promotions, finding purpose' },
+  { value: 'leadership', label: 'Leadership & Executive Coaching', desc: 'Building confidence, managing teams' },
+  { value: 'life', label: 'Life & Wellness', desc: 'Balance, self-care, relationships, growth' },
+  { value: 'business', label: 'Business & Entrepreneurship', desc: 'Starting ventures, scaling, navigating risk' },
+  { value: 'other', label: 'Something else', desc: "We'd love to hear what you bring" },
+];
+
+const nextSteps = [
+  'We review your profile (usually within 24 hours)',
+  'You set up your coach profile, rates, and availability',
+  'Start connecting with CollWiers who need your support',
+];
 
 export default function CoachRegister() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+    specialty: '',
+    experience: '',
+    certifications: '',
+  });
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [isLoadingGoogle, setIsLoadingGoogle] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    console.log('Coach registration:', { email, password });
+    console.log('Coach registration:', formData);
     setTimeout(() => setIsLoading(false), 1500);
   };
 
-  const handleGoogleAuth = async () => {
-    setIsLoadingGoogle(true);
-    setTimeout(() => setIsLoadingGoogle(false), 1500);
+  const updateField = (field: string, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  const benefits = [
-    {
-      icon: <TrendingUp className="text-purple-600" size={40} />,
-      title: '82% Revenue Share',
-      description: 'Keep what you earn. We only take 18% to maintain the platform.'
-    },
-    {
-      icon: <Users className="text-teal-500" size={40} />,
-      title: 'Built-In Client Pipeline',
-      description: 'Stop chasing leads. Clients come to you through our marketplace.'
-    },
-    {
-      icon: <Calendar className="text-orange-500" size={40} />,
-      title: 'Total Autonomy',
-      description: 'Set your own rates, schedule, and coaching approach. Your practice, your rules.'
-    },
-    {
-      icon: <Sparkles className="text-purple-600" size={40} />,
-      title: 'Simple Setup',
-      description: 'No applications or vetting. Create profile, set availability, start coaching.'
-    }
-  ];
-
-  const stats = [
-    { icon: <Trophy className="text-orange-500" />, label: 'Top coaches earn $10k+/mo' },
-    { icon: <Handshake className="text-teal-500" />, label: 'Average 15 clients/month' },
-    { icon: <TrendingUpIcon className="text-purple-600" />, label: '82% revenue share' }
-  ];
-
   return (
-    <div 
-      className="min-h-screen"
-      style={{
-        background: 'linear-gradient(180deg, #EDE7F8 0%, #FFFFFF 50%, #FFE4D2 100%)'
-      }}
-    >
+    <div className="min-h-screen pt-24" style={{ background: 'linear-gradient(180deg, #EDE7F8 0%, #FFFFFF 50%, #FFE4D2 100%)' }}>
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Crete+Round&family=Nunito:wght@400;600;700&display=swap');
         
@@ -66,244 +72,289 @@ export default function CoachRegister() {
         .font-nunito { font-family: 'Nunito', sans-serif; }
       `}</style>
 
-      {/* Hero Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-20 pb-16">
-        <div className="text-center mb-12 sm:mb-16">
-          <Link href="/" className="inline-block mb-8">
-            <div 
-              className="w-16 h-16 mx-auto rounded-2xl flex items-center justify-center"
-              style={{
-                background: 'linear-gradient(135deg, #7C3AED 0%, #6DCFD0 50%, #F87823 100%)'
-              }}
+      <div className="max-w-6xl mx-auto px-6 py-12 md:py-20">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20 items-start">
+          {/* Left — Value Proposition */}
+          <div className="lg:sticky lg:top-32">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 text-sm font-nunito hover:underline transition-colors mb-8"
+              style={{ color: 'rgba(23, 23, 23, 0.4)' }}
             >
-              <span className="text-white text-2xl font-bold">C</span>
-            </div>
-          </Link>
-          <h1 className="font-crete text-3xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
-            You're an Exceptional Coach.
-            <br />
-            <span 
-              className="bg-clip-text text-transparent"
-              style={{
-                backgroundImage: 'linear-gradient(to right, #97C9CA, #AE6EDE, #FA9F56)'
-              }}
-            >
-              Why Struggle to Find Clients?
+              <ArrowRight size={14} className="rotate-180" />
+              <span>Back to home</span>
+            </Link>
+
+            <span className="font-nunito inline-block px-4 py-1.5 text-xs font-bold tracking-[0.15em] uppercase rounded-full mb-6" style={{ background: 'rgba(124, 58, 237, 0.1)', color: '#7C3AED' }}>
+              For Coaches
             </span>
-          </h1>
-          <p className="font-nunito text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed px-4">
-            You've tried everything—free discovery sessions, networking, posting on social media. 
-            Your website is beautiful. Yet you still struggle to get clients consistently.
-          </p>
-          <p className="font-nunito text-lg sm:text-xl font-semibold text-gray-800">
-            You love coaching. You hate the business side. We've solved that for you.
-          </p>
-        </div>
 
-        {/* Benefits Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16 px-4 sm:px-0">
-          {benefits.map((benefit, index) => (
-            <div 
-              key={index}
-              className="bg-white rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 group"
-              style={{
-                boxShadow: '0 4px 16px rgba(124, 58, 237, 0.08)',
-                border: '1px solid rgba(124, 58, 237, 0.08)'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = '0 8px 24px rgba(124, 58, 237, 0.12)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = '0 4px 16px rgba(124, 58, 237, 0.08)';
-              }}
-            >
-              <div className="mb-4 transform group-hover:scale-110 transition-transform duration-300">
-                {benefit.icon}
-              </div>
-              <h3 className="font-nunito text-lg font-bold mb-2">{benefit.title}</h3>
-              <p className="font-nunito text-sm text-gray-600 leading-relaxed">{benefit.description}</p>
-            </div>
-          ))}
-        </div>
+            <h1 className="font-crete text-4xl md:text-5xl font-light leading-[1.15] mb-6">
+              Share your gift.
+              <br />
+              Build your <em className="italic" style={{ color: '#7C3AED' }}>practice.</em>
+            </h1>
 
-        {/* Stats Bar */}
-        <div className="max-w-4xl mx-auto mb-12 sm:mb-16 px-4">
-          <div 
-            className="rounded-2xl p-6 sm:p-8"
-            style={{
-              background: 'linear-gradient(to right, rgba(124,58,237,0.08), rgba(109,207,208,0.08), rgba(248,120,35,0.08))',
-              border: '1px solid rgba(124, 58, 237, 0.1)'
-            }}
-          >
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {stats.map((stat, index) => (
-                <div key={index} className="flex items-center gap-3 justify-center sm:justify-start">
-                  <div className="flex-shrink-0">{stat.icon}</div>
-                  <span className="font-nunito text-sm font-semibold text-gray-700">
-                    {stat.label}
-                  </span>
+            <p className="font-nunito text-lg leading-relaxed mb-10" style={{ color: 'rgba(23, 23, 23, 0.5)' }}>
+              Join a platform built to support coaches — not exploit them.
+              Focus on what you do best while we handle the rest.
+            </p>
+
+            <div className="space-y-5">
+              {coachPerks.map((item, i) => (
+                <div key={i} className="flex items-start gap-4">
+                  <div
+                    className={`flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center ${
+                      item.color === 'purple'
+                        ? 'text-purple-600'
+                        : item.color === 'teal'
+                        ? 'text-teal-500'
+                        : 'text-orange-500'
+                    }`}
+                    style={{
+                      background: item.color === 'purple' ? 'rgba(124, 58, 237, 0.1)' : item.color === 'teal' ? 'rgba(109, 207, 208, 0.1)' : 'rgba(248, 120, 35, 0.1)'
+                    }}
+                  >
+                    {item.icon}
+                  </div>
+                  <div>
+                    <h3 className="font-nunito font-bold mb-1" style={{ color: '#171717' }}>{item.title}</h3>
+                    <p className="font-nunito text-sm leading-relaxed" style={{ color: 'rgba(23, 23, 23, 0.5)' }}>{item.desc}</p>
+                  </div>
                 </div>
               ))}
             </div>
-          </div>
-        </div>
 
-        {/* Registration Form Section */}
-        <div 
-          className="max-w-lg mx-auto bg-white rounded-3xl p-6 sm:p-10 transition-all duration-300"
-          style={{
-            boxShadow: '0 8px 32px rgba(124, 58, 237, 0.08)',
-            border: '1px solid rgba(124, 58, 237, 0.08)'
-          }}
-        >
-          <div className="text-center mb-8">
-            <h2 className="font-crete text-2xl sm:text-3xl font-bold mb-3">
-              Join CollWi as a Coach
-            </h2>
-            <p className="font-nunito text-gray-600">
-              Start building your coaching practice today. No approval needed.
-            </p>
-          </div>
-
-          <form onSubmit={handleSubmit} className="space-y-5">
-            <div>
-              <label htmlFor="email" className="font-nunito block text-sm font-semibold text-gray-700 mb-2">
-                Email Address
-              </label>
-              <input
-                type="email"
-                id="email"
-                required
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="font-nunito w-full px-4 py-3.5 border-2 border-gray-200 rounded-2xl focus:outline-none focus:ring-4 focus:ring-purple-100 focus:border-purple-500 transition-all duration-300 text-gray-900 bg-gray-50 hover:bg-white"
-                placeholder="you@example.com"
-                disabled={isLoading || isLoadingGoogle}
-              />
+            {/* What happens next */}
+            <div className="mt-10 p-6 rounded-2xl" style={{ background: 'rgba(124, 58, 237, 0.05)' }}>
+              <h3 className="font-nunito font-bold mb-3" style={{ color: '#171717' }}>What happens next?</h3>
+              <ul className="space-y-2.5">
+                {nextSteps.map((step, i) => (
+                  <li key={i} className="font-nunito flex items-start gap-3 text-sm" style={{ color: 'rgba(23, 23, 23, 0.6)' }}>
+                    <span className="font-bold mt-0.5" style={{ color: '#7C3AED' }}>{i + 1}.</span>
+                    <span>{step}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
+          </div>
 
-            <div>
-              <label htmlFor="password" className="font-nunito block text-sm font-semibold text-gray-700 mb-2">
-                Password
-              </label>
-              <div className="relative">
-                <input
-                  type={showPassword ? 'text' : 'password'}
-                  id="password"
-                  required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="font-nunito w-full px-4 py-3.5 pr-12 border-2 border-gray-200 rounded-2xl focus:outline-none focus:ring-4 focus:ring-purple-100 focus:border-purple-500 transition-all duration-300 text-gray-900 bg-gray-50 hover:bg-white"
-                  placeholder="••••••••"
-                  disabled={isLoading || isLoadingGoogle}
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-purple-600 transition-colors"
-                  aria-label={showPassword ? 'Hide password' : 'Show password'}
-                >
-                  {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
-                </button>
+          {/* Right — Form */}
+          <div>
+            <div className="bg-white rounded-3xl p-8 md:p-10" style={{ boxShadow: '0 8px 32px rgba(124, 58, 237, 0.08)', border: '1px solid rgba(124, 58, 237, 0.08)' }}>
+              <div className="mb-8">
+                <h2 className="font-crete text-2xl font-bold mb-2">Apply to coach</h2>
+                <p className="font-nunito" style={{ color: 'rgba(23, 23, 23, 0.45)' }}>Tell us about yourself and your coaching practice.</p>
               </div>
-            </div>
 
-            <button
-              type="submit"
-              disabled={isLoading || isLoadingGoogle}
-              className="font-nunito w-full text-white font-bold py-4 px-8 rounded-full hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-base sm:text-lg"
-              style={{
-                background: 'linear-gradient(135deg, #7C3AED 0%, #6DCFD0 100%)',
-                boxShadow: '0 4px 16px rgba(124, 58, 237, 0.25)'
-              }}
-              onMouseEnter={(e) => {
-                if (!isLoading && !isLoadingGoogle) {
-                  e.currentTarget.style.boxShadow = '0 8px 24px rgba(124, 58, 237, 0.35)';
-                }
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = '0 4px 16px rgba(124, 58, 237, 0.25)';
-              }}
-            >
-              {isLoading ? (
-                <div className="flex items-center justify-center gap-3">
-                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                  <span>Creating your account...</span>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Basics */}
+                <div className="space-y-5">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="firstName" className="font-nunito block text-sm font-medium mb-2" style={{ color: 'rgba(23, 23, 23, 0.6)' }}>
+                        First name
+                      </label>
+                      <input
+                        type="text"
+                        id="firstName"
+                        required
+                        value={formData.firstName}
+                        onChange={(e) => updateField('firstName', e.target.value)}
+                        className="font-nunito w-full px-4 py-3.5 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:ring-2 transition-all duration-200"
+                        style={{ color: '#171717', borderColor: '#e5e7eb' }}
+                        onFocus={(e) => e.currentTarget.style.borderColor = '#7C3AED'}
+                        onBlur={(e) => e.currentTarget.style.borderColor = '#e5e7eb'}
+                        disabled={isLoading}
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="lastName" className="font-nunito block text-sm font-medium mb-2" style={{ color: 'rgba(23, 23, 23, 0.6)' }}>
+                        Last name
+                      </label>
+                      <input
+                        type="text"
+                        id="lastName"
+                        required
+                        value={formData.lastName}
+                        onChange={(e) => updateField('lastName', e.target.value)}
+                        className="font-nunito w-full px-4 py-3.5 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:ring-2 transition-all duration-200"
+                        style={{ color: '#171717', borderColor: '#e5e7eb' }}
+                        onFocus={(e) => e.currentTarget.style.borderColor = '#7C3AED'}
+                        onBlur={(e) => e.currentTarget.style.borderColor = '#e5e7eb'}
+                        disabled={isLoading}
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="email" className="font-nunito block text-sm font-medium mb-2" style={{ color: 'rgba(23, 23, 23, 0.6)' }}>
+                      Email address
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => updateField('email', e.target.value)}
+                      className="font-nunito w-full px-4 py-3.5 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:ring-2 transition-all duration-200"
+                      placeholder="you@example.com"
+                      style={{ color: '#171717', borderColor: '#e5e7eb' }}
+                      onFocus={(e) => e.currentTarget.style.borderColor = '#7C3AED'}
+                      onBlur={(e) => e.currentTarget.style.borderColor = '#e5e7eb'}
+                      disabled={isLoading}
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="password" className="font-nunito block text-sm font-medium mb-2" style={{ color: 'rgba(23, 23, 23, 0.6)' }}>
+                      Create a password
+                    </label>
+                    <div className="relative">
+                      <input
+                        type={showPassword ? 'text' : 'password'}
+                        id="password"
+                        required
+                        minLength={8}
+                        value={formData.password}
+                        onChange={(e) => updateField('password', e.target.value)}
+                        className="font-nunito w-full px-4 py-3.5 pr-12 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:ring-2 transition-all duration-200"
+                        placeholder="Minimum 8 characters"
+                        style={{ color: '#171717', borderColor: '#e5e7eb' }}
+                        onFocus={(e) => e.currentTarget.style.borderColor = '#7C3AED'}
+                        onBlur={(e) => e.currentTarget.style.borderColor = '#e5e7eb'}
+                        disabled={isLoading}
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setShowPassword(!showPassword)}
+                        className="absolute right-4 top-1/2 -translate-y-1/2 transition-colors"
+                        style={{ color: 'rgba(23, 23, 23, 0.3)' }}
+                        onMouseEnter={(e) => e.currentTarget.style.color = '#7C3AED'}
+                        onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(23, 23, 23, 0.3)'}
+                        aria-label={showPassword ? 'Hide password' : 'Show password'}
+                      >
+                        {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              ) : (
-                'Create Coach Account'
-              )}
-            </button>
 
-            <div className="relative my-6">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-gray-200"></div>
-              </div>
-              <div className="relative flex justify-center text-sm">
-                <span className="font-nunito px-4 bg-white text-gray-500">
-                  Or continue with
-                </span>
-              </div>
-            </div>
+                {/* Divider */}
+                <div className="border-t border-gray-50" />
 
-            <button
-              type="button"
-              onClick={handleGoogleAuth}
-              disabled={isLoading || isLoadingGoogle}
-              className="font-nunito w-full bg-white border-2 border-gray-200 text-gray-700 font-semibold py-4 px-8 rounded-full hover:border-teal-400 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
-            >
-              {isLoadingGoogle ? (
-                <>
-                  <div className="w-5 h-5 border-2 border-gray-700 border-t-transparent rounded-full animate-spin"></div>
-                  <span>Connecting to Google...</span>
-                </>
-              ) : (
-                <>
-                  <svg className="w-5 h-5" viewBox="0 0 24 24">
-                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-                  </svg>
-                  <span>Sign up with Google</span>
-                </>
-              )}
-            </button>
+                {/* Specialty */}
+                <div>
+                  <label className="font-nunito block text-sm font-medium mb-3" style={{ color: 'rgba(23, 23, 23, 0.6)' }}>
+                    What's your coaching focus?
+                  </label>
+                  <div className="space-y-2">
+                    {specialties.map((s) => (
+                      <label
+                        key={s.value}
+                        className={`flex items-center gap-4 p-4 rounded-xl border cursor-pointer transition-all duration-200 ${
+                          formData.specialty === s.value ? '' : 'hover:border-purple-200'
+                        }`}
+                        style={{
+                          borderColor: formData.specialty === s.value ? '#7C3AED' : '#e5e7eb',
+                          background: formData.specialty === s.value ? 'rgba(124, 58, 237, 0.05)' : '#FAFAFA'
+                        }}
+                      >
+                        <input
+                          type="radio"
+                          name="specialty"
+                          value={s.value}
+                          required
+                          checked={formData.specialty === s.value}
+                          onChange={(e) => updateField('specialty', e.target.value)}
+                          className="w-4 h-4"
+                          style={{ accentColor: '#7C3AED' }}
+                          disabled={isLoading}
+                        />
+                        <div>
+                          <div className="font-nunito font-medium text-sm" style={{ color: '#171717' }}>{s.label}</div>
+                          <div className="font-nunito text-xs" style={{ color: 'rgba(23, 23, 23, 0.4)' }}>{s.desc}</div>
+                        </div>
+                      </label>
+                    ))}
+                  </div>
+                </div>
 
-            <p className="font-nunito text-xs text-gray-500 text-center mt-6 leading-relaxed">
-              By creating an account you agree to CollWi's{' '}
-              <Link href="https://collwi.com/terms" target="_blank" className="font-semibold hover:underline" style={{ color: '#7C3AED' }}>
-                Terms of Service
-              </Link>{' '}
-              and{' '}
-              <Link href="https://collwi.com/privacy" target="_blank" className="font-semibold hover:underline" style={{ color: '#7C3AED' }}>
-                Privacy Policy
-              </Link>
-            </p>
+                {/* Experience */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="experience" className="font-nunito block text-sm font-medium mb-2" style={{ color: 'rgba(23, 23, 23, 0.6)' }}>
+                      Years coaching
+                    </label>
+                    <input
+                      type="number"
+                      id="experience"
+                      min="0"
+                      required
+                      value={formData.experience}
+                      onChange={(e) => updateField('experience', e.target.value)}
+                      className="font-nunito w-full px-4 py-3.5 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:ring-2 transition-all duration-200"
+                      style={{ color: '#171717', borderColor: '#e5e7eb' }}
+                      onFocus={(e) => e.currentTarget.style.borderColor = '#7C3AED'}
+                      onBlur={(e) => e.currentTarget.style.borderColor = '#e5e7eb'}
+                      disabled={isLoading}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="certifications" className="font-nunito block text-sm font-medium mb-2" style={{ color: 'rgba(23, 23, 23, 0.6)' }}>
+                      Certifications <span style={{ color: 'rgba(23, 23, 23, 0.25)' }}>(optional)</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="certifications"
+                      value={formData.certifications}
+                      onChange={(e) => updateField('certifications', e.target.value)}
+                      className="font-nunito w-full px-4 py-3.5 bg-gray-50 border border-gray-100 rounded-xl focus:outline-none focus:ring-2 transition-all duration-200"
+                      placeholder="e.g., ICF, BCC"
+                      style={{ color: '#171717', borderColor: '#e5e7eb' }}
+                      onFocus={(e) => e.currentTarget.style.borderColor = '#7C3AED'}
+                      onBlur={(e) => e.currentTarget.style.borderColor = '#e5e7eb'}
+                      disabled={isLoading}
+                    />
+                  </div>
+                </div>
 
-            <div className="font-nunito text-center mt-6">
-              Already have an account?{' '}
-              <Link href="https://collwi.com/login" className="font-bold hover:underline" style={{ color: '#7C3AED' }}>
-                Log in
-              </Link>
-            </div>
-          </form>
-        </div>
+                {/* Submit */}
+                <button
+                  type="submit"
+                  disabled={isLoading}
+                  className="font-nunito w-full flex items-center justify-center gap-2 py-4 px-8 text-white font-semibold rounded-full hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+                  style={{
+                    background: 'linear-gradient(135deg, #7C3AED 0%, #6DCFD0 100%)',
+                    boxShadow: '0 4px 16px rgba(124, 58, 237, 0.25)'
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!isLoading) e.currentTarget.style.boxShadow = '0 8px 24px rgba(124, 58, 237, 0.35)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.boxShadow = '0 4px 16px rgba(124, 58, 237, 0.25)';
+                  }}
+                >
+                  {isLoading ? (
+                    <>
+                      <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      <span>Submitting...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Submit Application</span>
+                      <ArrowRight size={18} />
+                    </>
+                  )}
+                </button>
 
-        {/* Trust Signals */}
-        <div className="mt-12 sm:mt-16 text-center px-4">
-          <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 text-sm sm:text-base text-gray-600">
-            <div className="flex items-center gap-2">
-              <CheckCircle size={20} style={{ color: '#6DCFD0' }} />
-              <span className="font-nunito">Free to join</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle size={20} style={{ color: '#6DCFD0' }} />
-              <span className="font-nunito">No approval process</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <CheckCircle size={20} style={{ color: '#6DCFD0' }} />
-              <span className="font-nunito">Start earning immediately</span>
+                <p className="font-nunito text-center text-sm" style={{ color: 'rgba(23, 23, 23, 0.4)' }}>
+                  Already have an account?{' '}
+                  <Link href="/login" className="font-semibold hover:underline transition-colors" style={{ color: '#7C3AED' }}>
+                    Log in
+                  </Link>
+                </p>
+              </form>
             </div>
           </div>
         </div>
