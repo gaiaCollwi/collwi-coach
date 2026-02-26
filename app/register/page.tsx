@@ -7,8 +7,8 @@ import { ArrowRight, Eye, EyeOff, DollarSign, Calendar, TrendingUp } from 'lucid
 const coachPerks = [
   {
     icon: <DollarSign size={22} />,
-    title: 'Keep 82% of earnings',
-    desc: 'Industry-leading take rate. You built your expertise — keep what you earn.',
+    title: 'Transparent, competitive revenue share',
+    desc: 'Keep what you earn with fair, transparent pricing. You built your expertise—we help you share it.',
     color: 'purple',
   },
   {
@@ -34,9 +34,10 @@ const specialties = [
 ];
 
 const nextSteps = [
-  'We review your profile (usually within 24 hours)',
-  'You set up your coach profile, rates, and availability',
-  'Start connecting with CollWiers who need your support',
+  'We review your application (usually within 24 hours)',
+  'Create your coach profile and share your story',
+  'Upload credentials and showcase your coaching expertise',
+  'Set your rates, availability, and start connecting with members',
 ];
 
 export default function CoachRegister() {
