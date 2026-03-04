@@ -20,7 +20,7 @@ export default function AboutPage() {
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-sans font-light leading-[1.1] mb-8">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-sans font-light leading-[1.1] mb-8">
               We built CollWi because we know
               <br />
               how hard it is to be a <em className="text-brand-teal italic">great coach</em> and a 
@@ -29,20 +29,20 @@ export default function AboutPage() {
           </FadeIn>
 
           <FadeIn delay={0.35}>
-            <p className="text-xl md:text-2xl text-brand-navy/60 max-w-3xl mx-auto leading-relaxed mb-6">
+            <p className="text-2xl md:text-3xl text-brand-navy/60 max-w-3xl mx-auto leading-relaxed mb-6">
               The best coaches we know spend their days helping other people transform their lives. 
               And spend their nights worried about where the next client will come from.
             </p>
           </FadeIn>
 
           <FadeIn delay={0.45}>
-            <p className="text-xl md:text-2xl text-brand-navy/60 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-2xl md:text-3xl text-brand-navy/60 max-w-3xl mx-auto leading-relaxed">
               They're exhausted. They're burned out. They're thinking about leaving a profession they love because the business side feels impossible.
             </p>
           </FadeIn>
 
           <FadeIn delay={0.55}>
-            <p className="text-xl md:text-2xl text-brand-navy/60 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-2xl md:text-3xl text-brand-navy/60 max-w-3xl mx-auto leading-relaxed">
               We realized: there are thousands of coaches just like this. Delivering world-class transformations while struggling to scale. 
               Coaches who should be focused on their craft, not consumed by <em className="text-brand-navy font-medium not-italic">client acquisition.</em>
             </p>
@@ -58,7 +58,7 @@ export default function AboutPage() {
               <span className="inline-block px-4 py-1.5 bg-brand-purple/10 text-brand-purple text-xs font-semibold tracking-[0.15em] uppercase rounded-full mb-5">
                 The Problem
               </span>
-              <h2 className="text-4xl md:text-5xl font-sans font-light leading-tight mb-6">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans font-light leading-tight mb-6">
                 The coach's paradox:
                 <br />
                 <em className="text-brand-purple italic">Great at coaching. Terrible at business.</em>
@@ -68,16 +68,16 @@ export default function AboutPage() {
 
           <FadeIn delay={0.15}>
             <div className="space-y-8 text-brand-navy/60 leading-relaxed max-w-3xl mx-auto">
-              <p className="text-xl md:text-2xl">
+              <p className="text-xl md:text-2xl lg:text-3xl">
                 You spent thousands on your certification. You invested years perfecting your craft. Your clients transform. 
                 You know you're damn good at what you do.
               </p>
-              <p className="text-xl md:text-2xl">
+              <p className="text-xl md:text-2xl lg:text-3xl">
                 And yet you're still struggling to fill your calendar. You're spending more time on marketing and admin 
                 than you are on actual coaching. Your income is unpredictable. You're working 50-hour weeks and earning less 
                 than you could in a corporate job.
               </p>
-              <p className="text-xl md:text-2xl">
+              <p className="text-xl md:text-2xl lg:text-3xl">
                 You didn't get into coaching to spend your days networking and posting on LinkedIn. You got into it to transform lives. 
                 But right now, you're transforming nobody because you're too busy trying to find clients.
               </p>

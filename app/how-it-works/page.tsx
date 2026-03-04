@@ -83,12 +83,12 @@ export default function HowItWorksPage() {
             <span className="inline-block px-5 py-2 bg-brand-purple/10 text-brand-purple text-xs font-bold tracking-[0.2em] uppercase rounded-full mb-6">
               How It Works
             </span>
-            <h1 className="text-4xl md:text-6xl font-sans font-light leading-tight mb-6">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-sans font-light leading-tight mb-6">
               How to Build a Thriving Group
               <br />
               Coaching Business on CollWi
             </h1>
-            <p className="text-lg md:text-xl text-brand-navy/50 max-w-xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-brand-navy/50 max-w-xl mx-auto leading-relaxed">
               From application to your first full group. We handle the business. You handle the transformation.
             </p>
           </FadeIn>
@@ -100,10 +100,10 @@ export default function HowItWorksPage() {
         <div className="max-w-4xl mx-auto">
           <FadeIn>
             <div className="text-center mb-14">
-              <h2 className="text-3xl md:text-5xl font-sans font-light leading-tight mb-6">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-sans font-light leading-tight mb-6">
                 A platform built for <em className="text-brand-teal italic">your success</em>
               </h2>
-              <p className="text-lg text-brand-navy/50 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-brand-navy/50 max-w-2xl mx-auto leading-relaxed">
                 CollWi removes the barriers to building a thriving group coaching business. We handle marketing, enrollment, and payments. You deliver exceptional coaching.
               </p>
             </div>
