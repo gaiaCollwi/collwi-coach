@@ -2,7 +2,9 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { ArrowRight, Eye, EyeOff, DollarSign, Calendar, TrendingUp } from 'lucide-react';
+import { auth, APIError } from '@/lib/api';
 
 const coachPerks = [
   {
@@ -41,6 +43,7 @@ const nextSteps = [
 ];
 
 export default function CoachRegister() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -52,12 +55,35 @@ export default function CoachRegister() {
   });
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    console.log('Coach registration:', formData);
-    setTimeout(() => setIsLoading(false), 1500);
+    setError('');
+
+    try {
+      await auth.register({
+        email: formData.email,
+        password: formData.password,
+        first_name: formData.firstName,
+        last_name: formData.lastName,
+        role: 'coach',
+        specialty: formData.specialty,
+        experience_years: formData.experience,
+        certifications: formData.certifications,
+      });
+      // Redirect to coach dashboard
+      router.push('/dashboard');
+    } catch (err) {
+      if (err instanceof APIError) {
+        setError(err.message || 'Registration failed. Please try again.');
+      } else {
+        setError('Something went wrong. Please try again.');
+      }
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const updateField = (field: string, value: string) => {
@@ -147,6 +173,13 @@ export default function CoachRegister() {
                 <h2 className="font-crete text-2xl font-bold mb-2">Apply to coach</h2>
                 <p className="font-nunito" style={{ color: 'rgba(23, 23, 23, 0.45)' }}>Tell us about yourself and your coaching practice.</p>
               </div>
+
+              {/* Error Message */}
+              {error && (
+                <div className="mb-6 p-4 rounded-xl text-sm font-nunito" style={{ background: 'rgba(239, 68, 68, 0.1)', border: '1px solid rgba(239, 68, 68, 0.3)', color: '#b91c1c' }}>
+                  {error}
+                </div>
+              )}
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Basics */}
