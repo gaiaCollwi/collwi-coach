@@ -2,42 +2,19 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { Eye, EyeOff } from 'lucide-react';
-import { auth, APIError } from '@/lib/api';
 
 export default function CoachLogin() {
-  const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
-    setError('');
-
-    try {
-      await auth.login(email, password);
-      // Redirect to coach dashboard
-      router.push('/dashboard');
-    } catch (err) {
-      if (err instanceof APIError) {
-        setError(err.message || 'Invalid email or password');
-      } else {
-        setError('Something went wrong. Please try again.');
-      }
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const handleGoogleLogin = () => {
-    // Redirect to Google OAuth on collwi.com backend
-    const redirectUri = `${window.location.origin}/auth/callback`;
-    window.location.href = `https://collwi.com/api/auth/google?redirect_uri=${encodeURIComponent(redirectUri)}`;
+    console.log('Coach login:', { email, password });
+    setTimeout(() => setIsLoading(false), 1500);
   };
 
   return (
@@ -90,13 +67,6 @@ export default function CoachLogin() {
               Log in to manage your coaching practice
             </p>
           </div>
-
-          {/* Error Message */}
-          {error && (
-            <div className="mb-6 p-4 rounded-xl text-sm font-nunito" style={{ background: 'rgba(239, 68, 68, 0.1)', border: '1px solid rgba(239, 68, 68, 0.3)', color: '#b91c1c' }}>
-              {error}
-            </div>
-          )}
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-5">
@@ -193,7 +163,6 @@ export default function CoachLogin() {
             {/* Google Button */}
             <button
               type="button"
-              onClick={handleGoogleLogin}
               disabled={isLoading}
               className="font-nunito w-full bg-white border-2 border-gray-200 text-gray-700 font-semibold py-4 px-8 rounded-full hover:border-teal-400 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3"
             >
