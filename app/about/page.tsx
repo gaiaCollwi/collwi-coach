@@ -334,7 +334,7 @@ export default function AboutPage() {
           </FadeIn>
           <FadeIn delay={0.2}>
             <a
-              href="https://collwi.com/register"
+              href="https://collwi.com/register?type=coach"
               className="group inline-flex items-center gap-3 px-10 py-5 bg-white text-brand-teal-dark font-semibold text-lg rounded-full shadow-soft-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1"
             >
               Apply as a Coach
