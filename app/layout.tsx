@@ -11,8 +11,8 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: "CollWi for Coaches - Scale Your Impact with Group Coaching",
-  description: "Join CollWi's community of certified coaches delivering transformative group coaching programs. Scale beyond 1:1 sessions while making a bigger impact.",
-  keywords: "group coaching, certified coach, coaching practice, scale coaching business, community coaching",
+  description: "Join CollWi's community of independent certified coaches delivering transformative group coaching programs for women. Scale beyond 1:1 sessions while making a bigger impact.",
+  keywords: "group coaching, certified coach, coaching practice, scale coaching business, community coaching, coaches for women",
   icons: {
     icon: [
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
