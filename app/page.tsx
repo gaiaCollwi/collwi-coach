@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef, useEffect, useLayoutEffect, useCallback } from 'react'
-import { ArrowRight, TrendingUp, Users, Settings, Heart, Award, Shield, Target, CheckCircle, ChevronDown } from 'lucide-react'
+import { ArrowRight, TrendingUp, Users, Settings, Heart, Award, Shield, Target, CheckCircle, ChevronDown, Star, Sparkles, Clock, DollarSign, MessageCircle, Zap, Globe, Mail, Twitter, Linkedin, Instagram } from 'lucide-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -241,14 +241,157 @@ function AuroraBackground() {
   )
 }
 
+/* ─── FLOATING DASHBOARD MOCKUP ─── */
+function DashboardMockup() {
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useIsomorphicLayoutEffect(() => {
+    if (!containerRef.current) return
+    const ctx = gsap.context(() => {
+      // Floating card animations
+      gsap.fromTo('.mockup-card-1', { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 1.2, delay: 1.5, ease: 'power3.out' })
+      gsap.fromTo('.mockup-card-2', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 1.2, delay: 1.8, ease: 'power3.out' })
+      gsap.fromTo('.mockup-badge', { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, delay: 2.1, ease: 'back.out(1.7)' })
+
+      // Gentle floating
+      gsap.to('.mockup-card-1', { y: -8, duration: 3, repeat: -1, yoyo: true, ease: 'sine.inOut' })
+      gsap.to('.mockup-card-2', { y: 10, duration: 3.5, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 0.5 })
+      gsap.to('.mockup-badge', { y: -5, duration: 2.5, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 1 })
+    }, containerRef)
+    return () => ctx.revert()
+  }, [])
+
+  return (
+    <div ref={containerRef} className="relative w-full h-full min-h-[400px]">
+      {/* Session card */}
+      <div className="mockup-card-1 absolute top-[10%] left-[5%] md:left-[10%] w-[280px] rounded-2xl overflow-hidden opacity-0"
+        style={{
+          background: 'rgba(255,255,255,0.15)',
+          backdropFilter: 'blur(20px)',
+          border: '1px solid rgba(255,255,255,0.25)',
+          boxShadow: '0 25px 50px -12px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.3)',
+        }}>
+        <div className="p-5">
+          <div className="flex items-center justify-between mb-4">
+            <span className="text-xs font-semibold tracking-widest uppercase text-brand-teal">Live Session</span>
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          </div>
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-teal to-brand-purple flex items-center justify-center">
+              <Clock size={16} className="text-white" />
+            </div>
+            <div>
+              <p className="text-sm font-semibold text-brand-navy">Career Transition Group</p>
+              <p className="text-xs text-brand-navy/50">Tuesdays, 6:00 PM</p>
+            </div>
+          </div>
+          <div className="flex items-center justify-between pt-3 border-t border-brand-navy/10">
+            <div className="flex items-center gap-1.5">
+              <Users size={14} className="text-brand-navy/40" />
+              <span className="text-xs text-brand-navy/60">10 attendees</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <DollarSign size={14} className="text-emerald-500" />
+              <span className="text-xs font-semibold text-emerald-600">$1,200/session</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Review card */}
+      <div className="mockup-card-2 absolute bottom-[15%] right-[5%] md:right-[8%] w-[260px] rounded-2xl overflow-hidden opacity-0"
+        style={{
+          background: 'rgba(255,255,255,0.12)',
+          backdropFilter: 'blur(20px)',
+          border: '1px solid rgba(255,255,255,0.2)',
+          boxShadow: '0 25px 50px -12px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.3)',
+        }}>
+        <div className="p-5">
+          <div className="flex gap-1 mb-3">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} size={14} className="text-brand-gold fill-brand-gold" />
+            ))}
+          </div>
+          <p className="text-sm text-brand-navy/70 italic leading-relaxed mb-3">
+            &ldquo;This group changed everything for me. Real accountability, real growth.&rdquo;
+          </p>
+          <div className="flex items-center gap-2">
+            <div className="w-7 h-7 rounded-full bg-gradient-to-br from-brand-coral to-brand-purple" />
+            <span className="text-xs text-brand-navy/50">Sarah M., Group Member</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Stats badge */}
+      <div className="mockup-badge absolute top-[55%] right-[35%] md:right-[40%] rounded-full px-5 py-3 opacity-0"
+        style={{
+          background: 'rgba(78,205,196,0.15)',
+          backdropFilter: 'blur(20px)',
+          border: '1px solid rgba(78,205,196,0.3)',
+          boxShadow: '0 10px 30px -5px rgba(78,205,196,0.2)',
+        }}>
+        <div className="flex items-center gap-2">
+          <Users size={16} className="text-brand-teal" />
+          <span className="text-sm font-bold text-brand-teal">8-12 per group</span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* ─── SPARKLE ELEMENTS ─── */
+function FloatingSparkles() {
+  const ref = useRef<HTMLDivElement>(null)
+
+  useIsomorphicLayoutEffect(() => {
+    if (!ref.current) return
+    const ctx = gsap.context(() => {
+      const sparkles = ref.current!.querySelectorAll('.sparkle-el')
+      sparkles.forEach((sparkle, i) => {
+        gsap.to(sparkle, {
+          keyframes: [
+            { opacity: 0, scale: 0, duration: 0.5 },
+            { opacity: 1, scale: 1, duration: 0.5 },
+            { opacity: 0, scale: 0, duration: 0.5 },
+          ],
+          repeat: -1,
+          delay: i * 0.8,
+          ease: 'sine.inOut',
+        })
+      })
+    }, ref)
+    return () => ctx.revert()
+  }, [])
+
+  return (
+    <div ref={ref} className="absolute inset-0 pointer-events-none overflow-hidden">
+      {[
+        { top: '15%', left: '10%' },
+        { top: '25%', right: '15%' },
+        { top: '60%', left: '20%' },
+        { top: '40%', right: '25%' },
+        { top: '75%', left: '70%' },
+        { top: '80%', right: '10%' },
+        { top: '50%', left: '5%' },
+      ].map((pos, i) => (
+        <div key={i} className="sparkle-el absolute opacity-0" style={pos}>
+          <Sparkles size={i % 2 === 0 ? 16 : 12} className="text-white/20" />
+        </div>
+      ))}
+    </div>
+  )
+}
+
 /* ─── MAIN COMPONENT ─── */
 
 export default function CoachesPage() {
   /* Refs */
   const heroRef = useRef<HTMLElement>(null)
+  const statsRef = useRef<HTMLElement>(null)
   const forYouRef = useRef<HTMLElement>(null)
   const whyRef = useRef<HTMLElement>(null)
   const howRef = useRef<HTMLElement>(null)
+  const testimonialRef = useRef<HTMLElement>(null)
   const whoRef = useRef<HTMLElement>(null)
   const ctaRef = useRef<HTMLElement>(null)
   const coachStepsRef = useRef<HTMLElement>(null)
@@ -267,9 +410,11 @@ export default function CoachesPage() {
   useParallaxScrub(heroOrb1, -0.2)
   useParallaxScrub(heroOrb2, 0.15)
   useParallaxScrub(heroOrb3, -0.1)
+  useScrollReveal(statsRef)
   useScrollReveal(forYouRef)
   useScrollReveal(whyRef)
   useScrollReveal(howRef)
+  useScrollReveal(testimonialRef)
   useScrollReveal(whoRef)
   useScrollReveal(ctaRef)
   useScrollReveal(coachStepsRef)
@@ -338,6 +483,25 @@ export default function CoachesPage() {
   /* GSAP staggered card animations */
   useIsomorphicLayoutEffect(() => {
     const ctx = gsap.context(() => {
+      // Stat counters with scale bounce
+      gsap.fromTo(
+        '.stat-item',
+        { opacity: 0, y: 60, scale: 0.8 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: 'back.out(1.4)',
+          scrollTrigger: {
+            trigger: '.stats-grid',
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+          },
+        }
+      )
+
       // For-you cards
       gsap.fromTo(
         '.for-you-card',
@@ -378,7 +542,26 @@ export default function CoachesPage() {
         }
       )
 
-      // Step cards
+      // Timeline step cards
+      gsap.fromTo(
+        '.timeline-step',
+        { opacity: 0, x: (i: number) => i % 2 === 0 ? -60 : 60, rotateY: (i: number) => i % 2 === 0 ? -8 : 8 },
+        {
+          opacity: 1,
+          x: 0,
+          rotateY: 0,
+          duration: 0.8,
+          stagger: 0.15,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.timeline-container',
+            start: 'top 80%',
+            toggleActions: 'play none none none',
+          },
+        }
+      )
+
+      // Step cards (mobile fallback)
       gsap.fromTo(
         '.step-card',
         { opacity: 0, y: 50, rotateX: -8 },
@@ -473,6 +656,40 @@ export default function CoachesPage() {
           },
         }
       )
+
+      // Testimonial
+      gsap.fromTo(
+        '.testimonial-content',
+        { opacity: 0, y: 40, scale: 0.95 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: '.testimonial-content',
+            start: 'top 80%',
+            toggleActions: 'play none none none',
+          },
+        }
+      )
+    })
+    return () => ctx.revert()
+  }, [])
+
+  /* Animated gradient sweep for bento large card */
+  useIsomorphicLayoutEffect(() => {
+    const sweepEl = document.querySelector('.gradient-sweep-bg')
+    if (!sweepEl) return
+    const ctx = gsap.context(() => {
+      gsap.to(sweepEl, {
+        backgroundPosition: '200% 50%',
+        duration: 8,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut',
+      })
     })
     return () => ctx.revert()
   }, [])
@@ -498,7 +715,7 @@ export default function CoachesPage() {
       icon: Users,
       color: "bg-brand-teal/10 text-brand-teal",
       title: "Scale Without Burning Out",
-      desc: "You're stuck trading time for money in 1:1 sessions. Group coaching lets you serve 8-12 people at once—multiply your income without multiplying your hours."
+      desc: "You're stuck trading time for money in 1:1 sessions. Group coaching lets you serve 8-12 people at once\u2014multiply your income without multiplying your hours."
     },
     {
       icon: Settings,
@@ -543,29 +760,43 @@ export default function CoachesPage() {
   ]
 
   const whoItems = [
-    { text: "Certified coaches (ICF, BCC, or equivalent credential)", icon: Award, accent: "border-t-brand-teal", glow: "hover:shadow-glow-teal" },
-    { text: "Experience with group facilitation (or willingness to learn)", icon: Users, accent: "border-t-brand-coral", glow: "hover:shadow-glow-coral" },
-    { text: "Commitment to emotional safety and inclusive practices", icon: Shield, accent: "border-t-brand-purple", glow: "hover:shadow-glow-purple" },
-    { text: "Belief in the power of collective wisdom and peer support", icon: Heart, accent: "border-t-brand-teal", glow: "hover:shadow-glow-teal" },
-    { text: "Ready to stop chasing clients and start building a real business", icon: Target, accent: "border-t-brand-coral", glow: "hover:shadow-glow-coral" },
+    { text: "Certified coaches (ICF, BCC, or equivalent credential)", icon: Award, accent: "from-brand-teal to-brand-teal-dark", glow: "hover:shadow-glow-teal" },
+    { text: "Experience with group facilitation (or willingness to learn)", icon: Users, accent: "from-brand-coral to-brand-coral", glow: "hover:shadow-glow-coral" },
+    { text: "Commitment to emotional safety and inclusive practices", icon: Shield, accent: "from-brand-purple to-brand-purple-dark", glow: "hover:shadow-glow-purple" },
+    { text: "Belief in the power of collective wisdom and peer support", icon: Heart, accent: "from-brand-teal to-brand-purple", glow: "hover:shadow-glow-teal" },
+    { text: "Ready to stop chasing clients and start building a real business", icon: Target, accent: "from-brand-coral to-brand-purple", glow: "hover:shadow-glow-coral" },
   ]
 
   const coachSteps = [
-    { num: '01', title: 'Register as a Coach', desc: 'Quick registration for certified coaches ready to offer group programs', border: 'border-t-brand-teal' },
-    { num: '02', title: 'Create Your Program', desc: 'Easy, quick process to set up your group coaching program. You set your own pricing and schedule', border: 'border-t-brand-coral' },
-    { num: '03', title: 'Members Find You', desc: 'Members browse programs and choose what fits their needs—no marketing required on your end', border: 'border-t-brand-purple' },
-    { num: '04', title: 'Lead & Earn', desc: 'Facilitate small groups (8-12 people), scale your impact, build sustainable income', border: 'border-t-brand-teal' },
+    { num: '01', title: 'Register as a Coach', desc: 'Quick registration for certified coaches ready to offer group programs', accent: 'from-brand-teal to-brand-teal-dark' },
+    { num: '02', title: 'Create Your Program', desc: 'Easy, quick process to set up your group coaching program. You set your own pricing and schedule', accent: 'from-brand-coral to-brand-coral' },
+    { num: '03', title: 'Members Find You', desc: 'Members browse programs and choose what fits their needs\u2014no marketing required on your end', accent: 'from-brand-purple to-brand-purple-dark' },
+    { num: '04', title: 'Lead & Earn', desc: 'Facilitate small groups (8-12 people), scale your impact, build sustainable income', accent: 'from-brand-teal to-brand-purple' },
   ]
 
-  const borderColors = ['border-l-brand-teal', 'border-l-brand-coral', 'border-l-brand-purple', 'border-l-brand-teal', 'border-l-brand-coral', 'border-l-brand-purple']
-  const stepBorderColors = ['border-l-brand-teal', 'border-l-brand-coral', 'border-l-brand-purple', 'border-l-brand-teal', 'border-l-brand-coral']
+  const gradientAccentColors = [
+    'from-brand-teal via-brand-teal-dark to-brand-teal',
+    'from-brand-coral via-brand-coral to-brand-coral',
+    'from-brand-purple via-brand-purple-dark to-brand-purple',
+    'from-brand-teal via-brand-purple to-brand-teal',
+    'from-brand-coral via-brand-purple to-brand-coral',
+    'from-brand-purple via-brand-teal to-brand-purple',
+  ]
+
+  const timelineAccentColors = [
+    'from-brand-teal to-brand-teal-dark',
+    'from-brand-coral to-brand-coral',
+    'from-brand-purple to-brand-purple-dark',
+    'from-brand-teal to-brand-purple',
+    'from-brand-coral to-brand-teal',
+  ]
 
   return (
     <div className="min-h-screen overflow-x-hidden">
       {/* ─── HERO SECTION ─── */}
       <section
         ref={heroRef}
-        className="relative min-h-screen flex items-center justify-center overflow-hidden"
+        className="relative min-h-screen flex items-center overflow-hidden"
         style={{
           background: 'linear-gradient(135deg, #FAF8F5 0%, #F0F9F8 25%, #F0EAFF 50%, #FFF0EB 75%, #F0F9F8 100%)',
         }}
@@ -580,34 +811,49 @@ export default function CoachesPage() {
         <div className="absolute top-[15%] right-[25%] w-48 h-48 bg-brand-coral/8 rounded-full blur-3xl animate-float-slow" />
         <div className="absolute bottom-[30%] left-[20%] w-56 h-56 bg-brand-teal/6 rounded-full blur-3xl animate-float-delayed" />
 
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center pt-28 pb-20" style={{ perspective: '800px' }}>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-light leading-[1.1] mb-8">
-            {`You're an Exceptional Coach. So Why Is It So Hard to Find Paying Clients?`
-              .split(/\s+/)
-              .map((word, i) => (
-                <span key={i} className="hero-word inline-block" style={{ opacity: 0 }}>
-                  {word}{' '}
-                </span>
-              ))}
-          </h1>
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-28 pb-20">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left: Text content */}
+            <div className="text-center lg:text-left" style={{ perspective: '800px' }}>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-light leading-[1.1] mb-8">
+                {`You're an Exceptional Coach. So Why Is It So Hard to Find Paying Clients?`
+                  .split(/\s+/)
+                  .map((word, i) => (
+                    <span key={i} className="hero-word inline-block" style={{ opacity: 0 }}>
+                      {word}{' '}
+                    </span>
+                  ))}
+              </h1>
 
-          <p className="hero-subtitle text-xl md:text-2xl text-brand-navy/70 font-light mb-6" style={{ opacity: 0 }}>
-            You've tried everything—free discovery sessions, networking, posting on social media. Your website is beautiful. Yet you still struggle to get clients consistently.
-          </p>
+              <p className="hero-subtitle text-xl md:text-2xl text-brand-navy/70 font-light mb-6" style={{ opacity: 0 }}>
+                You&apos;ve tried everything&mdash;free discovery sessions, networking, posting on social media. Your website is beautiful. Yet you still struggle to get clients consistently.
+              </p>
 
-          <p className="hero-subtitle-2 text-lg md:text-xl text-brand-navy/60 mb-12" style={{ opacity: 0 }}>
-            You love coaching. You hate the business side. We've solved that for you.
-          </p>
+              <p className="hero-subtitle-2 text-lg md:text-xl text-brand-navy/60 mb-12" style={{ opacity: 0 }}>
+                You love coaching. You hate the business side. We&apos;ve solved that for you.
+              </p>
 
-          <div className="hero-cta-wrap" style={{ opacity: 0 }}>
-            <a
-              ref={heroCta}
-              href="https://collwi.com/register?type=coach"
-              className="group inline-flex items-center gap-2.5 px-9 py-4 bg-brand-teal text-white font-semibold text-lg rounded-full shadow-teal hover:bg-brand-teal-dark hover:shadow-lg transition-all duration-300"
-            >
-              Join as a Coach
-              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </a>
+              <div className="hero-cta-wrap" style={{ opacity: 0 }}>
+                <a
+                  ref={heroCta}
+                  href="https://collwi.com/register?type=coach"
+                  className="group inline-flex items-center gap-2.5 px-9 py-4 bg-brand-teal text-white font-semibold text-lg rounded-full shadow-teal hover:bg-brand-teal-dark hover:shadow-lg transition-all duration-300"
+                >
+                  Join as a Coach
+                  <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
+            </div>
+
+            {/* Right: Floating dashboard mockup (desktop) */}
+            <div className="hidden lg:block">
+              <DashboardMockup />
+            </div>
+          </div>
+
+          {/* Mobile: Dashboard mockup below */}
+          <div className="lg:hidden mt-16">
+            <DashboardMockup />
           </div>
         </div>
 
@@ -618,8 +864,50 @@ export default function CoachesPage() {
         </div>
       </section>
 
+      {/* ─── STAT COUNTER SECTION ─── */}
+      <section
+        ref={statsRef}
+        className="relative py-20 md:py-28 px-6 overflow-hidden"
+        style={{
+          background: 'linear-gradient(135deg, #1A1F36 0%, #2D3250 40%, #1A1F36 100%)',
+        }}
+      >
+        {/* Subtle gradient orbs */}
+        <div className="absolute top-0 left-[20%] w-64 h-64 bg-brand-teal/8 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-[15%] w-72 h-72 bg-brand-purple/8 rounded-full blur-3xl" />
+
+        <div className="relative z-10 max-w-5xl mx-auto">
+          <div className="stats-grid grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12">
+            {/* Stat 1 */}
+            <div className="stat-item text-center" style={{ opacity: 0 }}>
+              <div className="text-6xl md:text-7xl font-sans font-bold bg-gradient-to-r from-brand-coral to-brand-gold bg-clip-text text-transparent mb-3">
+                <span className="count-up" data-target={82}>00</span>
+                <span className="text-4xl md:text-5xl">%</span>
+              </div>
+              <p className="text-white/60 text-lg">Coaches who struggle with client acquisition</p>
+            </div>
+
+            {/* Stat 2 */}
+            <div className="stat-item text-center" style={{ opacity: 0 }}>
+              <div className="text-6xl md:text-7xl font-sans font-bold bg-gradient-to-r from-brand-teal to-brand-teal-dark bg-clip-text text-transparent mb-3">
+                8-12
+              </div>
+              <p className="text-white/60 text-lg">People per group session</p>
+            </div>
+
+            {/* Stat 3 */}
+            <div className="stat-item text-center" style={{ opacity: 0 }}>
+              <div className="text-6xl md:text-7xl font-sans font-bold bg-gradient-to-r from-brand-purple to-brand-purple-dark bg-clip-text text-transparent mb-3">
+                <span className="count-up" data-target={0}>0</span>
+              </div>
+              <p className="text-white/60 text-lg">Marketing required</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ─── THIS IS FOR YOU SECTION ─── */}
-      <section ref={forYouRef} className="relative py-24 md:py-32 px-6 overflow-hidden" style={{
+      <section ref={forYouRef} className="relative py-28 md:py-36 px-6 overflow-hidden" style={{
         background: 'linear-gradient(160deg, #FFF0EB 0%, #FAF8F5 30%, #F0F9F8 60%, #FFF8E1 100%)',
       }}>
         {/* Parallax orbs */}
@@ -628,21 +916,23 @@ export default function CoachesPage() {
         <div className="absolute top-1/2 right-[30%] w-48 h-48 bg-brand-purple/6 rounded-full blur-3xl animate-float-slow" />
 
         <div className="relative z-10 max-w-4xl mx-auto">
-          <h2 className="text-split-reveal text-3xl md:text-5xl font-sans font-light leading-tight mb-12 text-center">
-            This is for you if you're a certified coach who...
+          <h2 className="text-split-reveal text-3xl md:text-5xl font-sans font-light leading-tight mb-14 text-center">
+            This is for you if you&apos;re a certified coach who...
           </h2>
 
-          <div className="for-you-grid grid md:grid-cols-2 gap-5">
+          <div className="for-you-grid grid md:grid-cols-2 gap-6">
             {forYouItems.map((item, i) => (
               <div
                 key={i}
-                className={`for-you-card relative rounded-xl border-l-4 ${borderColors[i]} bg-white/40 backdrop-blur-md p-6 group hover:bg-white/70 hover:shadow-soft-lg hover:-translate-y-1 hover:rotate-[0.5deg] transition-all duration-400 cursor-default`}
+                className="for-you-card relative rounded-xl bg-white/40 backdrop-blur-md p-7 group hover:bg-white/70 hover:shadow-soft-lg hover:-translate-y-1 hover:rotate-[0.5deg] transition-all duration-400 cursor-default overflow-hidden"
                 style={{ opacity: 0 }}
               >
-                <span className="absolute top-3 right-4 text-5xl font-sans font-light bg-gradient-to-br from-brand-teal/10 to-brand-purple/10 bg-clip-text text-transparent select-none">
+                {/* Gradient top accent line */}
+                <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${gradientAccentColors[i]} rounded-t-xl`} />
+                <span className="absolute top-4 right-4 text-4xl font-sans font-light text-brand-navy/[0.04] select-none">
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <div className="flex items-start gap-3">
+                <div className="flex items-start gap-3 pt-1">
                   <CheckCircle size={20} className="text-brand-teal mt-1 flex-shrink-0 opacity-60" />
                   <p className="text-lg md:text-xl text-brand-navy/70 leading-relaxed pr-8">
                     {item}
@@ -653,13 +943,13 @@ export default function CoachesPage() {
           </div>
 
           <p className="text-xl md:text-2xl text-center font-medium text-brand-navy/80 mt-16 max-w-3xl mx-auto">
-            <em className="text-brand-purple not-italic font-semibold">You're one of the 82% of coaches who struggle</em>—not because your coaching isn't good enough, but because client acquisition is a different skill set. CollWi solves that.
+            <em className="text-brand-purple not-italic font-semibold">You&apos;re one of the 82% of coaches who struggle</em>&mdash;not because your coaching isn&apos;t good enough, but because client acquisition is a different skill set. CollWi solves that.
           </p>
         </div>
       </section>
 
       {/* ─── WHY COLLWI WORKS — BENTO GRID ─── */}
-      <section ref={whyRef} className="relative py-24 md:py-32 px-6 overflow-hidden" style={{
+      <section ref={whyRef} className="relative py-28 md:py-36 px-6 overflow-hidden" style={{
         background: 'linear-gradient(135deg, #F0F9F8 0%, #F8F9FC 30%, #F0EAFF 60%, #F0F9F8 100%)',
       }}>
         <div className="absolute top-20 left-[5%] w-72 h-72 bg-brand-teal/8 rounded-full blur-3xl animate-float" />
@@ -668,17 +958,25 @@ export default function CoachesPage() {
 
         <div className="relative z-10 max-w-5xl mx-auto">
           <h2 className="text-split-reveal text-3xl md:text-5xl font-sans font-light leading-tight mb-6 text-center">
-            Why CollWi Works When Everything Else Hasn't
+            Why CollWi Works When Everything Else Hasn&apos;t
           </h2>
 
-          <p className="text-lg md:text-xl text-brand-navy/60 text-center mb-16 max-w-2xl mx-auto">
-            You've tried free sessions, networking, social media. You've spent money on websites and courses. Nothing worked. Here's why CollWi is different:
+          <p className="text-lg md:text-xl text-brand-navy/60 text-center mb-20 max-w-2xl mx-auto">
+            You&apos;ve tried free sessions, networking, social media. You&apos;ve spent money on websites and courses. Nothing worked. Here&apos;s why CollWi is different:
           </p>
 
           {/* Bento Grid */}
           <div className="bento-grid grid grid-cols-1 md:grid-cols-4 gap-5">
-            {/* Large card — spans 2 cols */}
-            <div className="bento-card md:col-span-2 relative bg-gradient-to-br from-brand-navy to-brand-navy-light rounded-2xl p-8 overflow-hidden group hover:shadow-soft-xl transition-all duration-500" style={{ opacity: 0 }}>
+            {/* Large card — spans 2 cols, animated gradient sweep */}
+            <div className="bento-card md:col-span-2 relative rounded-2xl p-8 overflow-hidden group hover:shadow-soft-xl transition-all duration-500" style={{ opacity: 0 }}>
+              <div
+                className="gradient-sweep-bg absolute inset-0"
+                style={{
+                  background: 'linear-gradient(135deg, #1A1F36 0%, #2D3250 25%, #3BAFA8 50%, #2D3250 75%, #1A1F36 100%)',
+                  backgroundSize: '300% 300%',
+                  backgroundPosition: '0% 50%',
+                }}
+              />
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-brand-teal/20 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
               <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-brand-teal via-brand-purple to-brand-coral" />
               <div className="relative z-10">
@@ -690,9 +988,18 @@ export default function CoachesPage() {
               </div>
             </div>
 
-            {/* Tall accent card */}
+            {/* Tall accent card with floating icon particles */}
             <div className="bento-card md:row-span-2 relative bg-gradient-to-b from-brand-teal to-brand-teal-dark rounded-2xl p-8 overflow-hidden group hover:shadow-glow-teal transition-all duration-500" style={{ opacity: 0 }}>
               <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
+              {/* Floating icon particles */}
+              <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                <Users size={12} className="absolute top-[15%] left-[10%] text-white/10 animate-float" />
+                <Heart size={10} className="absolute top-[30%] right-[15%] text-white/10 animate-float-delayed" />
+                <Star size={8} className="absolute top-[60%] left-[20%] text-white/10 animate-float-slow" />
+                <Zap size={10} className="absolute top-[45%] right-[25%] text-white/10 animate-float" />
+                <Users size={8} className="absolute bottom-[20%] left-[30%] text-white/10 animate-float-delayed" />
+                <Target size={10} className="absolute top-[75%] right-[10%] text-white/10 animate-float-slow" />
+              </div>
               <div className="relative z-10 h-full flex flex-col">
                 <div className="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center mb-5">
                   <Users size={28} strokeWidth={1.5} className="text-white" />
@@ -722,19 +1029,19 @@ export default function CoachesPage() {
               <p className="text-brand-navy/70 leading-relaxed">{whyBenefits[3].desc}</p>
             </div>
 
-            {/* Wide bottom card spanning 2 cols */}
-            <div className="bento-card md:col-span-2 relative bg-gradient-to-r from-brand-purple/5 via-white/80 to-brand-teal/5 backdrop-blur-md rounded-2xl p-8 border border-white/60 hover:shadow-soft-lg transition-all duration-500 overflow-hidden" style={{ opacity: 0 }}>
+            {/* Wide bottom tagline card spanning 2 cols */}
+            <div className="bento-card md:col-span-2 relative bg-gradient-to-r from-brand-purple/5 via-white/80 to-brand-teal/5 backdrop-blur-md rounded-2xl p-10 border border-white/60 hover:shadow-soft-lg transition-all duration-500 overflow-hidden" style={{ opacity: 0 }}>
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-teal via-brand-purple to-brand-coral" />
-              <p className="text-lg md:text-xl text-brand-navy/70 text-center italic leading-relaxed">
-                &ldquo;You&rsquo;ve tried free sessions, networking, social media. You&rsquo;ve spent money on websites and courses. Nothing worked.&rdquo; — That chapter is over. CollWi is different.
+              <p className="text-xl md:text-2xl lg:text-3xl text-brand-navy/70 text-center italic leading-relaxed font-light">
+                &ldquo;You&rsquo;ve tried free sessions, networking, social media. You&rsquo;ve spent money on websites and courses. Nothing worked.&rdquo; &mdash; That chapter is over. CollWi is different.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ─── HOW IT WORKS ─── */}
-      <section ref={howRef} className="relative py-24 md:py-32 px-6 overflow-hidden" style={{
+      {/* ─── HOW IT WORKS — TIMELINE ─── */}
+      <section ref={howRef} className="relative py-28 md:py-36 px-6 overflow-hidden" style={{
         background: 'linear-gradient(150deg, #FFF0EB 0%, #FAF8F5 30%, #FFF8E1 60%, #FFF0EB 100%)',
       }}>
         {/* Parallax orbs */}
@@ -742,27 +1049,71 @@ export default function CoachesPage() {
         <div className="absolute bottom-20 left-[10%] w-64 h-64 bg-brand-purple/6 rounded-full blur-3xl animate-float-delayed" />
         <div className="absolute top-[50%] left-[50%] w-48 h-48 bg-brand-coral/5 rounded-full blur-3xl animate-float-slow" />
 
-        <div className="relative z-10 max-w-4xl mx-auto">
+        <div className="relative z-10 max-w-5xl mx-auto">
           <h2 className="text-split-reveal text-3xl md:text-5xl font-sans font-light leading-tight mb-6 text-center">
             How It Works
           </h2>
 
-          <p className="text-xl md:text-2xl text-center text-brand-navy/60 mb-16">
+          <p className="text-xl md:text-2xl text-center text-brand-navy/60 mb-20">
             Simple. Sustainable. No Marketing Required.
           </p>
 
-          <div className="steps-grid relative grid md:grid-cols-2 gap-6">
-            {/* Connecting dotted lines on desktop */}
-            <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-px h-[80%] border-l-2 border-dashed border-brand-teal/15" />
-            <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-px border-t-2 border-dashed border-brand-teal/15" />
+          {/* Desktop Timeline */}
+          <div className="timeline-container hidden md:block relative">
+            {/* Central vertical line */}
+            <div className="absolute left-1/2 top-0 bottom-0 w-px -translate-x-1/2">
+              <div className="w-full h-full bg-gradient-to-b from-brand-teal/30 via-brand-purple/30 to-brand-coral/30" />
+            </div>
 
+            {howSteps.map((step, i) => {
+              const isLeft = i % 2 === 0
+              return (
+                <div key={i} className={`timeline-step relative flex items-center mb-16 last:mb-0 ${isLeft ? 'flex-row' : 'flex-row-reverse'}`} style={{ opacity: 0 }}>
+                  {/* Card */}
+                  <div className={`w-[45%] ${isLeft ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
+                    <div
+                      className="relative rounded-2xl p-7 group hover:-translate-y-1 transition-all duration-400 overflow-hidden"
+                      style={{
+                        background: 'rgba(255,255,255,0.6)',
+                        backdropFilter: 'blur(20px)',
+                        border: '1px solid rgba(255,255,255,0.5)',
+                        boxShadow: '0 10px 40px -10px rgba(0,0,0,0.08)',
+                      }}
+                    >
+                      <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${timelineAccentColors[i]}`} />
+                      <h3 className="text-xl font-semibold text-brand-navy mb-2 group-hover:text-brand-teal transition-colors duration-300">{step.title}</h3>
+                      <p className="text-lg text-brand-navy/70 leading-relaxed">{step.desc}</p>
+                    </div>
+                  </div>
+
+                  {/* Center dot + number */}
+                  <div className="absolute left-1/2 -translate-x-1/2 z-10">
+                    <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${timelineAccentColors[i]} flex items-center justify-center shadow-lg ring-4 ring-white/80`}>
+                      <span className="text-white font-bold text-xl">{step.number}</span>
+                    </div>
+                  </div>
+
+                  {/* Empty spacer */}
+                  <div className="w-[45%]">
+                    <span className={`block text-7xl font-sans font-bold bg-gradient-to-r ${timelineAccentColors[i]} bg-clip-text text-transparent opacity-20 ${isLeft ? 'text-left pl-8' : 'text-right pr-8'}`}>
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+
+          {/* Mobile: stacked cards */}
+          <div className="steps-grid md:hidden grid gap-6">
             {howSteps.map((step, i) => (
               <div
                 key={i}
-                className={`step-card flex items-start gap-6 bg-white/60 backdrop-blur-md border-l-4 ${stepBorderColors[i]} rounded-2xl p-6 shadow-soft hover:shadow-soft-lg hover:-translate-y-1 transition-all duration-400 group`}
+                className="step-card flex items-start gap-5 bg-white/60 backdrop-blur-md rounded-2xl p-6 shadow-soft hover:shadow-soft-lg hover:-translate-y-1 transition-all duration-400 group overflow-hidden relative"
                 style={{ opacity: 0 }}
               >
-                <div className="relative flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center font-bold text-xl bg-gradient-to-br from-brand-teal to-brand-purple text-white shadow-md ring-4 ring-white/80">
+                <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${timelineAccentColors[i]}`} />
+                <div className={`relative flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center font-bold text-xl bg-gradient-to-br ${timelineAccentColors[i]} text-white shadow-md ring-4 ring-white/80`}>
                   <span className="count-up" data-target={parseInt(step.number)}>{step.number}</span>
                 </div>
                 <div>
@@ -775,13 +1126,60 @@ export default function CoachesPage() {
         </div>
       </section>
 
+      {/* ─── TESTIMONIAL SECTION ─── */}
+      <section
+        ref={testimonialRef}
+        className="relative py-24 md:py-32 px-6 overflow-hidden"
+        style={{
+          background: 'linear-gradient(135deg, #1A1F36 0%, #3BAFA8 40%, #6347A0 100%)',
+        }}
+      >
+        <div className="absolute top-10 left-[10%] w-64 h-64 bg-white/5 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-10 right-[15%] w-56 h-56 bg-white/5 rounded-full blur-3xl animate-float-delayed" />
+
+        <div className="relative z-10 max-w-3xl mx-auto text-center">
+          <div className="testimonial-content" style={{ opacity: 0 }}>
+            {/* Decorative quote marks */}
+            <span className="block text-[120px] md:text-[160px] leading-none font-serif text-white/10 -mb-16 md:-mb-20">&ldquo;</span>
+
+            <p className="text-2xl md:text-3xl lg:text-4xl text-white/90 italic font-light leading-relaxed mb-8">
+              CollWi changed how I think about my coaching practice.
+            </p>
+
+            <div className="flex items-center justify-center gap-4 mb-4">
+              {/* Avatar placeholder */}
+              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-brand-teal via-brand-purple to-brand-coral flex items-center justify-center">
+                <span className="text-white font-semibold text-lg">CC</span>
+              </div>
+              <div className="text-left">
+                <p className="text-white/80 font-medium">Coach on CollWi</p>
+                <p className="text-white/40 text-sm">Certified Group Coach</p>
+              </div>
+            </div>
+
+            <span className="block text-[120px] md:text-[160px] leading-none font-serif text-white/10 rotate-180 -mt-16 md:-mt-20">&ldquo;</span>
+          </div>
+        </div>
+      </section>
+
       {/* ─── WHO WE'RE LOOKING FOR ─── */}
-      <section ref={whoRef} className="relative py-24 md:py-32 px-6 overflow-hidden" style={{
+      <section ref={whoRef} className="relative py-28 md:py-36 px-6 overflow-hidden" style={{
         background: 'linear-gradient(135deg, #F0EAFF 0%, #F8F9FC 30%, #F0F9F8 60%, #F0EAFF 100%)',
       }}>
-        {/* Large watermark */}
+        {/* Large watermark with shimmer effect */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden">
-          <span className="text-[10rem] md:text-[14rem] font-sans font-bold text-brand-purple/[0.03] tracking-widest uppercase">COACHES</span>
+          <span
+            className="text-[10rem] md:text-[14rem] font-sans font-bold tracking-widest uppercase"
+            style={{
+              background: 'linear-gradient(90deg, rgba(124,92,191,0.03) 0%, rgba(124,92,191,0.08) 50%, rgba(124,92,191,0.03) 100%)',
+              backgroundSize: '200% 100%',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              animation: 'shimmer 3s ease-in-out infinite',
+            }}
+          >
+            COACHES
+          </span>
         </div>
 
         {/* Floating orbs */}
@@ -791,11 +1189,11 @@ export default function CoachesPage() {
 
         <div className="relative z-10 max-w-5xl mx-auto">
           <h2 className="text-split-reveal text-3xl md:text-5xl font-sans font-light leading-tight mb-6 text-center">
-            Who We're Looking For
+            Who We&apos;re Looking For
           </h2>
 
-          <p className="text-xl md:text-2xl text-center text-brand-navy/70 mb-12 max-w-3xl mx-auto">
-            <strong>We're selective.</strong> We only work with qualified, ethical coaches who are committed to transformation—for their clients AND themselves.
+          <p className="text-xl md:text-2xl text-center text-brand-navy/70 mb-14 max-w-3xl mx-auto">
+            <strong>We&apos;re selective.</strong> We only work with qualified, ethical coaches who are committed to transformation&mdash;for their clients AND themselves.
           </p>
 
           <div className="who-grid grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -804,14 +1202,16 @@ export default function CoachesPage() {
               return (
                 <div
                   key={i}
-                  className={`who-card relative bg-white/50 backdrop-blur-md border-t-4 ${item.accent} rounded-xl p-6 ${item.glow} hover:bg-white/80 hover:-translate-y-1 hover:rotate-[0.3deg] transition-all duration-400 h-full group`}
+                  className={`who-card relative bg-white/50 backdrop-blur-md rounded-xl p-7 ${item.glow} hover:bg-white/80 hover:-translate-y-1 hover:rotate-[0.3deg] transition-all duration-400 h-full group overflow-hidden`}
                   style={{ opacity: 0 }}
                 >
-                  <span className="absolute top-3 right-4 text-5xl font-sans font-light text-brand-navy/[0.04] select-none">
+                  {/* Gradient top accent bar */}
+                  <div className={`absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r ${item.accent} rounded-t-xl`} />
+                  <span className="absolute top-4 right-4 text-5xl font-sans font-light text-brand-navy/[0.04] select-none">
                     {String(i + 1).padStart(2, '0')}
                   </span>
-                  <div className="w-12 h-12 rounded-xl bg-brand-purple/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Icon size={24} className="text-brand-purple" strokeWidth={1.5} />
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-purple/10 to-brand-teal/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 border border-brand-purple/10">
+                    <Icon size={26} className="text-brand-purple" strokeWidth={1.5} />
                   </div>
                   <p className="text-lg text-brand-navy/70 leading-relaxed">
                     {item.text}
@@ -823,11 +1223,19 @@ export default function CoachesPage() {
         </div>
       </section>
 
-      {/* ─── CTA SECTION ─── */}
-      <section ref={ctaRef} className="relative py-24 md:py-32 px-6 overflow-hidden" style={{
-        background: 'linear-gradient(135deg, #1A1F36 0%, #3BAFA8 45%, #6347A0 100%)',
-      }}>
-        {/* Floating animated orbs */}
+      {/* ─── CTA SECTION — Full viewport, dramatic ─── */}
+      <section
+        ref={ctaRef}
+        className="relative min-h-[80vh] flex items-center px-6 overflow-hidden"
+        style={{
+          background: 'linear-gradient(135deg, #1A1F36 0%, #3BAFA8 45%, #6347A0 100%)',
+          backgroundSize: '200% 200%',
+          animation: 'gradient-shift 6s ease-in-out infinite',
+        }}
+      >
+        {/* Floating animated elements */}
+        <FloatingSparkles />
+
         <div className="absolute top-10 left-[10%] w-64 h-64 bg-white/5 rounded-full blur-3xl animate-float" />
         <div className="absolute bottom-10 right-[10%] w-72 h-72 bg-white/5 rounded-full blur-3xl animate-float-delayed" />
         <div className="absolute top-[40%] right-[30%] w-48 h-48 bg-brand-gold/10 rounded-full blur-3xl animate-float-slow" />
@@ -836,45 +1244,47 @@ export default function CoachesPage() {
         <div className="absolute bottom-[30%] right-[25%] w-2 h-2 rounded-full bg-white/15 animate-pulse-soft" />
         <div className="absolute top-[60%] left-[60%] w-2.5 h-2.5 rounded-full bg-brand-gold/30 animate-pulse-soft" />
 
-        <div className="cta-content relative z-10 max-w-3xl mx-auto text-center">
-          <h2 className="text-split-reveal text-3xl md:text-5xl font-sans font-light leading-tight mb-8 text-white">
+        <div className="cta-content relative z-10 max-w-4xl mx-auto text-center py-24">
+          <h2 className="text-split-reveal text-4xl md:text-6xl lg:text-7xl font-sans font-light leading-tight mb-10 text-white">
             Ready to Stop Struggling?
           </h2>
 
-          <p className="text-xl md:text-2xl text-white/80 mb-6 leading-relaxed">
-            Join CollWi and finally build the financially viable coaching practice you deserve. No more free discovery sessions. No more 'hopeful' social media posts. No more wondering what you're doing wrong.
+          <p className="text-xl md:text-2xl text-white/80 mb-6 leading-relaxed max-w-3xl mx-auto">
+            Join CollWi and finally build the financially viable coaching practice you deserve. No more free discovery sessions. No more &apos;hopeful&apos; social media posts. No more wondering what you&apos;re doing wrong.
           </p>
 
-          <p className="text-lg md:text-xl text-white/70 mb-12">
-            You're an exceptional coach. You just needed the other half of the equation. We've got it.
+          <p className="text-lg md:text-xl text-white/70 mb-14 max-w-3xl mx-auto">
+            You&apos;re an exceptional coach. You just needed the other half of the equation. We&apos;ve got it.
           </p>
 
           <div>
             <a
               ref={ctaCta}
               href="https://collwi.com/register?type=coach"
-              className="group inline-flex items-center gap-2.5 px-10 py-5 bg-white text-brand-teal font-semibold text-xl rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:bg-white/95"
+              className="group relative inline-flex items-center gap-3 px-12 py-6 bg-white text-brand-teal font-semibold text-xl rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:bg-white/95 overflow-hidden"
             >
-              Register as a Coach With CollWi
-              <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
+              {/* Shimmer effect on hover */}
+              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-brand-teal/10 to-transparent" />
+              <span className="relative z-10">Register as a Coach With CollWi</span>
+              <ArrowRight size={24} className="relative z-10 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
 
-          <p className="text-sm text-white/60 mt-6">
+          <p className="text-base md:text-lg text-white/70 mt-8 font-medium">
             Join our growing network of certified coaches offering group programs.
           </p>
         </div>
       </section>
 
-      {/* ─── HOW IT WORKS FOR COACHES ─── */}
-      <section ref={coachStepsRef} className="relative py-24 md:py-32 px-6 overflow-hidden" style={{
+      {/* ─── HOW IT WORKS FOR COACHES — Horizontal connected flow ─── */}
+      <section ref={coachStepsRef} className="relative py-28 md:py-36 px-6 overflow-hidden" style={{
         background: 'linear-gradient(160deg, #FFF0EB 0%, #FAF8F5 30%, #FFF8E1 60%, #F0F9F8 100%)',
       }}>
         <div className="absolute top-10 left-[15%] w-56 h-56 bg-brand-coral/6 rounded-full blur-3xl animate-float" />
         <div className="absolute bottom-20 right-[10%] w-64 h-64 bg-brand-purple/6 rounded-full blur-3xl animate-float-delayed" />
 
-        <div className="relative z-10 max-w-4xl mx-auto">
-          <div className="text-center mb-16">
+        <div className="relative z-10 max-w-6xl mx-auto">
+          <div className="text-center mb-20">
             <span className="inline-block px-4 py-1.5 bg-brand-purple/10 text-brand-purple text-xs font-bold tracking-[0.15em] uppercase rounded-full mb-5">
               Getting Started
             </span>
@@ -883,18 +1293,48 @@ export default function CoachesPage() {
             </h2>
           </div>
 
-          <div className="coach-steps-grid relative grid sm:grid-cols-2 gap-6">
-            {/* Connecting lines between cards */}
-            <div className="hidden sm:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-px h-[80%] border-l-2 border-dashed border-brand-purple/10" />
-            <div className="hidden sm:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-px border-t-2 border-dashed border-brand-purple/10" />
+          {/* Desktop: horizontal 4-column layout with connecting arrows */}
+          <div className="coach-steps-grid hidden md:grid md:grid-cols-4 gap-4 relative">
+            {/* Connecting line behind cards */}
+            <div className="absolute top-[60px] left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-brand-teal/20 via-brand-purple/20 to-brand-teal/20" />
 
             {coachSteps.map((step, i) => (
               <div
                 key={i}
-                className={`coach-step-card bg-white/60 backdrop-blur-md border-t-4 ${step.border} rounded-2xl p-8 shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all duration-400 h-full group`}
+                className="coach-step-card relative bg-white/60 backdrop-blur-md rounded-2xl p-6 shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all duration-400 h-full group overflow-hidden"
                 style={{ opacity: 0 }}
               >
-                <span className="text-5xl font-sans font-bold bg-gradient-to-r from-brand-teal to-brand-purple bg-clip-text text-transparent mb-4 block">
+                {/* Alternating accent top bar */}
+                <div className={`absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r ${step.accent} rounded-t-2xl`} />
+
+                {/* Large gradient step number */}
+                <div className={`text-6xl font-sans font-bold bg-gradient-to-r ${step.accent} bg-clip-text text-transparent mb-4 block`}>
+                  <span className="count-up" data-target={parseInt(step.num)}>{step.num}</span>
+                </div>
+
+                <h3 className="text-lg font-bold mb-3 text-brand-navy group-hover:text-brand-teal transition-colors duration-300">{step.title}</h3>
+                <p className="text-brand-navy/60 leading-relaxed text-sm">{step.desc}</p>
+
+                {/* Arrow connector (not on last card) */}
+                {i < coachSteps.length - 1 && (
+                  <div className="absolute -right-4 top-[60px] z-20">
+                    <ArrowRight size={20} className="text-brand-navy/20" />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile: stacked */}
+          <div className="md:hidden grid gap-6">
+            {coachSteps.map((step, i) => (
+              <div
+                key={i}
+                className={`coach-step-card bg-white/60 backdrop-blur-md rounded-2xl p-8 shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all duration-400 h-full group overflow-hidden relative`}
+                style={{ opacity: 0 }}
+              >
+                <div className={`absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r ${step.accent} rounded-t-2xl`} />
+                <span className={`text-5xl font-sans font-bold bg-gradient-to-r ${step.accent} bg-clip-text text-transparent mb-4 block`}>
                   <span className="count-up" data-target={parseInt(step.num)}>{step.num}</span>
                 </span>
                 <h3 className="text-xl font-bold mb-3 text-brand-navy group-hover:text-brand-teal transition-colors duration-300">{step.title}</h3>
@@ -903,14 +1343,14 @@ export default function CoachesPage() {
             ))}
           </div>
 
-          <p className="text-center text-xl font-semibold text-brand-navy/60 mt-14">
+          <p className="text-center text-xl font-semibold text-brand-navy/60 mt-16">
             No more cold outreach. No more unpaid discovery sessions. Just coaching.
           </p>
         </div>
       </section>
 
-      {/* ─── ABOUT COLLWI ─── */}
-      <section ref={aboutRef} className="relative py-24 md:py-32 px-6 overflow-hidden" style={{
+      {/* ─── ABOUT COLLWI — Magazine-style asymmetric ─── */}
+      <section ref={aboutRef} className="relative py-28 md:py-36 px-6 overflow-hidden" style={{
         background: 'linear-gradient(135deg, #F0EAFF 0%, #F0F9F8 25%, #FFF0EB 50%, #F0EAFF 75%, #F0F9F8 100%)',
       }}>
         {/* Extra floating orbs */}
@@ -932,15 +1372,24 @@ export default function CoachesPage() {
             </h2>
           </div>
 
-          <div className="about-grid grid md:grid-cols-2 gap-6 mb-12">
-            <div className="about-card relative bg-white/60 backdrop-blur-md rounded-2xl p-8 shadow-soft hover:shadow-lg transition-all duration-500 h-full border border-white/40 hover:border-brand-teal/30 group overflow-hidden" style={{ opacity: 0 }}>
+          {/* Asymmetric grid: large left, smaller right */}
+          <div className="about-grid grid md:grid-cols-5 gap-6 mb-14">
+            {/* Large featured card with gradient bg */}
+            <div className="about-card md:col-span-3 relative rounded-2xl p-10 overflow-hidden group hover:shadow-soft-xl transition-all duration-500 h-full"
+              style={{
+                background: 'linear-gradient(135deg, rgba(78,205,196,0.08) 0%, rgba(124,92,191,0.08) 50%, rgba(244,132,95,0.06) 100%)',
+                backdropFilter: 'blur(20px)',
+                border: '1px solid rgba(255,255,255,0.4)',
+                boxShadow: '0 10px 40px -10px rgba(0,0,0,0.08)',
+              }}
+            >
               <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ boxShadow: 'inset 0 0 0 2px rgba(78,205,196,0.15)' }} />
-              <div className="absolute -top-10 -right-10 w-32 h-32 bg-brand-teal/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-brand-teal/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative z-10">
-                <div className="w-14 h-14 bg-brand-teal/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <Users size={26} className="text-brand-teal" />
+                <div className="w-16 h-16 bg-gradient-to-br from-brand-teal/20 to-brand-purple/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Users size={30} className="text-brand-teal" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4 text-brand-navy">For CollWiers (Participants)</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-brand-navy">For CollWiers (Participants)</h3>
                 <p className="text-lg text-brand-navy/60 leading-relaxed">
                   We turn personal growth from a lonely journey into a shared, guided experience.
                   Small groups. Professional coaches. Real transformation.
@@ -948,11 +1397,19 @@ export default function CoachesPage() {
               </div>
             </div>
 
-            <div className="about-card relative bg-white/60 backdrop-blur-md rounded-2xl p-8 shadow-soft hover:shadow-lg transition-all duration-500 h-full border border-white/40 hover:border-brand-purple/30 group overflow-hidden" style={{ opacity: 0 }}>
+            {/* Smaller accent card */}
+            <div className="about-card md:col-span-2 relative rounded-2xl p-8 overflow-hidden group hover:shadow-soft-xl transition-all duration-500 h-full"
+              style={{
+                background: 'linear-gradient(135deg, rgba(124,92,191,0.1) 0%, rgba(99,71,160,0.08) 100%)',
+                backdropFilter: 'blur(20px)',
+                border: '1px solid rgba(124,92,191,0.15)',
+                boxShadow: '0 10px 40px -10px rgba(0,0,0,0.08)',
+              }}
+            >
               <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ boxShadow: 'inset 0 0 0 2px rgba(124,92,191,0.15)' }} />
               <div className="absolute -top-10 -right-10 w-32 h-32 bg-brand-purple/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative z-10">
-                <div className="w-14 h-14 bg-brand-purple/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-14 h-14 bg-brand-purple/15 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <TrendingUp size={26} className="text-brand-purple" />
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-brand-navy">For Coaches (You!)</h3>
@@ -964,31 +1421,93 @@ export default function CoachesPage() {
             </div>
           </div>
 
-          {/* Mission pull-quote */}
-          <div className="about-card relative bg-white/50 backdrop-blur-md rounded-2xl p-10 border border-white/40 text-center overflow-hidden" style={{ opacity: 0 }}>
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-teal via-brand-purple to-brand-coral" />
-            <span className="text-7xl font-serif text-brand-teal/15 leading-none block mb-2">&ldquo;</span>
-            <p className="text-xl md:text-2xl text-brand-navy/60 leading-relaxed max-w-3xl mx-auto mb-4">
-              CollWi is a platform, yes, but more than that, it's a <span className="text-brand-navy font-medium">movement</span>.
-              A community where coaches can thrive and people can transform—together.
-            </p>
-            <p className="text-2xl font-semibold bg-gradient-to-r from-brand-teal to-brand-purple bg-clip-text text-transparent">
-              Our mission: Make growth social, accessible, and transformative—for everyone.
-            </p>
-            <span className="text-7xl font-serif text-brand-teal/15 leading-none block mt-2 rotate-180">&ldquo;</span>
+          {/* Mission pull-quote — standalone featured */}
+          <div className="about-card relative rounded-2xl overflow-hidden" style={{ opacity: 0 }}>
+            <div
+              className="p-12 md:p-16 text-center"
+              style={{
+                background: 'linear-gradient(135deg, rgba(78,205,196,0.06) 0%, rgba(255,255,255,0.8) 30%, rgba(124,92,191,0.06) 60%, rgba(255,255,255,0.8) 100%)',
+                backdropFilter: 'blur(20px)',
+                border: '1px solid rgba(255,255,255,0.4)',
+                boxShadow: '0 20px 60px -15px rgba(0,0,0,0.08)',
+              }}
+            >
+              <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-teal via-brand-purple to-brand-coral" />
+              <span className="text-8xl md:text-9xl font-serif text-brand-teal/15 leading-none block mb-4">&ldquo;</span>
+              <p className="text-xl md:text-2xl text-brand-navy/60 leading-relaxed max-w-3xl mx-auto mb-6">
+                CollWi is a platform, yes, but more than that, it&apos;s a <span className="text-brand-navy font-medium">movement</span>.
+                A community where coaches can thrive and people can transform&mdash;together.
+              </p>
+              <p className="text-2xl md:text-3xl font-semibold bg-gradient-to-r from-brand-teal to-brand-purple bg-clip-text text-transparent">
+                Our mission: Make growth social, accessible, and transformative&mdash;for everyone.
+              </p>
+              <span className="text-8xl md:text-9xl font-serif text-brand-teal/15 leading-none block mt-4 rotate-180">&ldquo;</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ─── FOOTER ─── */}
-      <footer className="relative bg-brand-navy text-white py-12 overflow-hidden">
-        {/* Subtle gradient orbs */}
-        <div className="absolute top-0 left-[20%] w-48 h-48 bg-brand-teal/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 right-[20%] w-56 h-56 bg-brand-purple/5 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-brand-coral/3 rounded-full blur-3xl" />
+      {/* ─── FOOTER — Expanded with links and gradient mesh ─── */}
+      <footer className="relative overflow-hidden" style={{
+        background: 'linear-gradient(135deg, #1A1F36 0%, #2D3250 30%, #1A1F36 60%, #2D3250 100%)',
+      }}>
+        {/* Gradient mesh background */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-[20%] w-64 h-64 bg-brand-teal/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-[20%] w-72 h-72 bg-brand-purple/5 rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-coral/3 rounded-full blur-3xl" />
+          <div className="absolute top-0 right-[40%] w-48 h-48 bg-brand-gold/3 rounded-full blur-3xl" />
+        </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
-          <p className="text-brand-navy-light">&copy; 2026 CollWi. All rights reserved.</p>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-16">
+          {/* Top section */}
+          <div className="grid md:grid-cols-3 gap-12 mb-12">
+            {/* Brand */}
+            <div>
+              <h3 className="text-2xl font-semibold text-white mb-4">CollWi</h3>
+              <p className="text-white/50 leading-relaxed">
+                Where coaches thrive and people transform&mdash;together.
+              </p>
+            </div>
+
+            {/* Quick links */}
+            <div>
+              <h4 className="text-sm font-semibold tracking-widest uppercase text-white/40 mb-4">Quick Links</h4>
+              <div className="flex flex-col gap-3">
+                <a href="https://collwi.com/register?type=coach" className="text-white/60 hover:text-brand-teal transition-colors duration-300">Join as a Coach</a>
+                <a href="https://collwi.com" className="text-white/60 hover:text-brand-teal transition-colors duration-300">Explore Programs</a>
+                <a href="https://collwi.com/about" className="text-white/60 hover:text-brand-teal transition-colors duration-300">About CollWi</a>
+              </div>
+            </div>
+
+            {/* Social */}
+            <div>
+              <h4 className="text-sm font-semibold tracking-widest uppercase text-white/40 mb-4">Connect</h4>
+              <div className="flex gap-4">
+                <a href="#" className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors duration-300">
+                  <Twitter size={18} className="text-white/60" />
+                </a>
+                <a href="#" className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors duration-300">
+                  <Linkedin size={18} className="text-white/60" />
+                </a>
+                <a href="#" className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors duration-300">
+                  <Instagram size={18} className="text-white/60" />
+                </a>
+                <a href="#" className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors duration-300">
+                  <Mail size={18} className="text-white/60" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8" />
+
+          {/* Bottom */}
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <p className="text-white/30 text-sm">&copy; 2026 CollWi. All rights reserved.</p>
+            <p className="text-white/20 text-xs italic">Make growth social, accessible, and transformative.</p>
+          </div>
         </div>
       </footer>
     </div>
