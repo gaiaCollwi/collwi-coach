@@ -44,12 +44,24 @@ const blogPosts = [
 ]
 
 export default function BlogPage() {
+  const accentColors = ['border-l-brand-teal', 'border-l-brand-coral', 'border-l-brand-purple', 'border-l-brand-teal']
+  const glowColors = ['hover:shadow-glow-teal', 'hover:shadow-glow-coral', 'hover:shadow-glow-purple', 'hover:shadow-glow-teal']
+
   return (
     <div className="min-h-screen">
       {/* Hero */}
       <section className="relative py-24 md:py-32 px-6 overflow-hidden">
         <div className="absolute inset-0 mesh-gradient-intense" />
-        
+        {/* Floating orbs */}
+        <div className="absolute top-20 right-[10%] w-72 h-72 bg-brand-purple/8 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-10 left-[8%] w-64 h-64 bg-brand-teal/8 rounded-full blur-3xl animate-float-delayed" />
+        <div className="absolute top-[40%] left-[50%] w-56 h-56 bg-brand-coral/6 rounded-full blur-3xl animate-float-slow" />
+        {/* Pulsing dots */}
+        <div className="absolute top-[25%] right-[20%] w-2 h-2 rounded-full bg-brand-teal/40 animate-pulse-soft" />
+        <div className="absolute bottom-[30%] left-[15%] w-3 h-3 rounded-full bg-brand-purple/30 animate-pulse-soft" />
+        <div className="absolute top-[55%] right-[35%] w-2 h-2 rounded-full bg-brand-coral/40 animate-pulse-soft" />
+        <div className="absolute top-[40%] left-[25%] w-1.5 h-1.5 rounded-full bg-brand-gold/50 animate-pulse-soft" />
+
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <FadeIn delay={0.1}>
             <span className="inline-block px-5 py-2 bg-brand-teal/10 text-brand-teal text-xs font-semibold tracking-[0.2em] uppercase rounded-full mb-8">
@@ -72,13 +84,29 @@ export default function BlogPage() {
       </section>
 
       {/* Blog Posts */}
-      <section className="py-16 md:py-24 px-6 bg-white">
-        <div className="max-w-5xl mx-auto">
+      <section className="relative py-16 md:py-24 px-6 mesh-gradient-warm overflow-hidden">
+        {/* Floating orbs */}
+        <div className="absolute top-10 left-[5%] w-64 h-64 bg-brand-teal/6 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-20 right-[8%] w-72 h-72 bg-brand-purple/6 rounded-full blur-3xl animate-float-delayed" />
+        <div className="absolute top-[50%] right-[30%] w-48 h-48 bg-brand-coral/5 rounded-full blur-3xl animate-float-slow" />
+        {/* Pulsing dots */}
+        <div className="absolute top-[15%] right-[18%] w-2 h-2 rounded-full bg-brand-coral/30 animate-pulse-soft" />
+        <div className="absolute bottom-[20%] left-[22%] w-3 h-3 rounded-full bg-brand-teal/25 animate-pulse-soft" />
+
+        {/* Large watermark */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+          <span className="text-[10rem] md:text-[14rem] font-sans font-bold text-brand-teal/[0.02] tracking-widest uppercase">BLOG</span>
+        </div>
+
+        <div className="relative z-10 max-w-5xl mx-auto">
           <StaggerContainer className="space-y-8" staggerDelay={0.1}>
-            {blogPosts.map((post) => (
+            {blogPosts.map((post, i) => (
               <StaggerItem key={post.slug}>
                 <Link href={`/blog/${post.slug}`}>
-                  <article className="group bg-white rounded-2xl p-8 md:p-10 border border-gray-100 hover:border-brand-teal/30 hover:shadow-soft transition-all duration-300">
+                  <article className={`group relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 md:p-10 border border-white/30 border-l-4 ${accentColors[i]} ${glowColors[i]} hover:border-brand-teal/30 hover:shadow-soft transition-all duration-300 card-hover`}>
+                    <span className="absolute top-4 right-6 text-7xl font-sans font-light text-brand-navy/[0.04] select-none">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
                     <div className="flex items-center gap-4 text-sm text-brand-navy/40 mb-4">
                       <span className="px-3 py-1 bg-brand-teal/10 text-brand-teal rounded-full font-medium">
                         {post.category}

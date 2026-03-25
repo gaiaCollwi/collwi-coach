@@ -11,6 +11,13 @@ export default function AboutPage() {
         <div className="absolute inset-0 mesh-gradient-intense" />
         <div className="absolute top-32 right-[5%] w-80 h-80 bg-brand-purple/8 rounded-full blur-3xl animate-float" />
         <div className="absolute bottom-20 left-[8%] w-72 h-72 bg-brand-coral/8 rounded-full blur-3xl animate-float-delayed" />
+        <div className="absolute top-[50%] left-[50%] w-64 h-64 bg-brand-teal/6 rounded-full blur-3xl animate-float-slow" />
+        <div className="absolute bottom-[40%] right-[20%] w-56 h-56 bg-brand-gold/6 rounded-full blur-3xl animate-float" />
+        {/* Pulsing dots */}
+        <div className="absolute top-[25%] right-[18%] w-2 h-2 rounded-full bg-brand-teal/40 animate-pulse-soft" />
+        <div className="absolute bottom-[30%] left-[15%] w-3 h-3 rounded-full bg-brand-purple/30 animate-pulse-soft" />
+        <div className="absolute top-[55%] right-[35%] w-2 h-2 rounded-full bg-brand-coral/40 animate-pulse-soft" />
+        <div className="absolute top-[35%] left-[25%] w-1.5 h-1.5 rounded-full bg-brand-gold/50 animate-pulse-soft" />
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-32 pb-20">
           <FadeIn delay={0.1}>
@@ -23,14 +30,14 @@ export default function AboutPage() {
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-light leading-[1.1] mb-8">
               We built CollWi because we know
               <br />
-              how hard it is to be a <em className="text-brand-teal italic">great coach</em> and a 
+              how hard it is to be a <em className="text-brand-teal italic">great coach</em> and a
               successful business owner.
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.35}>
             <p className="text-xl md:text-2xl text-brand-navy/60 max-w-3xl mx-auto leading-relaxed mb-6">
-              The best coaches we know spend their days helping other people transform their lives. 
+              The best coaches we know spend their days helping other people transform their lives.
               And spend their nights worried about where the next client will come from.
             </p>
           </FadeIn>
@@ -43,7 +50,7 @@ export default function AboutPage() {
 
           <FadeIn delay={0.55}>
             <p className="text-xl md:text-2xl text-brand-navy/60 max-w-3xl mx-auto leading-relaxed">
-              We realized: there are thousands of coaches just like this. Delivering world-class transformations while struggling to scale. 
+              We realized: there are thousands of coaches just like this. Delivering world-class transformations while struggling to scale.
               Coaches who should be focused on their craft, not consumed by <em className="text-brand-navy font-medium not-italic">client acquisition.</em>
             </p>
           </FadeIn>
@@ -51,8 +58,16 @@ export default function AboutPage() {
       </section>
 
       {/* ─── The Problem We Saw ─── */}
-      <section className="py-24 md:py-32 px-6 bg-white">
-        <div className="max-w-4xl mx-auto">
+      <section className="relative py-24 md:py-32 px-6 mesh-gradient-warm overflow-hidden">
+        {/* Floating orbs */}
+        <div className="absolute top-10 right-[8%] w-64 h-64 bg-brand-purple/8 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-20 left-[5%] w-72 h-72 bg-brand-coral/8 rounded-full blur-3xl animate-float-delayed" />
+        <div className="absolute top-[40%] left-[50%] w-48 h-48 bg-brand-teal/6 rounded-full blur-3xl animate-float-slow" />
+        {/* Pulsing dots */}
+        <div className="absolute top-[20%] left-[12%] w-2 h-2 rounded-full bg-brand-coral/40 animate-pulse-soft" />
+        <div className="absolute bottom-[25%] right-[18%] w-3 h-3 rounded-full bg-brand-purple/30 animate-pulse-soft" />
+
+        <div className="relative z-10 max-w-4xl mx-auto">
           <FadeIn>
             <div className="text-center mb-16">
               <span className="inline-block px-4 py-1.5 bg-brand-purple/10 text-brand-purple text-xs font-semibold tracking-[0.15em] uppercase rounded-full mb-5">
@@ -68,19 +83,28 @@ export default function AboutPage() {
 
           <FadeIn delay={0.15}>
             <div className="space-y-8 text-brand-navy/60 leading-relaxed max-w-3xl mx-auto">
-              <p className="text-lg md:text-xl">
-                You spent thousands on your certification. You invested years perfecting your craft. Your clients transform. 
-                You know you're damn good at what you do.
-              </p>
-              <p className="text-lg md:text-xl">
-                And yet you're still struggling to fill your calendar. You're spending more time on marketing and admin 
-                than you are on actual coaching. Your income is unpredictable. You're working 50-hour weeks and earning less 
-                than you could in a corporate job.
-              </p>
-              <p className="text-lg md:text-xl">
-                You didn't get into coaching to spend your days networking and posting on LinkedIn. You got into it to transform lives. 
-                But right now, you're transforming nobody because you're too busy trying to find clients.
-              </p>
+              <div className="relative bg-white/70 backdrop-blur-sm border border-white/30 rounded-2xl p-8 shadow-soft">
+                <span className="absolute top-4 right-5 text-6xl font-sans font-light text-brand-navy/[0.04] select-none">01</span>
+                <p className="text-lg md:text-xl">
+                  You spent thousands on your certification. You invested years perfecting your craft. Your clients transform.
+                  You know you're damn good at what you do.
+                </p>
+              </div>
+              <div className="relative bg-white/70 backdrop-blur-sm border border-white/30 rounded-2xl p-8 shadow-soft">
+                <span className="absolute top-4 right-5 text-6xl font-sans font-light text-brand-navy/[0.04] select-none">02</span>
+                <p className="text-lg md:text-xl">
+                  And yet you're still struggling to fill your calendar. You're spending more time on marketing and admin
+                  than you are on actual coaching. Your income is unpredictable. You're working 50-hour weeks and earning less
+                  than you could in a corporate job.
+                </p>
+              </div>
+              <div className="relative bg-white/70 backdrop-blur-sm border border-white/30 rounded-2xl p-8 shadow-soft">
+                <span className="absolute top-4 right-5 text-6xl font-sans font-light text-brand-navy/[0.04] select-none">03</span>
+                <p className="text-lg md:text-xl">
+                  You didn't get into coaching to spend your days networking and posting on LinkedIn. You got into it to transform lives.
+                  But right now, you're transforming nobody because you're too busy trying to find clients.
+                </p>
+              </div>
             </div>
           </FadeIn>
 
@@ -93,8 +117,22 @@ export default function AboutPage() {
       </section>
 
       {/* ─── What We Built ─── */}
-      <section className="py-24 md:py-32 px-6 mesh-gradient-intense">
-        <div className="max-w-5xl mx-auto">
+      <section className="relative py-24 md:py-32 px-6 mesh-gradient-cool overflow-hidden">
+        {/* Floating orbs */}
+        <div className="absolute top-20 left-[5%] w-72 h-72 bg-brand-teal/8 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-10 right-[8%] w-64 h-64 bg-brand-purple/8 rounded-full blur-3xl animate-float-delayed" />
+        <div className="absolute top-[40%] right-[20%] w-48 h-48 bg-brand-coral/6 rounded-full blur-3xl animate-float-slow" />
+        {/* Pulsing dots */}
+        <div className="absolute top-[15%] right-[22%] w-2 h-2 rounded-full bg-brand-teal/40 animate-pulse-soft" />
+        <div className="absolute bottom-[20%] left-[18%] w-3 h-3 rounded-full bg-brand-coral/30 animate-pulse-soft" />
+        <div className="absolute top-[60%] left-[35%] w-2 h-2 rounded-full bg-brand-purple/35 animate-pulse-soft" />
+
+        {/* Large watermark */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+          <span className="text-[10rem] md:text-[14rem] font-sans font-bold text-brand-teal/[0.03] tracking-widest uppercase">BUILT</span>
+        </div>
+
+        <div className="relative z-10 max-w-5xl mx-auto">
           <FadeIn>
             <div className="text-center mb-16">
               <span className="inline-block px-4 py-1.5 bg-brand-teal/10 text-brand-teal text-xs font-semibold tracking-[0.15em] uppercase rounded-full mb-5">
@@ -108,52 +146,56 @@ export default function AboutPage() {
 
           <StaggerContainer className="grid md:grid-cols-2 gap-6 mb-16" staggerDelay={0.08}>
             <StaggerItem>
-              <div className="bg-white rounded-2xl p-8 shadow-soft card-hover h-full">
+              <div className="relative bg-white/80 backdrop-blur-sm border border-white/30 rounded-2xl p-8 shadow-soft hover:shadow-glow-teal transition-all duration-300 card-hover h-full">
+                <span className="absolute top-4 right-5 text-6xl font-sans font-light text-brand-navy/[0.04] select-none">01</span>
                 <div className="w-14 h-14 bg-brand-teal/10 rounded-2xl flex items-center justify-center mb-6">
                   <Users size={26} className="text-brand-teal" />
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-brand-navy">We Handle the Business</h3>
                 <p className="text-lg text-brand-navy/60 leading-relaxed">
-                  Marketing, enrollment, payments, member management—we do it all. 
+                  Marketing, enrollment, payments, member management—we do it all.
                   You focus on coaching and changing lives.
                 </p>
               </div>
             </StaggerItem>
 
             <StaggerItem>
-              <div className="bg-white rounded-2xl p-8 shadow-soft card-hover h-full">
+              <div className="relative bg-white/80 backdrop-blur-sm border border-white/30 rounded-2xl p-8 shadow-soft hover:shadow-glow-coral transition-all duration-300 card-hover h-full">
+                <span className="absolute top-4 right-5 text-6xl font-sans font-light text-brand-navy/[0.04] select-none">02</span>
                 <div className="w-14 h-14 bg-brand-coral/10 rounded-2xl flex items-center justify-center mb-6">
                   <Heart size={26} className="text-brand-coral" />
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-brand-navy">We Connect You to Clients</h3>
                 <p className="text-lg text-brand-navy/60 leading-relaxed">
-                  Our community brings you pre-qualified, ready-to-invest participants. 
+                  Our community brings you pre-qualified, ready-to-invest participants.
                   No more cold outreach or networking pressure.
                 </p>
               </div>
             </StaggerItem>
 
             <StaggerItem>
-              <div className="bg-white rounded-2xl p-8 shadow-soft card-hover h-full">
+              <div className="relative bg-white/80 backdrop-blur-sm border border-white/30 rounded-2xl p-8 shadow-soft hover:shadow-glow-purple transition-all duration-300 card-hover h-full">
+                <span className="absolute top-4 right-5 text-6xl font-sans font-light text-brand-navy/[0.04] select-none">03</span>
                 <div className="w-14 h-14 bg-brand-purple/10 rounded-2xl flex items-center justify-center mb-6">
                   <Compass size={26} className="text-brand-purple" />
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-brand-navy">Recurring Revenue</h3>
                 <p className="text-lg text-brand-navy/60 leading-relaxed">
-                  Monthly subscriptions replace the feast-or-famine cycle of 1:1 coaching. 
+                  Monthly subscriptions replace the feast-or-famine cycle of 1:1 coaching.
                   Know your income. Plan your life.
                 </p>
               </div>
             </StaggerItem>
 
             <StaggerItem>
-              <div className="bg-white rounded-2xl p-8 shadow-soft card-hover h-full">
+              <div className="relative bg-white/80 backdrop-blur-sm border border-white/30 rounded-2xl p-8 shadow-soft hover:shadow-glow-teal transition-all duration-300 card-hover h-full">
+                <span className="absolute top-4 right-5 text-6xl font-sans font-light text-brand-navy/[0.04] select-none">04</span>
                 <div className="w-14 h-14 bg-brand-gold/10 rounded-2xl flex items-center justify-center mb-6">
                   <Sparkles size={26} className="text-brand-gold" />
                 </div>
                 <h3 className="text-xl font-semibold mb-4 text-brand-navy">A Community of Coaches</h3>
                 <p className="text-lg text-brand-navy/60 leading-relaxed">
-                  Learn from other coaches running successful groups. Share templates, best practices, 
+                  Learn from other coaches running successful groups. Share templates, best practices,
                   and support each other as you build.
                 </p>
               </div>
@@ -162,7 +204,7 @@ export default function AboutPage() {
 
           <FadeIn delay={0.3}>
             <p className="text-xl md:text-2xl text-center text-brand-navy/60 leading-relaxed max-w-3xl mx-auto">
-              CollWi is a platform, yes, but more than that, it's a <span className="text-brand-navy font-medium">solution</span>. 
+              CollWi is a platform, yes, but more than that, it's a <span className="text-brand-navy font-medium">solution</span>.
               A way for incredible coaches to finally build the business they deserve while staying true to what they love.
             </p>
           </FadeIn>
@@ -170,8 +212,21 @@ export default function AboutPage() {
       </section>
 
       {/* ─── Our Values ─── */}
-      <section className="py-24 md:py-32 px-6 bg-white">
-        <div className="max-w-4xl mx-auto">
+      <section className="relative py-24 md:py-32 px-6 mesh-gradient-purple overflow-hidden">
+        {/* Floating orbs */}
+        <div className="absolute top-10 left-[10%] w-64 h-64 bg-brand-coral/8 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-20 right-[5%] w-72 h-72 bg-brand-purple/8 rounded-full blur-3xl animate-float-delayed" />
+        <div className="absolute top-[50%] right-[40%] w-48 h-48 bg-brand-teal/6 rounded-full blur-3xl animate-float-slow" />
+        {/* Pulsing dots */}
+        <div className="absolute top-[18%] right-[15%] w-2 h-2 rounded-full bg-brand-purple/40 animate-pulse-soft" />
+        <div className="absolute bottom-[22%] left-[20%] w-3 h-3 rounded-full bg-brand-coral/30 animate-pulse-soft" />
+
+        {/* Large watermark */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+          <span className="text-[10rem] md:text-[14rem] font-sans font-bold text-brand-purple/[0.03] tracking-widest uppercase">VALUES</span>
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto">
           <FadeIn>
             <div className="text-center mb-16">
               <span className="inline-block px-4 py-1.5 bg-brand-coral/10 text-brand-coral text-xs font-semibold tracking-[0.15em] uppercase rounded-full mb-5">
@@ -188,22 +243,33 @@ export default function AboutPage() {
               {
                 title: 'Coaching Changes Lives',
                 desc: "The best thing a person can do is invest in a coach who truly gets them. Coaching creates transformation at scale in a way nothing else can. We believe in this deeply.",
+                accent: 'border-l-brand-teal',
+                glow: 'hover:shadow-glow-teal',
               },
               {
                 title: 'Great Coaches Deserve Great Income',
                 desc: "If you're certified, skilled, and committed to client transformation, you should earn a comfortable living doing it. Not by hustling harder. By building smarter.",
+                accent: 'border-l-brand-coral',
+                glow: 'hover:shadow-glow-coral',
               },
               {
                 title: 'Group Coaching is the Future',
                 desc: "One-on-one coaching has a ceiling. Group coaching scales impact without burning out coaches. It creates community. It creates transformation. It's the better model.",
+                accent: 'border-l-brand-purple',
+                glow: 'hover:shadow-glow-purple',
               },
               {
                 title: 'Coaches Need Support',
                 desc: "The best coaches in the world struggle with business. You shouldn't have to. We're here to remove the barriers so you can do what you were meant to do.",
+                accent: 'border-l-brand-teal',
+                glow: 'hover:shadow-glow-teal',
               },
             ].map((value, i) => (
               <FadeIn key={i} delay={i * 0.08}>
-                <div className="border-l-4 border-brand-teal pl-6 py-2">
+                <div className={`relative bg-white/70 backdrop-blur-sm border border-white/30 border-l-4 ${value.accent} rounded-2xl pl-6 pr-8 py-6 shadow-soft ${value.glow} transition-all duration-300 card-hover`}>
+                  <span className="absolute top-3 right-5 text-5xl font-sans font-light text-brand-navy/[0.04] select-none">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
                   <h3 className="text-xl font-semibold mb-3 text-brand-navy">{value.title}</h3>
                   <p className="text-lg text-brand-navy/60 leading-relaxed">{value.desc}</p>
                 </div>
@@ -214,8 +280,17 @@ export default function AboutPage() {
       </section>
 
       {/* ─── Who We Are ─── */}
-      <section className="py-24 md:py-32 px-6 bg-surface-warm">
-        <div className="max-w-4xl mx-auto">
+      <section className="relative py-24 md:py-32 px-6 mesh-gradient-warm overflow-hidden">
+        {/* Floating orbs */}
+        <div className="absolute top-20 right-[10%] w-64 h-64 bg-brand-purple/8 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-10 left-[5%] w-72 h-72 bg-brand-teal/8 rounded-full blur-3xl animate-float-delayed" />
+        <div className="absolute top-[40%] left-[40%] w-56 h-56 bg-brand-coral/6 rounded-full blur-3xl animate-float-slow" />
+        {/* Pulsing dots */}
+        <div className="absolute top-[22%] left-[18%] w-2 h-2 rounded-full bg-brand-teal/40 animate-pulse-soft" />
+        <div className="absolute bottom-[28%] right-[15%] w-3 h-3 rounded-full bg-brand-purple/30 animate-pulse-soft" />
+        <div className="absolute top-[55%] left-[10%] w-2 h-2 rounded-full bg-brand-coral/35 animate-pulse-soft" />
+
+        <div className="relative z-10 max-w-4xl mx-auto">
           <FadeIn>
             <div className="text-center mb-12">
               <span className="inline-block px-4 py-1.5 bg-brand-purple/10 text-brand-purple text-xs font-semibold tracking-[0.15em] uppercase rounded-full mb-5">
@@ -228,22 +303,24 @@ export default function AboutPage() {
           </FadeIn>
 
           <FadeIn delay={0.15}>
-            <div className="space-y-6 text-brand-navy/60 leading-relaxed max-w-3xl mx-auto text-center">
-              <p className="text-lg md:text-xl">
-                We're <span className="text-brand-navy font-medium">Barbara</span> and <span className="text-brand-navy font-medium">Adriana</span>. 
-                We're both coaches ourselves. We've built 1:1 practices. We've hit the ceiling. We've felt the frustration.
-              </p>
-              <p className="text-lg md:text-xl">
-                We know what it's like to be exceptional at your craft and terrible at business. We know what it feels like 
-                to spend your days helping others and your nights stressed about your own financial stability.
-              </p>
-              <p className="text-lg md:text-xl">
-                Then we realized: there are thousands of coaches feeling this way. Coaches who could be running multiple thriving groups, 
-                earning real income, helping hundreds of people... but they're too stuck in the weeds of client acquisition to see it.
-              </p>
-              <p className="text-lg md:text-xl">
-                That's why we built CollWi. A platform designed specifically for coaches like us. Built by coaches. For coaches.
-              </p>
+            <div className="bg-white/70 backdrop-blur-sm border border-white/30 rounded-3xl p-10 md:p-14 shadow-soft">
+              <div className="space-y-6 text-brand-navy/60 leading-relaxed max-w-3xl mx-auto text-center">
+                <p className="text-lg md:text-xl">
+                  We're <span className="text-brand-navy font-medium">Barbara</span> and <span className="text-brand-navy font-medium">Adriana</span>.
+                  We're both coaches ourselves. We've built 1:1 practices. We've hit the ceiling. We've felt the frustration.
+                </p>
+                <p className="text-lg md:text-xl">
+                  We know what it's like to be exceptional at your craft and terrible at business. We know what it feels like
+                  to spend your days helping others and your nights stressed about your own financial stability.
+                </p>
+                <p className="text-lg md:text-xl">
+                  Then we realized: there are thousands of coaches feeling this way. Coaches who could be running multiple thriving groups,
+                  earning real income, helping hundreds of people... but they're too stuck in the weeds of client acquisition to see it.
+                </p>
+                <p className="text-lg md:text-xl">
+                  That's why we built CollWi. A platform designed specifically for coaches like us. Built by coaches. For coaches.
+                </p>
+              </div>
             </div>
           </FadeIn>
 
@@ -256,8 +333,16 @@ export default function AboutPage() {
       </section>
 
       {/* ─── Why Coaches Choose CollWi ─── */}
-      <section className="py-24 md:py-32 px-6 bg-gradient-to-br from-brand-teal/5 via-white to-brand-coral/5">
-        <div className="max-w-4xl mx-auto">
+      <section className="relative py-24 md:py-32 px-6 mesh-gradient-cool overflow-hidden">
+        {/* Floating orbs */}
+        <div className="absolute top-10 left-[8%] w-64 h-64 bg-brand-teal/8 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-20 right-[10%] w-72 h-72 bg-brand-purple/8 rounded-full blur-3xl animate-float-delayed" />
+        <div className="absolute top-[50%] right-[30%] w-48 h-48 bg-brand-coral/6 rounded-full blur-3xl animate-float-slow" />
+        {/* Pulsing dots */}
+        <div className="absolute top-[20%] right-[25%] w-2 h-2 rounded-full bg-brand-teal/40 animate-pulse-soft" />
+        <div className="absolute bottom-[30%] left-[15%] w-3 h-3 rounded-full bg-brand-purple/30 animate-pulse-soft" />
+
+        <div className="relative z-10 max-w-4xl mx-auto">
           <FadeIn>
             <div className="text-center mb-12">
               <span className="inline-block px-4 py-1.5 bg-brand-teal/10 text-brand-teal text-xs font-semibold tracking-[0.15em] uppercase rounded-full mb-5">
@@ -270,7 +355,7 @@ export default function AboutPage() {
           </FadeIn>
 
           <ScaleIn delay={0.15}>
-            <div className="bg-white rounded-3xl p-10 md:p-14 shadow-soft-xl border border-gray-100">
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-10 md:p-14 shadow-soft-xl border border-white/30 hover:shadow-glow-teal transition-all duration-500">
               <ul className="space-y-6 text-lg md:text-xl text-brand-navy/70 leading-relaxed">
                 <li className="flex items-start gap-4">
                   <div className="w-2 h-2 rounded-full bg-brand-teal mt-2.5 flex-shrink-0" />
@@ -310,9 +395,14 @@ export default function AboutPage() {
       <section className="relative py-28 md:py-36 px-6 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-brand-teal via-brand-teal-dark to-brand-purple" />
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 right-20 w-64 h-64 bg-white rounded-full blur-3xl" />
-          <div className="absolute bottom-10 left-20 w-48 h-48 bg-brand-gold rounded-full blur-3xl" />
+          <div className="absolute top-10 right-20 w-64 h-64 bg-white rounded-full blur-3xl animate-float" />
+          <div className="absolute bottom-10 left-20 w-48 h-48 bg-brand-gold rounded-full blur-3xl animate-float-delayed" />
+          <div className="absolute top-[40%] left-[40%] w-56 h-56 bg-white rounded-full blur-3xl animate-float-slow" />
         </div>
+        {/* Pulsing dots */}
+        <div className="absolute top-[20%] right-[15%] w-2 h-2 rounded-full bg-white/20 animate-pulse-soft" />
+        <div className="absolute bottom-[25%] left-[20%] w-3 h-3 rounded-full bg-white/15 animate-pulse-soft" />
+        <div className="absolute top-[60%] right-[35%] w-2 h-2 rounded-full bg-brand-gold/30 animate-pulse-soft" />
 
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <FadeIn>

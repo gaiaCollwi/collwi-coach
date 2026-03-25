@@ -74,4 +74,42 @@
   .card-hover:hover {
     @apply -translate-y-1 shadow-soft-lg;
   }
+
+  .mesh-gradient-warm {
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(244, 132, 95, 0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 30%, rgba(247, 201, 72, 0.10) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 80%, rgba(124, 92, 191, 0.08) 0%, transparent 40%),
+      #FAF8F5;
+  }
+
+  .mesh-gradient-cool {
+    background:
+      radial-gradient(ellipse at 15% 30%, rgba(78, 205, 196, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 85% 70%, rgba(124, 92, 191, 0.10) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 20%, rgba(244, 132, 95, 0.06) 0%, transparent 40%),
+      #F0F9F8;
+  }
+
+  .mesh-gradient-purple {
+    background:
+      radial-gradient(ellipse at 30% 40%, rgba(124, 92, 191, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 60%, rgba(78, 205, 196, 0.10) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 80%, rgba(244, 132, 95, 0.06) 0%, transparent 40%),
+      #ffffff;
+  }
+
+  .glassmorphism {
+    @apply bg-white/70 backdrop-blur-xl border border-white/30;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }

@@ -41,6 +41,9 @@ export default {
         'soft-xl': '0 20px 60px -15px rgba(0, 0, 0, 0.12)',
         'teal': '0 8px 30px -4px rgba(78, 205, 196, 0.35)',
         'purple': '0 8px 30px -4px rgba(124, 92, 191, 0.3)',
+        'glow-teal': '0 0 40px rgba(78, 205, 196, 0.2)',
+        'glow-coral': '0 0 40px rgba(244, 132, 95, 0.2)',
+        'glow-purple': '0 0 40px rgba(124, 92, 191, 0.2)',
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
@@ -48,6 +51,8 @@ export default {
         'float-slow': 'float 8s ease-in-out infinite',
         'pulse-soft': 'pulseSoft 4s ease-in-out infinite',
         'spin-slow': 'spin 20s linear infinite',
+        'shimmer': 'shimmer 3s ease-in-out infinite',
+        'gradient-shift': 'gradient-shift 6s ease-in-out infinite',
       },
       keyframes: {
         float: {
