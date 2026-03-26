@@ -819,8 +819,8 @@ export default function CoachesPage() {
                 {`You're an Exceptional Coach. So Why Is It So Hard to Find Paying Clients?`
                   .split(/\s+/)
                   .map((word, i) => (
-                    <span key={i} className="hero-word inline-block" style={{ opacity: 0 }}>
-                      {word}{' '}
+                    <span key={i} className="hero-word inline-block mr-[0.3em]" style={{ opacity: 0 }}>
+                      {word}
                     </span>
                   ))}
               </h1>
