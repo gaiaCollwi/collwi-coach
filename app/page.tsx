@@ -816,7 +816,7 @@ export default function CoachesPage() {
             {/* Left: Text content */}
             <div className="text-center lg:text-left" style={{ perspective: '800px' }}>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-light leading-[1.1] mb-8">
-                {`You're an Exceptional Coach. So Why Is It So Hard to Find Paying Clients?`
+                {`You're an exceptional coach. So why is it so hard to find paying clients?`
                   .split(/\s+/)
                   .map((word, i) => (
                     <span key={i} className="hero-word inline-block mr-[0.3em]" style={{ opacity: 0 }}>
