@@ -725,8 +725,8 @@ export default function CoachesPage() {
     {
       icon: TrendingUp,
       color: "bg-brand-coral/10 text-brand-coral",
-      title: "We Connect You With Members Seeking Growth",
-      desc: "Stop chasing clients. CollWi connects you with members actively seeking growth and community support. No more cold outreach. No more endless free discovery sessions."
+      title: "We Connect You With Women Seeking Growth",
+      desc: "Stop chasing clients. CollWi connects you with women actively seeking growth and community support. No more cold outreach. No more endless free discovery sessions."
     },
     {
       icon: Users,
