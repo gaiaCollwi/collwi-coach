@@ -924,23 +924,25 @@ export default function CoachesPage() {
       </section>
 
       {/* ─── THIS IS FOR YOU SECTION ─── */}
-      <section ref={forYouRef} className="relative py-28 md:py-40 px-6 overflow-hidden bg-brand-navy">
+      <section ref={forYouRef} className="relative py-28 md:py-40 px-6 overflow-hidden" style={{
+        background: 'linear-gradient(160deg, #FFF5F0 0%, #FFF0F5 30%, #F5F0FF 60%, #F0F8F8 100%)',
+      }}>
         {/* Ambient glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-brand-teal/[0.07] rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-brand-purple/[0.08] rounded-full blur-[100px]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-brand-coral/[0.08] rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-brand-purple/[0.06] rounded-full blur-[100px]" />
 
         <div className="relative z-10 max-w-5xl mx-auto">
-          <p className="for-you-card text-brand-teal text-sm font-semibold tracking-[0.2em] uppercase text-center mb-4" style={{ opacity: 0 }}>
+          <p className="for-you-card text-brand-coral text-sm font-semibold tracking-[0.2em] uppercase text-center mb-4" style={{ opacity: 0 }}>
             Sound familiar?
           </p>
-          <h2 className="for-you-card text-3xl md:text-5xl lg:text-6xl font-sans font-extralight leading-tight text-center text-white/90 mb-20" style={{ opacity: 0 }}>
+          <h2 className="for-you-card text-3xl md:text-5xl lg:text-6xl font-sans font-extralight leading-tight text-center text-brand-navy/80 mb-20" style={{ opacity: 0 }}>
             This is for you if you&apos;re<br className="hidden md:block" /> a certified coach who...
           </h2>
 
           {/* Staggered alternating cards */}
           <div className="for-you-grid relative">
             {/* Center vertical line */}
-            <div className="for-you-line absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent hidden md:block" />
+            <div className="for-you-line absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-brand-navy/10 to-transparent hidden md:block" />
 
             {forYouItems.map((item, i) => {
               const isLeft = i % 2 === 0
@@ -954,12 +956,12 @@ export default function CoachesPage() {
                 >
                   {/* Card */}
                   <div className={`w-full md:w-[calc(50%-2rem)] ${isLeft ? 'md:pr-0' : 'md:pl-0'}`}>
-                    <div className={`group relative rounded-2xl border border-white/[0.06] bg-white/[0.03] backdrop-blur-sm p-8 cursor-default transition-all duration-500 hover:bg-white/[0.07] hover:border-${accent}/30 hover:shadow-[0_0_40px_-12px] hover:shadow-${accent}/20`}>
+                    <div className={`group relative rounded-2xl border border-brand-navy/[0.06] bg-white/60 backdrop-blur-sm p-8 cursor-default transition-all duration-500 hover:bg-white/80 hover:border-${accent}/30 hover:shadow-[0_8px_30px_-12px] hover:shadow-${accent}/15`}>
                       {/* Number pill */}
                       <div className={`inline-flex items-center justify-center w-8 h-8 rounded-full bg-${accent}/15 text-${accent} text-xs font-bold mb-4`}>
                         {String(i + 1).padStart(2, '0')}
                       </div>
-                      <p className="text-lg md:text-xl text-white/70 leading-relaxed font-light group-hover:text-white/90 transition-colors duration-500">
+                      <p className="text-lg md:text-xl text-brand-navy/60 leading-relaxed font-light group-hover:text-brand-navy/80 transition-colors duration-500">
                         {item}
                       </p>
                       {/* Bottom accent bar on hover */}
@@ -969,7 +971,7 @@ export default function CoachesPage() {
 
                   {/* Center dot (desktop) */}
                   <div className="hidden md:flex items-center justify-center w-16 flex-shrink-0">
-                    <div className={`w-3 h-3 rounded-full bg-${accent}/60 ring-4 ring-${accent}/10 group-hover:ring-${accent}/30 transition-all duration-500`} />
+                    <div className={`w-3 h-3 rounded-full bg-${accent}/60 ring-4 ring-${accent}/10 transition-all duration-500`} />
                   </div>
 
                   {/* Spacer for other side */}
@@ -980,10 +982,10 @@ export default function CoachesPage() {
           </div>
 
           <div className="for-you-card mt-20 text-center" style={{ opacity: 0 }}>
-            <p className="text-xl md:text-2xl font-light text-white/60 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl font-light text-brand-navy/50 max-w-3xl mx-auto leading-relaxed">
               <span className="text-brand-purple font-medium">82% of coaches struggle with this</span>&mdash;not because their coaching isn&apos;t good enough, but because client acquisition is a different skill set.
             </p>
-            <p className="text-2xl md:text-3xl font-light text-white/90 mt-4">
+            <p className="text-2xl md:text-3xl font-light text-brand-navy/80 mt-4">
               CollWi solves that.
             </p>
           </div>
