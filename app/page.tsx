@@ -1107,7 +1107,7 @@ export default function CoachesPage() {
                   {/* Card */}
                   <div className={`w-[45%] ${isLeft ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
                     <div
-                      className="relative rounded-2xl p-7 group hover:-translate-y-1 transition-all duration-400 overflow-hidden"
+                      className="relative rounded-2xl p-7 group hover:-translate-y-1 transition-all duration-400 overflow-hidden min-h-[160px] flex flex-col justify-center"
                       style={{
                         background: 'rgba(255,255,255,0.6)',
                         backdropFilter: 'blur(20px)',
