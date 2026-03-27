@@ -323,7 +323,7 @@ function DashboardMockup() {
       </div>
 
       {/* Stats badge */}
-      <div className="mockup-badge absolute top-[55%] right-[35%] md:right-[40%] rounded-full px-5 py-3 opacity-0"
+      <div className="mockup-badge absolute top-[20%] right-[5%] md:right-[8%] rounded-full px-5 py-3 opacity-0"
         style={{
           background: 'rgba(78,205,196,0.15)',
           backdropFilter: 'blur(20px)',
