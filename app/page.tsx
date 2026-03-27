@@ -332,7 +332,7 @@ function DashboardMockup() {
         }}>
         <div className="flex items-center gap-2">
           <Users size={16} className="text-brand-teal" />
-          <span className="text-sm font-bold text-brand-teal">8-12 per group</span>
+          <span className="text-sm font-bold text-brand-teal">4-10 per group</span>
         </div>
       </div>
     </div>
@@ -732,7 +732,7 @@ export default function CoachesPage() {
       icon: Users,
       color: "bg-brand-teal/10 text-brand-teal",
       title: "Scale Without Burning Out",
-      desc: "You're stuck trading time for money in 1:1 sessions. Group coaching lets you serve 8-12 people at once\u2014multiply your income without multiplying your hours."
+      desc: "You're stuck trading time for money in 1:1 sessions. Group coaching lets you serve 4-10 people at once\u2014multiply your income without multiplying your hours."
     },
     {
       icon: Settings,
@@ -761,7 +761,7 @@ export default function CoachesPage() {
     },
     {
       number: "3",
-      title: "Lead Small Groups (8-12 People)",
+      title: "Lead Small Groups (4-10 People)",
       desc: "Guide live sessions. Build community. Make the impact you've always wanted."
     },
     {
@@ -789,7 +789,7 @@ export default function CoachesPage() {
     { num: '01', title: 'Register as a Coach', desc: 'Quick registration for certified coaches ready to offer group programs', accent: 'from-brand-teal to-brand-teal-dark' },
     { num: '02', title: 'Create Your Program', desc: 'Easy, quick process to set up your group coaching program. You set your own pricing and schedule', accent: 'from-brand-coral to-brand-coral' },
     { num: '03', title: 'Members Find You', desc: 'Members browse programs and choose what fits their needs\u2014no marketing required on your end', accent: 'from-brand-purple to-brand-purple-dark' },
-    { num: '04', title: 'Lead & Earn', desc: 'Facilitate small groups (8-12 people), scale your impact, build sustainable income', accent: 'from-brand-teal to-brand-purple' },
+    { num: '04', title: 'Lead & Earn', desc: 'Facilitate small groups (4-10 people), scale your impact, build sustainable income', accent: 'from-brand-teal to-brand-purple' },
   ]
 
   const gradientAccentColors = [
@@ -908,7 +908,7 @@ export default function CoachesPage() {
             {/* Stat 2 */}
             <div className="stat-item text-center" style={{ opacity: 0 }}>
               <div className="text-6xl md:text-7xl font-sans font-bold bg-gradient-to-r from-brand-teal to-brand-teal-dark bg-clip-text text-transparent mb-3">
-                8-12
+                4-10
               </div>
               <p className="text-white/60 text-lg">People per group session</p>
             </div>
