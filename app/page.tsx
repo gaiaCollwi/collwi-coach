@@ -782,6 +782,7 @@ export default function CoachesPage() {
     { text: "Commitment to emotional safety and inclusive practices", icon: Shield, accent: "from-brand-purple to-brand-purple-dark", glow: "hover:shadow-glow-purple" },
     { text: "Belief in the power of collective wisdom and peer support", icon: Heart, accent: "from-brand-teal to-brand-purple", glow: "hover:shadow-glow-teal" },
     { text: "Ready to stop chasing clients and start building a real business", icon: Target, accent: "from-brand-coral to-brand-purple", glow: "hover:shadow-glow-coral" },
+    { text: "Passionate about continuous growth, both personally and professionally", icon: Sparkles, accent: "from-brand-purple to-brand-teal", glow: "hover:shadow-glow-purple" },
   ]
 
   const coachSteps = [
