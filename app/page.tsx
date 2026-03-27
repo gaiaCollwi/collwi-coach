@@ -908,9 +908,9 @@ export default function CoachesPage() {
             {/* Stat 2 */}
             <div className="stat-item text-center" style={{ opacity: 0 }}>
               <div className="text-6xl md:text-7xl font-sans font-bold bg-gradient-to-r from-brand-teal to-brand-teal-dark bg-clip-text text-transparent mb-3">
-                4-10
+                82%
               </div>
-              <p className="text-white/60 text-lg">People per group session</p>
+              <p className="text-white/60 text-lg">Revenue kept by coaches</p>
             </div>
 
             {/* Stat 3 */}
