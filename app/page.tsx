@@ -916,9 +916,9 @@ export default function CoachesPage() {
             {/* Stat 3 */}
             <div className="stat-item text-center" style={{ opacity: 0 }}>
               <div className="text-6xl md:text-7xl font-sans font-bold bg-gradient-to-r from-brand-purple to-brand-purple-dark bg-clip-text text-transparent mb-3">
-                <span className="count-up" data-target={0}>0</span>
+                0%
               </div>
-              <p className="text-white/60 text-lg">Marketing required</p>
+              <p className="text-white/60 text-lg">Marketing required by you</p>
             </div>
           </div>
         </div>
