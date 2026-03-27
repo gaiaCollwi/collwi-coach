@@ -67,61 +67,76 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ─── The Problem We Saw ─── */}
-      <section className="relative py-24 md:py-32 px-6 mesh-gradient-warm overflow-hidden">
-        {/* Floating orbs */}
-        <div className="absolute top-10 right-[8%] w-64 h-64 bg-brand-purple/8 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-20 left-[5%] w-72 h-72 bg-brand-coral/8 rounded-full blur-3xl animate-float-delayed" />
-        <div className="absolute top-[40%] left-[50%] w-48 h-48 bg-brand-teal/6 rounded-full blur-3xl animate-float-slow" />
-        {/* Pulsing dots */}
-        <div className="absolute top-[20%] left-[12%] w-2 h-2 rounded-full bg-brand-coral/40 animate-pulse-soft" />
-        <div className="absolute bottom-[25%] right-[18%] w-3 h-3 rounded-full bg-brand-purple/30 animate-pulse-soft" />
+      {/* ─── The Problem — Storytelling Journey ─── */}
+      <section className="relative py-28 md:py-40 px-6 overflow-hidden" style={{
+        background: 'linear-gradient(180deg, #FAF8F5 0%, #F5F0FF 50%, #F0F9F8 100%)',
+      }}>
+        {/* Ambient glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-brand-purple/[0.06] rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-[10%] w-[400px] h-[400px] bg-brand-teal/[0.05] rounded-full blur-[100px]" />
 
         <div className="relative z-10 max-w-4xl mx-auto">
           <FadeIn>
-            <div className="text-center mb-16">
-              <span className="inline-block px-4 py-1.5 bg-brand-purple/10 text-brand-purple text-xs font-semibold tracking-[0.15em] uppercase rounded-full mb-5">
-                The Problem
-              </span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-sans font-light leading-tight mb-6">
-                The coach's paradox:
-                <br />
-                <em className="text-brand-purple italic">Great at coaching. Terrible at business.</em>
-              </h2>
-            </div>
+            <h2 className="text-3xl md:text-5xl font-sans font-extralight leading-tight text-center mb-24">
+              The coach&apos;s paradox
+            </h2>
           </FadeIn>
 
-          <FadeIn delay={0.15}>
-            <div className="space-y-8 text-brand-navy/60 leading-relaxed max-w-3xl mx-auto">
-              <div className="relative bg-white/70 backdrop-blur-sm border border-white/30 rounded-2xl p-8 shadow-soft">
-                <span className="absolute top-4 right-5 text-6xl font-sans font-light text-brand-navy/[0.04] select-none">01</span>
-                <p className="text-lg md:text-xl">
-                  You spent thousands on your certification. You invested years perfecting your craft. Your clients transform.
-                  You know you're damn good at what you do.
-                </p>
-              </div>
-              <div className="relative bg-white/70 backdrop-blur-sm border border-white/30 rounded-2xl p-8 shadow-soft">
-                <span className="absolute top-4 right-5 text-6xl font-sans font-light text-brand-navy/[0.04] select-none">02</span>
-                <p className="text-lg md:text-xl">
-                  And yet you're still struggling to fill your calendar. You're spending more time on marketing and admin
-                  than you are on actual coaching. Your income is unpredictable. You're working 50-hour weeks and earning less
-                  than you could in a corporate job.
-                </p>
-              </div>
-              <div className="relative bg-white/70 backdrop-blur-sm border border-white/30 rounded-2xl p-8 shadow-soft">
-                <span className="absolute top-4 right-5 text-6xl font-sans font-light text-brand-navy/[0.04] select-none">03</span>
-                <p className="text-lg md:text-xl">
-                  You didn't get into coaching to spend your days networking and posting on LinkedIn. You got into it to transform lives.
-                  But right now, you're transforming nobody because you're too busy trying to find clients.
-                </p>
-              </div>
-            </div>
-          </FadeIn>
+          {/* Storytelling timeline */}
+          <div className="relative">
+            {/* Vertical line */}
+            <div className="absolute left-8 md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-brand-purple/20 via-brand-coral/20 to-brand-teal/20" />
 
-          <FadeIn delay={0.3}>
-            <p className="text-2xl md:text-3xl font-sans font-light text-center mt-16 text-brand-navy">
-              We couldn't find a platform that solved this... so we <em className="text-brand-teal italic">built it.</em>
-            </p>
+            {/* Step 1 — The Dream */}
+            <FadeIn delay={0.1}>
+              <div className="relative flex items-start mb-20 md:mb-28">
+                <div className="absolute left-8 md:left-1/2 md:-translate-x-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-brand-purple ring-4 ring-brand-purple/20" />
+                <div className="ml-20 md:ml-0 md:w-[45%] md:pr-16">
+                  <span className="text-brand-purple text-xs font-semibold tracking-[0.2em] uppercase mb-3 block">The dream</span>
+                  <p className="text-xl md:text-2xl font-light text-brand-navy/70 leading-relaxed">
+                    You spent thousands on your certification. Years perfecting your craft. Your clients <em className="text-brand-navy font-medium not-italic">transform.</em>
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Step 2 — The Reality */}
+            <FadeIn delay={0.2}>
+              <div className="relative flex items-start mb-20 md:mb-28 md:flex-row-reverse">
+                <div className="absolute left-8 md:left-1/2 md:-translate-x-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-brand-coral ring-4 ring-brand-coral/20" />
+                <div className="ml-20 md:ml-0 md:w-[45%] md:pl-16 md:text-left">
+                  <span className="text-brand-coral text-xs font-semibold tracking-[0.2em] uppercase mb-3 block">The reality</span>
+                  <p className="text-xl md:text-2xl font-light text-brand-navy/70 leading-relaxed">
+                    And yet you can&apos;t fill your calendar. More time on marketing than coaching. Unpredictable income. 50-hour weeks for less than a corporate salary.
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+
+            {/* Step 3 — The Breaking Point */}
+            <FadeIn delay={0.3}>
+              <div className="relative flex items-start mb-20 md:mb-28">
+                <div className="absolute left-8 md:left-1/2 md:-translate-x-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-brand-teal ring-4 ring-brand-teal/20" />
+                <div className="ml-20 md:ml-0 md:w-[45%] md:pr-16">
+                  <span className="text-brand-teal text-xs font-semibold tracking-[0.2em] uppercase mb-3 block">The breaking point</span>
+                  <p className="text-xl md:text-2xl font-light text-brand-navy/70 leading-relaxed">
+                    You got into coaching to transform lives. But you&apos;re transforming nobody&mdash;because you&apos;re too busy trying to find clients.
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+
+          {/* The Resolve */}
+          <FadeIn delay={0.4}>
+            <div className="text-center mt-8">
+              <p className="text-2xl md:text-4xl font-extralight text-brand-navy/80 leading-relaxed">
+                We couldn&apos;t find a platform that solved this.
+              </p>
+              <p className="text-2xl md:text-4xl font-light text-brand-teal mt-2">
+                So we built it.
+              </p>
+            </div>
           </FadeIn>
         </div>
       </section>
