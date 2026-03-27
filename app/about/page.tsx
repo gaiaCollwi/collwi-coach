@@ -335,19 +335,14 @@ export default function AboutPage() {
             <div className="bg-white/70 backdrop-blur-sm border border-white/30 rounded-3xl p-10 md:p-14 shadow-soft">
               <div className="space-y-6 text-brand-navy/60 leading-relaxed max-w-3xl mx-auto text-center">
                 <p className="text-lg md:text-xl">
-                  We're <span className="text-brand-navy font-medium">Barbara</span> and <span className="text-brand-navy font-medium">Adriana</span>.
-                  We're both coaches ourselves. We've built 1:1 practices. We've hit the ceiling. We've felt the frustration.
+                  We&apos;re <span className="text-brand-navy font-medium">Barbara</span> and <span className="text-brand-navy font-medium">Adriana</span>.
+                  Barbara is a coach who&apos;s lived the struggle&mdash;building a practice, hitting the ceiling, feeling the frustration of doing incredible work but struggling to grow.
                 </p>
                 <p className="text-lg md:text-xl">
-                  We know what it's like to be exceptional at your craft and terrible at business. We know what it feels like
-                  to spend your days helping others and your nights stressed about your own financial stability.
+                  Adriana experienced it from the other side&mdash;as a woman who knew she was capable of more but felt stuck navigating it alone. She watched so many incredible women around her feeling the same way: ambitious, capable, but lacking the right support and community to help them move forward.
                 </p>
                 <p className="text-lg md:text-xl">
-                  Then we realized: there are thousands of coaches feeling this way. Coaches who could be running multiple thriving groups,
-                  earning real income, helping hundreds of people... but they're too stuck in the weeds of client acquisition to see it.
-                </p>
-                <p className="text-lg md:text-xl">
-                  That's why we built CollWi. A platform designed specifically for coaches like us. Built by coaches. For coaches.
+                  Together, we realized: women don&apos;t need another productivity hack. They need real connection, honest conversations, and guidance from people who actually understand. That&apos;s why we built CollWi.
                 </p>
               </div>
             </div>
