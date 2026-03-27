@@ -171,7 +171,7 @@ export default function AboutPage() {
 
           <StaggerContainer className="grid md:grid-cols-2 gap-6 mb-16" staggerDelay={0.08}>
             <StaggerItem>
-              <div className="relative bg-white/80 backdrop-blur-sm border border-white/30 rounded-2xl p-8 shadow-soft hover:shadow-glow-teal transition-all duration-300 card-hover h-full">
+              <div className="relative bg-white/80 backdrop-blur-sm border border-white/30 rounded-2xl p-8 shadow-soft hover:shadow-glow-teal transition-all duration-300 card-hover h-full min-h-[240px]">
                 <span className="absolute top-4 right-5 text-6xl font-sans font-light text-brand-navy/[0.04] select-none">01</span>
                 <div className="w-14 h-14 bg-brand-teal/10 rounded-2xl flex items-center justify-center mb-6">
                   <Users size={26} className="text-brand-teal" />
@@ -185,7 +185,7 @@ export default function AboutPage() {
             </StaggerItem>
 
             <StaggerItem>
-              <div className="relative bg-white/80 backdrop-blur-sm border border-white/30 rounded-2xl p-8 shadow-soft hover:shadow-glow-coral transition-all duration-300 card-hover h-full">
+              <div className="relative bg-white/80 backdrop-blur-sm border border-white/30 rounded-2xl p-8 shadow-soft hover:shadow-glow-coral transition-all duration-300 card-hover h-full min-h-[240px]">
                 <span className="absolute top-4 right-5 text-6xl font-sans font-light text-brand-navy/[0.04] select-none">02</span>
                 <div className="w-14 h-14 bg-brand-coral/10 rounded-2xl flex items-center justify-center mb-6">
                   <Heart size={26} className="text-brand-coral" />
@@ -199,21 +199,21 @@ export default function AboutPage() {
             </StaggerItem>
 
             <StaggerItem>
-              <div className="relative bg-white/80 backdrop-blur-sm border border-white/30 rounded-2xl p-8 shadow-soft hover:shadow-glow-purple transition-all duration-300 card-hover h-full">
+              <div className="relative bg-white/80 backdrop-blur-sm border border-white/30 rounded-2xl p-8 shadow-soft hover:shadow-glow-purple transition-all duration-300 card-hover h-full min-h-[240px]">
                 <span className="absolute top-4 right-5 text-6xl font-sans font-light text-brand-navy/[0.04] select-none">03</span>
                 <div className="w-14 h-14 bg-brand-purple/10 rounded-2xl flex items-center justify-center mb-6">
                   <Compass size={26} className="text-brand-purple" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4 text-brand-navy">Recurring Revenue</h3>
+                <h3 className="text-xl font-semibold mb-4 text-brand-navy">Scale Your Impact</h3>
                 <p className="text-lg text-brand-navy/60 leading-relaxed">
-                  Monthly subscriptions replace the feast-or-famine cycle of 1:1 coaching.
-                  Know your income. Plan your life.
+                  Go from helping one person at a time to empowering groups of women.
+                  Multiply your impact without multiplying your hours.
                 </p>
               </div>
             </StaggerItem>
 
             <StaggerItem>
-              <div className="relative bg-white/80 backdrop-blur-sm border border-white/30 rounded-2xl p-8 shadow-soft hover:shadow-glow-teal transition-all duration-300 card-hover h-full">
+              <div className="relative bg-white/80 backdrop-blur-sm border border-white/30 rounded-2xl p-8 shadow-soft hover:shadow-glow-teal transition-all duration-300 card-hover h-full min-h-[240px]">
                 <span className="absolute top-4 right-5 text-6xl font-sans font-light text-brand-navy/[0.04] select-none">04</span>
                 <div className="w-14 h-14 bg-brand-gold/10 rounded-2xl flex items-center justify-center mb-6">
                   <Sparkles size={26} className="text-brand-gold" />
@@ -336,13 +336,13 @@ export default function AboutPage() {
               <div className="space-y-6 text-brand-navy/60 leading-relaxed max-w-3xl mx-auto text-center">
                 <p className="text-lg md:text-xl">
                   We&apos;re <span className="text-brand-navy font-medium">Barbara</span> and <span className="text-brand-navy font-medium">Adriana</span>.
-                  Barbara is a coach who&apos;s lived the struggle&mdash;building a practice, hitting the ceiling, feeling the frustration of doing incredible work but struggling to grow.
+                  Barbara is a coach who&apos;s lived the struggle&mdash;building a practice, hitting the ceiling, feeling the frustration. Adriana saw it from the other side&mdash;the systems, the gaps, the potential. Together, we built what neither could alone.
                 </p>
                 <p className="text-lg md:text-xl">
-                  Adriana experienced it from the other side&mdash;as a woman who knew she was capable of more but felt stuck navigating it alone. She watched so many incredible women around her feeling the same way: ambitious, capable, but lacking the right support and community to help them move forward.
+                  Women who didn&apos;t need fixing or another productivity hack. They needed real connection, honest conversations, and guidance from people who actually understood. That&apos;s when we realized: what if we built a place where women could find exactly that?
                 </p>
                 <p className="text-lg md:text-xl">
-                  Together, we realized: women don&apos;t need another productivity hack. They need real connection, honest conversations, and guidance from people who actually understand. That&apos;s why we built CollWi.
+                  A platform where growth isn&apos;t lonely, where support is real, and where every woman has access to both community and expert coaching. CollWi is that place. And we&apos;re inviting you to be part of it.
                 </p>
               </div>
             </div>
@@ -388,10 +388,6 @@ export default function AboutPage() {
                 <li className="flex items-start gap-4">
                   <div className="w-2 h-2 rounded-full bg-brand-teal mt-2.5 flex-shrink-0" />
                   <span>We bring you qualified clients ready to invest</span>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="w-2 h-2 rounded-full bg-brand-teal mt-2.5 flex-shrink-0" />
-                  <span>We pay you 70% of group revenue (no hidden fees)</span>
                 </li>
                 <li className="flex items-start gap-4">
                   <div className="w-2 h-2 rounded-full bg-brand-teal mt-2.5 flex-shrink-0" />
