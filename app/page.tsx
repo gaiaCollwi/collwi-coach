@@ -1496,7 +1496,7 @@ export default function CoachesPage() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-16">
           {/* Top section */}
-          <div className="grid md:grid-cols-3 gap-12 mb-12">
+          <div className="grid md:grid-cols-4 gap-12 mb-12">
             {/* Brand */}
             <div>
               <h3 className="text-2xl font-semibold text-white mb-4">CollWi</h3>
@@ -1512,6 +1512,15 @@ export default function CoachesPage() {
                 <a href="https://collwi.com/register?type=coach" className="text-white/60 hover:text-brand-teal transition-colors duration-300">Join as a Coach</a>
                 <a href="https://collwi.com" className="text-white/60 hover:text-brand-teal transition-colors duration-300">Explore Programs</a>
                 <a href="https://collwi.com/about" className="text-white/60 hover:text-brand-teal transition-colors duration-300">About CollWi</a>
+              </div>
+            </div>
+
+            {/* Legal */}
+            <div>
+              <h4 className="text-sm font-semibold tracking-widest uppercase text-white/40 mb-4">Legal</h4>
+              <div className="flex flex-col gap-3">
+                <a href="/privacy" className="text-white/60 hover:text-brand-teal transition-colors duration-300">Privacy Policy</a>
+                <a href="/terms" className="text-white/60 hover:text-brand-teal transition-colors duration-300">Terms of Service</a>
               </div>
             </div>
 
