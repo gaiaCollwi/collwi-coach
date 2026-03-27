@@ -12,48 +12,58 @@ export default function AboutPage() {
         <div className="absolute top-32 right-[5%] w-80 h-80 bg-brand-purple/8 rounded-full blur-3xl animate-float" />
         <div className="absolute bottom-20 left-[8%] w-72 h-72 bg-brand-coral/8 rounded-full blur-3xl animate-float-delayed" />
         <div className="absolute top-[50%] left-[50%] w-64 h-64 bg-brand-teal/6 rounded-full blur-3xl animate-float-slow" />
-        <div className="absolute bottom-[40%] right-[20%] w-56 h-56 bg-brand-gold/6 rounded-full blur-3xl animate-float" />
         {/* Pulsing dots */}
         <div className="absolute top-[25%] right-[18%] w-2 h-2 rounded-full bg-brand-teal/40 animate-pulse-soft" />
         <div className="absolute bottom-[30%] left-[15%] w-3 h-3 rounded-full bg-brand-purple/30 animate-pulse-soft" />
-        <div className="absolute top-[55%] right-[35%] w-2 h-2 rounded-full bg-brand-coral/40 animate-pulse-soft" />
-        <div className="absolute top-[35%] left-[25%] w-1.5 h-1.5 rounded-full bg-brand-gold/50 animate-pulse-soft" />
 
-        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-32 pb-20">
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center pt-32 pb-20">
           <FadeIn delay={0.1}>
-            <span className="inline-block px-5 py-2 bg-brand-coral/10 text-brand-coral text-xs font-semibold tracking-[0.2em] uppercase rounded-full mb-8">
+            <span className="inline-block px-5 py-2 bg-brand-coral/10 text-brand-coral text-xs font-semibold tracking-[0.2em] uppercase rounded-full mb-10">
               About CollWi
             </span>
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-light leading-[1.1] mb-8">
-              We built CollWi because we know
-              <br />
-              how hard it is to be a <em className="text-brand-teal italic">great coach</em> and a
-              successful business owner.
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-extralight leading-[1.15] mb-16">
+              Great coaches deserve<br />
+              a <em className="text-brand-teal italic font-light">great business.</em>
             </h1>
           </FadeIn>
 
-          <FadeIn delay={0.35}>
-            <p className="text-xl md:text-2xl text-brand-navy/60 max-w-3xl mx-auto leading-relaxed mb-6">
-              The best coaches we know spend their days helping other people transform their lives.
-              And spend their nights worried about where the next client will come from.
-            </p>
-          </FadeIn>
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <FadeIn delay={0.3}>
+              <div className="group bg-white/50 backdrop-blur-sm border border-white/40 rounded-2xl p-8 hover:bg-white/70 hover:shadow-soft-lg hover:-translate-y-1 transition-all duration-500">
+                <div className="w-12 h-12 bg-brand-teal/10 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                  <Heart size={22} className="text-brand-teal" />
+                </div>
+                <p className="text-brand-navy/60 leading-relaxed">
+                  You spend your days transforming lives. And your nights worrying about where the next client will come from.
+                </p>
+              </div>
+            </FadeIn>
 
-          <FadeIn delay={0.45}>
-            <p className="text-xl md:text-2xl text-brand-navy/60 max-w-3xl mx-auto leading-relaxed">
-              They're exhausted. They're burned out. They're thinking about leaving a profession they love because the business side feels impossible.
-            </p>
-          </FadeIn>
+            <FadeIn delay={0.4}>
+              <div className="group bg-white/50 backdrop-blur-sm border border-white/40 rounded-2xl p-8 hover:bg-white/70 hover:shadow-soft-lg hover:-translate-y-1 transition-all duration-500">
+                <div className="w-12 h-12 bg-brand-coral/10 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                  <Sparkles size={22} className="text-brand-coral" />
+                </div>
+                <p className="text-brand-navy/60 leading-relaxed">
+                  You&apos;re exhausted. Not from coaching&mdash;from everything else. The marketing, the selling, the hustle that never ends.
+                </p>
+              </div>
+            </FadeIn>
 
-          <FadeIn delay={0.55}>
-            <p className="text-xl md:text-2xl text-brand-navy/60 max-w-3xl mx-auto leading-relaxed">
-              We realized: there are thousands of coaches just like this. Delivering world-class transformations while struggling to scale.
-              Coaches who should be focused on their craft, not consumed by <em className="text-brand-navy font-medium not-italic">client acquisition.</em>
-            </p>
-          </FadeIn>
+            <FadeIn delay={0.5}>
+              <div className="group bg-white/50 backdrop-blur-sm border border-white/40 rounded-2xl p-8 hover:bg-white/70 hover:shadow-soft-lg hover:-translate-y-1 transition-all duration-500">
+                <div className="w-12 h-12 bg-brand-purple/10 rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                  <Target size={22} className="text-brand-purple" />
+                </div>
+                <p className="text-brand-navy/60 leading-relaxed">
+                  We built CollWi so you can focus on your craft. We handle the rest.
+                </p>
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
 
