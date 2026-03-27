@@ -782,7 +782,7 @@ export default function CoachesPage() {
     { text: "Commitment to emotional safety and inclusive practices", icon: Shield, accent: "from-brand-purple to-brand-purple-dark", glow: "hover:shadow-glow-purple" },
     { text: "Belief in the power of collective wisdom and peer support", icon: Heart, accent: "from-brand-teal to-brand-purple", glow: "hover:shadow-glow-teal" },
     { text: "Ready to stop chasing clients and start building a real business", icon: Target, accent: "from-brand-coral to-brand-purple", glow: "hover:shadow-glow-coral" },
-    { text: "Passionate about continuous growth, both personally and professionally", icon: Sparkles, accent: "from-brand-purple to-brand-teal", glow: "hover:shadow-glow-purple" },
+    { text: "Passionate about helping and empowering women to thrive", icon: Sparkles, accent: "from-brand-purple to-brand-teal", glow: "hover:shadow-glow-purple" },
   ]
 
   const coachSteps = [
@@ -1407,10 +1407,10 @@ export default function CoachesPage() {
             </h2>
           </div>
 
-          {/* Asymmetric grid: large left, smaller right */}
-          <div className="about-grid grid md:grid-cols-5 gap-6 mb-14">
-            {/* Large featured card with gradient bg */}
-            <div className="about-card md:col-span-3 relative rounded-2xl p-10 overflow-hidden group hover:shadow-soft-xl transition-all duration-500 h-full"
+          {/* Equal two-column grid */}
+          <div className="about-grid grid md:grid-cols-2 gap-6 mb-14">
+            {/* CollWiers card */}
+            <div className="about-card relative rounded-2xl p-10 overflow-hidden group hover:shadow-soft-xl transition-all duration-500 h-full"
               style={{
                 background: 'linear-gradient(135deg, rgba(78,205,196,0.08) 0%, rgba(124,92,191,0.08) 50%, rgba(244,132,95,0.06) 100%)',
                 backdropFilter: 'blur(20px)',
@@ -1432,8 +1432,8 @@ export default function CoachesPage() {
               </div>
             </div>
 
-            {/* Smaller accent card */}
-            <div className="about-card md:col-span-2 relative rounded-2xl p-8 overflow-hidden group hover:shadow-soft-xl transition-all duration-500 h-full"
+            {/* Coaches card */}
+            <div className="about-card relative rounded-2xl p-10 overflow-hidden group hover:shadow-soft-xl transition-all duration-500 h-full"
               style={{
                 background: 'linear-gradient(135deg, rgba(124,92,191,0.1) 0%, rgba(99,71,160,0.08) 100%)',
                 backdropFilter: 'blur(20px)',
@@ -1444,10 +1444,10 @@ export default function CoachesPage() {
               <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ boxShadow: 'inset 0 0 0 2px rgba(124,92,191,0.15)' }} />
               <div className="absolute -top-10 -right-10 w-32 h-32 bg-brand-purple/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative z-10">
-                <div className="w-14 h-14 bg-brand-purple/15 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <TrendingUp size={26} className="text-brand-purple" />
+                <div className="w-16 h-16 bg-brand-purple/15 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <TrendingUp size={30} className="text-brand-purple" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4 text-brand-navy">For Coaches (You!)</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-brand-navy">For Coaches (You!)</h3>
                 <p className="text-lg text-brand-navy/60 leading-relaxed">
                   We solve the client acquisition problem that causes 82% of coaches to fail.
                   Certified coaches get matched with people actively seeking transformation.
