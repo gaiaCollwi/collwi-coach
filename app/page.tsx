@@ -1484,7 +1484,7 @@ export default function CoachesPage() {
 
       {/* ─── FOOTER — Expanded with links and gradient mesh ─── */}
       <footer className="relative overflow-hidden" style={{
-        background: 'linear-gradient(135deg, #1E1033 0%, #2A1548 30%, #1E1033 60%, #2A1548 100%)',
+        background: 'linear-gradient(135deg, #2D1B4E 0%, #3D2663 30%, #2D1B4E 60%, #3D2663 100%)',
       }}>
         {/* Gradient mesh background */}
         <div className="absolute inset-0 pointer-events-none">
