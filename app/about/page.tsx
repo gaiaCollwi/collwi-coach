@@ -228,10 +228,14 @@ export default function AboutPage() {
           </StaggerContainer>
 
           <FadeIn delay={0.3}>
-            <p className="text-xl md:text-2xl text-center text-brand-navy/60 leading-relaxed max-w-3xl mx-auto">
-              CollWi is a platform, yes, but more than that, it's a <span className="text-brand-navy font-medium">solution</span>.
-              A way for incredible coaches to finally build the business they deserve while staying true to what they love.
-            </p>
+            <div className="text-center max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-brand-navy/70 leading-relaxed mb-3">
+                CollWi is a community for women seeking support, connection, and personal growth.
+              </p>
+              <p className="text-xl md:text-2xl font-medium text-brand-navy/90">
+                A platform built by women, for women.
+              </p>
+            </div>
           </FadeIn>
         </div>
       </section>
