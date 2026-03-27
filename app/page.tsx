@@ -1,7 +1,7 @@
 'use client'
 
 import { useRef, useEffect, useLayoutEffect, useCallback } from 'react'
-import { ArrowRight, TrendingUp, Users, Settings, Heart, Award, Shield, Target, CheckCircle, ChevronDown, Star, Sparkles, Clock, DollarSign, MessageCircle, Zap, Globe, Mail, Twitter, Linkedin, Instagram } from 'lucide-react'
+import { ArrowRight, TrendingUp, Users, Settings, Heart, Award, Shield, Target, CheckCircle, ChevronDown, Star, Sparkles, Clock, DollarSign, MessageCircle, Zap, Globe, Mail, Facebook, Linkedin, Instagram } from 'lucide-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -1484,7 +1484,7 @@ export default function CoachesPage() {
 
       {/* ─── FOOTER — Expanded with links and gradient mesh ─── */}
       <footer className="relative overflow-hidden" style={{
-        background: 'linear-gradient(135deg, #1A1F36 0%, #2D3250 30%, #1A1F36 60%, #2D3250 100%)',
+        background: 'linear-gradient(135deg, #1E1033 0%, #2A1548 30%, #1E1033 60%, #2A1548 100%)',
       }}>
         {/* Gradient mesh background */}
         <div className="absolute inset-0 pointer-events-none">
@@ -1519,16 +1519,16 @@ export default function CoachesPage() {
             <div>
               <h4 className="text-sm font-semibold tracking-widest uppercase text-white/40 mb-4">Connect</h4>
               <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors duration-300">
-                  <Twitter size={18} className="text-white/60" />
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors duration-300">
+                <a href="https://www.linkedin.com/company/collwi-collective-wisdom/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors duration-300">
                   <Linkedin size={18} className="text-white/60" />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors duration-300">
+                <a href="https://www.instagram.com/collwi_collective_wisdom/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors duration-300">
                   <Instagram size={18} className="text-white/60" />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors duration-300">
+                <a href="https://www.facebook.com/profile.php?id=61565171915248" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors duration-300">
+                  <Facebook size={18} className="text-white/60" />
+                </a>
+                <a href="mailto:care@collwi.com" className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors duration-300">
                   <Mail size={18} className="text-white/60" />
                 </a>
               </div>
