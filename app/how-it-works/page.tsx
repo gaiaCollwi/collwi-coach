@@ -10,7 +10,7 @@ import { FadeIn, StaggerContainer, StaggerItem } from '../components/AnimatedSec
 const faqs = [
   {
     q: 'How do I set my pricing?',
-    a: 'You decide your own pricing for your group coaching programs. The platform handles all payment processing through Stripe or PayPal.',
+    a: 'You decide your own pricing for your group coaching events or 1-to-1 sessions. The platform handles the payment processing through Stripe or PayPal. CollWi retains a 15% fee; the payment processor\'s fee is around 3%, depending on where you are in the world.',
   },
   {
     q: 'Do I need to handle marketing?',
@@ -422,6 +422,13 @@ export default function HowItWorksPage() {
           </FadeIn>
         </div>
       </section>
+
+      {/* ─── Footer ─── */}
+      <footer className="bg-brand-navy text-white py-12">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+          <p className="text-white/40">© 2026 CollWi. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
   )
 }

@@ -263,6 +263,16 @@ function DashboardMockup() {
 
   return (
     <div ref={containerRef} className="relative w-full h-full min-h-[400px]">
+      {/* Background group photo */}
+      <div className="absolute inset-0 rounded-3xl overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=700&q=80"
+          alt="Women coaches"
+          className="w-full h-full object-cover opacity-60"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-teal/20 to-brand-purple/20" />
+      </div>
+
       {/* Session card */}
       <div className="mockup-card-1 absolute top-[10%] left-[5%] md:left-[10%] w-[280px] rounded-2xl overflow-hidden opacity-0"
         style={{

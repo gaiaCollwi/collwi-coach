@@ -51,7 +51,7 @@ Let's say you're charging $200/hour for 1:1 coaching. That's solid.
 
 A full calendar means 20 hours per week of client sessions. That's $4,000/week, or roughly $16,000/month (accounting for admin, follow-ups, and time off).
 
-Now let's say you run one group coaching program with 10 participants at $99/month each. That's $990 in group revenue. You keep 70% after platform fees, so $693/month.
+Now let's say you run one group coaching program with 10 participants at $99/month each. That's $990 in group revenue. You keep 82% after platform fees, so $811/month.
 
 That sounds worse, right? Except...
 
