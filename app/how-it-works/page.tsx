@@ -424,9 +424,49 @@ export default function HowItWorksPage() {
       </section>
 
       {/* ─── Footer ─── */}
-      <footer className="bg-brand-navy text-white py-12">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <p className="text-white/40">© 2026 CollWi. All rights reserved.</p>
+      <footer className="bg-gray-50 text-gray-900 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-6 pt-16 pb-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+            {/* Brand */}
+            <div>
+              <p className="text-xl font-semibold text-brand-teal mb-3">CollWi for Coaches</p>
+              <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
+                A platform built by women, for women. Scale your impact with group coaching.
+              </p>
+            </div>
+            {/* Links */}
+            <div>
+              <h4 className="text-xs font-semibold tracking-[0.15em] uppercase text-gray-400 mb-4">Platform</h4>
+              <ul className="space-y-3">
+                {[
+                  { label: 'How It Works', href: '/how-it-works' },
+                  { label: 'Coach Home', href: '/' },
+                  { label: 'For Members', href: 'https://collwi.com' },
+                ].map((link) => (
+                  <li key={link.label}>
+                    <a href={link.href} className="text-sm text-gray-500 hover:text-brand-teal transition-colors duration-200">{link.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* Legal */}
+            <div>
+              <h4 className="text-xs font-semibold tracking-[0.15em] uppercase text-gray-400 mb-4">Legal</h4>
+              <ul className="space-y-3">
+                {[
+                  { label: 'Privacy Policy', href: '/privacy' },
+                  { label: 'Terms of Service', href: '/terms' },
+                ].map((link) => (
+                  <li key={link.label}>
+                    <a href={link.href} className="text-sm text-gray-500 hover:text-brand-teal transition-colors duration-200">{link.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-gray-200 pt-8 text-center">
+            <p className="text-xs text-gray-400">© {new Date().getFullYear()} CollWi. All rights reserved.</p>
+          </div>
         </div>
       </footer>
     </div>

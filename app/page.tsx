@@ -897,7 +897,7 @@ export default function CoachesPage() {
         ref={statsRef}
         className="relative py-20 md:py-28 px-6 overflow-hidden"
         style={{
-          background: 'linear-gradient(135deg, #1A1F36 0%, #2D3250 40%, #1A1F36 100%)',
+          background: 'linear-gradient(135deg, #3B8F8B 0%, #7C5CBF 40%, #4ECDC4 100%)',
         }}
       >
         {/* Subtle gradient orbs */}
@@ -1022,12 +1022,12 @@ export default function CoachesPage() {
 
           {/* Bento Grid — 2x2 top + full-width tagline */}
           <div className="bento-grid grid grid-cols-1 md:grid-cols-2 gap-5">
-            {/* Large dark card */}
+            {/* Large accent card */}
             <div className="bento-card relative rounded-2xl p-8 md:p-10 overflow-hidden group hover:shadow-soft-xl transition-all duration-500" style={{ opacity: 0 }}>
               <div
                 className="gradient-sweep-bg absolute inset-0"
                 style={{
-                  background: 'linear-gradient(135deg, #1A1F36 0%, #2D3250 40%, #1A1F36 100%)',
+                  background: 'linear-gradient(135deg, #7C5CBF 0%, #9B7DD4 40%, #7C5CBF 100%)',
                 }}
               />
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-brand-teal/20 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
@@ -1176,7 +1176,7 @@ export default function CoachesPage() {
         ref={testimonialRef}
         className="relative py-24 md:py-32 px-6 overflow-hidden"
         style={{
-          background: 'linear-gradient(135deg, #1A1F36 0%, #3BAFA8 40%, #6347A0 100%)',
+          background: 'linear-gradient(135deg, #4ECDC4 0%, #7C5CBF 40%, #4ECDC4 100%)',
         }}
       >
         <div className="absolute top-10 left-[10%] w-64 h-64 bg-white/5 rounded-full blur-3xl animate-float" />
@@ -1273,7 +1273,7 @@ export default function CoachesPage() {
         ref={ctaRef}
         className="relative min-h-[80vh] flex items-center px-6 overflow-hidden"
         style={{
-          background: 'linear-gradient(135deg, #1A1F36 0%, #3BAFA8 45%, #6347A0 100%)',
+          background: 'linear-gradient(135deg, #4ECDC4 0%, #7C5CBF 45%, #F4845F 100%)',
           backgroundSize: '200% 200%',
           animation: 'gradient-shift 6s ease-in-out infinite',
         }}
