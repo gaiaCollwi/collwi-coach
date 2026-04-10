@@ -1116,7 +1116,6 @@ export default function CoachesPage() {
                         boxShadow: '0 10px 40px -10px rgba(0,0,0,0.08)',
                       }}
                     >
-                      <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${timelineAccentColors[i]}`} />
                       <h3 className="text-xl font-semibold text-brand-navy mb-2 group-hover:text-brand-teal transition-colors duration-300">{step.title}</h3>
                       <p className="text-lg text-brand-navy/70 leading-relaxed">{step.desc}</p>
                     </div>
@@ -1148,7 +1147,6 @@ export default function CoachesPage() {
                 className="step-card flex items-start gap-5 bg-white/60 backdrop-blur-md rounded-2xl p-6 shadow-soft hover:shadow-soft-lg hover:-translate-y-1 transition-all duration-400 group overflow-hidden relative"
                 style={{ opacity: 0 }}
               >
-                <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${timelineAccentColors[i]}`} />
                 <div className={`relative flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center font-bold text-xl bg-gradient-to-br ${timelineAccentColors[i]} text-white shadow-md ring-4 ring-white/80`}>
                   <span className="count-up" data-target={parseInt(step.number)}>{step.number}</span>
                 </div>
@@ -1167,11 +1165,11 @@ export default function CoachesPage() {
         ref={testimonialRef}
         className="relative py-24 md:py-32 px-6 overflow-hidden"
         style={{
-          background: 'linear-gradient(135deg, #4ECDC4 0%, #7C5CBF 40%, #4ECDC4 100%)',
+          background: 'linear-gradient(135deg, #5ED3CA 0%, #9B7DD4 40%, #5ED3CA 100%)',
         }}
       >
-        <div className="absolute top-10 left-[10%] w-64 h-64 bg-white/5 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-10 right-[15%] w-56 h-56 bg-white/5 rounded-full blur-3xl animate-float-delayed" />
+        <div className="absolute top-10 left-[10%] w-64 h-64 bg-white/8 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-10 right-[15%] w-56 h-56 bg-white/8 rounded-full blur-3xl animate-float-delayed" />
 
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <div className="testimonial-content" style={{ opacity: 0 }}>
@@ -1241,8 +1239,7 @@ export default function CoachesPage() {
                   className={`who-card relative bg-white/50 backdrop-blur-md rounded-xl p-7 ${item.glow} hover:bg-white/80 hover:-translate-y-1 hover:rotate-[0.3deg] transition-all duration-400 h-full group overflow-hidden`}
                   style={{ opacity: 0 }}
                 >
-                  {/* Gradient top accent bar */}
-                  <div className={`absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r ${item.accent} rounded-t-xl`} />
+
                   <span className="absolute top-4 right-4 text-5xl font-sans font-light text-brand-navy/[0.04] select-none">
                     {String(i + 1).padStart(2, '0')}
                   </span>
@@ -1340,8 +1337,7 @@ export default function CoachesPage() {
                 className="coach-step-card relative bg-white/60 backdrop-blur-md rounded-2xl p-6 shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all duration-400 h-full group overflow-hidden"
                 style={{ opacity: 0 }}
               >
-                {/* Alternating accent top bar */}
-                <div className={`absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r ${step.accent} rounded-t-2xl`} />
+
 
                 {/* Large gradient step number */}
                 <div className={`text-6xl font-sans font-bold bg-gradient-to-r ${step.accent} bg-clip-text text-transparent mb-4 block`}>
@@ -1369,7 +1365,6 @@ export default function CoachesPage() {
                 className={`coach-step-card bg-white/60 backdrop-blur-md rounded-2xl p-8 shadow-soft hover:shadow-lg hover:-translate-y-1 transition-all duration-400 h-full group overflow-hidden relative`}
                 style={{ opacity: 0 }}
               >
-                <div className={`absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r ${step.accent} rounded-t-2xl`} />
                 <span className={`text-5xl font-sans font-bold bg-gradient-to-r ${step.accent} bg-clip-text text-transparent mb-4 block`}>
                   <span className="count-up" data-target={parseInt(step.num)}>{step.num}</span>
                 </span>
@@ -1468,7 +1463,7 @@ export default function CoachesPage() {
                 boxShadow: '0 20px 60px -15px rgba(0,0,0,0.08)',
               }}
             >
-              <div className="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-teal via-brand-purple to-brand-coral" />
+
               <span className="text-8xl md:text-9xl font-serif text-brand-teal/15 leading-none block mb-4">&ldquo;</span>
               <p className="text-xl md:text-2xl text-brand-navy/60 leading-relaxed max-w-3xl mx-auto mb-6">
                 CollWi is a platform, yes, but more than that, it&apos;s a <span className="text-brand-navy font-medium">movement</span>.
