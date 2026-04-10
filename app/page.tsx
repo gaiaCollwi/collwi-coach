@@ -897,7 +897,7 @@ export default function CoachesPage() {
         ref={statsRef}
         className="relative py-20 md:py-28 px-6 overflow-hidden"
         style={{
-          background: 'linear-gradient(135deg, #3B8F8B 0%, #7C5CBF 40%, #4ECDC4 100%)',
+          background: 'linear-gradient(135deg, #5ED3CA 0%, #9B7DD4 40%, #6EE5DC 100%)',
         }}
       >
         {/* Subtle gradient orbs */}
@@ -1022,41 +1022,34 @@ export default function CoachesPage() {
 
           {/* Bento Grid — 2x2 top + full-width tagline */}
           <div className="bento-grid grid grid-cols-1 md:grid-cols-2 gap-5">
-            {/* Large accent card */}
-            <div className="bento-card relative rounded-2xl p-8 md:p-10 overflow-hidden group hover:shadow-soft-xl transition-all duration-500" style={{ opacity: 0 }}>
-              <div
-                className="gradient-sweep-bg absolute inset-0"
-                style={{
-                  background: 'linear-gradient(135deg, #7C5CBF 0%, #9B7DD4 40%, #7C5CBF 100%)',
-                }}
-              />
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-brand-teal/20 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
-              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-brand-teal via-brand-purple to-brand-coral" />
+            {/* Soft purple card — no dark background */}
+            <div className="bento-card relative rounded-2xl p-8 md:p-10 overflow-hidden group hover:shadow-glow-purple transition-all duration-500" style={{ opacity: 0 }}>
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/12 via-brand-purple/6 to-white rounded-2xl" />
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-brand-teal/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700" />
               <div className="relative z-10">
-                <div className="w-14 h-14 rounded-2xl bg-brand-coral/20 flex items-center justify-center mb-5">
-                  <TrendingUp size={28} strokeWidth={1.5} className="text-brand-coral" />
+                <div className="w-14 h-14 rounded-2xl bg-brand-purple/12 flex items-center justify-center mb-5">
+                  <TrendingUp size={28} strokeWidth={1.5} className="text-brand-purple" />
                 </div>
-                <h3 className="text-2xl font-semibold text-white mb-3">{whyBenefits[0].title}</h3>
-                <p className="text-lg text-white/70 leading-relaxed">{whyBenefits[0].desc}</p>
+                <h3 className="text-2xl font-semibold text-brand-navy mb-3">{whyBenefits[0].title}</h3>
+                <p className="text-lg text-brand-navy/65 leading-relaxed">{whyBenefits[0].desc}</p>
               </div>
             </div>
 
-            {/* Teal accent card */}
-            <div className="bento-card relative bg-gradient-to-br from-brand-teal to-brand-teal-dark rounded-2xl p-8 md:p-10 overflow-hidden group hover:shadow-glow-teal transition-all duration-500" style={{ opacity: 0 }}>
-              <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-white/10 rounded-full blur-2xl" />
-              <div className="absolute -top-8 -left-8 w-24 h-24 bg-white/5 rounded-full blur-xl" />
+            {/* Soft teal card — no dark background */}
+            <div className="bento-card relative rounded-2xl p-8 md:p-10 overflow-hidden group hover:shadow-glow-teal transition-all duration-500" style={{ opacity: 0 }}>
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-teal/12 via-brand-teal/6 to-white rounded-2xl" />
+              <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-brand-coral/10 rounded-full blur-2xl" />
               <div className="relative z-10">
-                <div className="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center mb-5">
-                  <Users size={28} strokeWidth={1.5} className="text-white" />
+                <div className="w-14 h-14 rounded-2xl bg-brand-teal/12 flex items-center justify-center mb-5">
+                  <Users size={28} strokeWidth={1.5} className="text-brand-teal" />
                 </div>
-                <h3 className="text-2xl font-semibold text-white mb-3">{whyBenefits[1].title}</h3>
-                <p className="text-lg text-white/80 leading-relaxed">{whyBenefits[1].desc}</p>
+                <h3 className="text-2xl font-semibold text-brand-navy mb-3">{whyBenefits[1].title}</h3>
+                <p className="text-lg text-brand-navy/65 leading-relaxed">{whyBenefits[1].desc}</p>
               </div>
             </div>
 
-            {/* Purple-accented white card */}
-            <div className="bento-card relative bg-white/80 backdrop-blur-md rounded-2xl p-8 border border-white/60 hover:border-brand-purple/20 hover:shadow-glow-purple group transition-all duration-500 overflow-hidden" style={{ opacity: 0 }}>
-              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-brand-purple to-brand-purple/40" />
+            {/* White card with purple accent left border */}
+            <div className="bento-card relative bg-white/80 backdrop-blur-md rounded-2xl p-8 border border-brand-purple/15 hover:border-brand-purple/30 hover:shadow-glow-purple group transition-all duration-500 overflow-hidden" style={{ opacity: 0 }}>
               <div className="w-14 h-14 rounded-2xl bg-brand-purple/10 flex items-center justify-center mb-5">
                 <Settings size={28} strokeWidth={1.5} className="text-brand-purple" />
               </div>
@@ -1064,9 +1057,8 @@ export default function CoachesPage() {
               <p className="text-brand-navy/70 leading-relaxed">{whyBenefits[2].desc}</p>
             </div>
 
-            {/* Coral-accented white card */}
-            <div className="bento-card relative bg-white/80 backdrop-blur-md rounded-2xl p-8 border border-white/60 hover:border-brand-coral/20 hover:shadow-glow-coral group transition-all duration-500 overflow-hidden" style={{ opacity: 0 }}>
-              <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-brand-coral to-brand-coral/40" />
+            {/* White card with coral accent left border */}
+            <div className="bento-card relative bg-white/80 backdrop-blur-md rounded-2xl p-8 border border-brand-coral/15 hover:border-brand-coral/30 hover:shadow-glow-coral group transition-all duration-500 overflow-hidden" style={{ opacity: 0 }}>
               <div className="w-14 h-14 rounded-2xl bg-brand-coral/10 flex items-center justify-center mb-5">
                 <Heart size={28} strokeWidth={1.5} className="text-brand-coral" />
               </div>
@@ -1076,7 +1068,6 @@ export default function CoachesPage() {
 
             {/* Full-width tagline card */}
             <div className="bento-card md:col-span-2 relative bg-gradient-to-r from-brand-purple/5 via-white/80 to-brand-teal/5 backdrop-blur-md rounded-2xl p-10 border border-white/60 hover:shadow-soft-lg transition-all duration-500 overflow-hidden" style={{ opacity: 0 }}>
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-teal via-brand-purple to-brand-coral" />
               <p className="text-xl md:text-2xl lg:text-3xl text-brand-navy/70 text-center italic leading-relaxed font-light">
                 &ldquo;You&rsquo;ve tried free sessions, networking, social media. You&rsquo;ve spent money on websites and courses. Nothing worked.&rdquo; &mdash; That chapter is over. CollWi is different.
               </p>
@@ -1494,7 +1485,7 @@ export default function CoachesPage() {
 
       {/* ─── FOOTER — Expanded with links and gradient mesh ─── */}
       <footer className="relative overflow-hidden" style={{
-        background: 'linear-gradient(135deg, #2D1B4E 0%, #3D2663 30%, #2D1B4E 60%, #3D2663 100%)',
+        background: 'linear-gradient(135deg, #2E6B82 0%, #3D5A8A 30%, #2E6B82 60%, #3D5A8A 100%)',
       }}>
         {/* Gradient mesh background */}
         <div className="absolute inset-0 pointer-events-none">

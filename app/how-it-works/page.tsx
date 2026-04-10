@@ -339,7 +339,8 @@ export default function HowItWorksPage() {
               },
             ].map((item, i) => (
               <StaggerItem key={i}>
-                <div className={`relative bg-white/80 backdrop-blur-sm border border-white/30 border-t-4 ${item.accent} rounded-2xl p-8 shadow-soft ${item.glow} transition-all duration-300 card-hover h-full`}>
+                {/* Last card is intentionally shorter (asymmetric design) */}
+                <div className={`relative bg-white/80 backdrop-blur-sm border border-white/30 border-t-4 ${item.accent} rounded-2xl p-8 shadow-soft ${item.glow} transition-all duration-300 card-hover ${i < 5 ? 'h-full' : ''}`}>
                   <span className="absolute top-4 right-5 text-5xl font-sans font-light text-brand-navy/[0.04] select-none">
                     {String(i + 1).padStart(2, '0')}
                   </span>
@@ -384,7 +385,7 @@ export default function HowItWorksPage() {
 
       {/* ─── CTA ─── */}
       <section className="relative py-28 md:py-36 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-teal via-brand-teal-dark to-brand-purple" />
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-teal via-brand-coral/70 to-brand-teal-dark" />
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 right-20 w-64 h-64 bg-white rounded-full blur-3xl animate-float" />
           <div className="absolute bottom-10 left-20 w-48 h-48 bg-brand-gold rounded-full blur-3xl animate-float-delayed" />
