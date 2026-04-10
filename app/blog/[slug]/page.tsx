@@ -5,6 +5,115 @@ import { ArrowLeft, Calendar, User, ArrowRight } from 'lucide-react'
 import { FadeIn } from '../../components/AnimatedSection'
 
 const blogContent: Record<string, any> = {
+  'how-to-get-first-5-coaching-clients': {
+    title: 'How to Get Your First 5 Coaching Clients Without Paid Ads',
+    author: 'CollWi Team',
+    date: '2026-04-10',
+    category: 'Business',
+    readTime: '8 min read',
+    content: `Most new coaches make the same mistake: they build a website, pick a niche, and wait for clients to appear. Then they wonder why nothing is happening.
+
+Paid ads are not the answer. Not yet. Not when you\'re starting out. Running ads without a proven offer and clear conversion path is how you burn $500 and get nothing.
+
+Your first 5 clients will come from relationships. Here\'s exactly how to get them.
+
+## Start with who already knows you
+
+Your first clients are almost never strangers. They\'re people who already know, like, and trust you. Former colleagues. Friends who\'ve seen you do this kind of work. People in communities where you\'ve been active for months or years.
+
+Make a list. Not of "ideal clients" — of real people you actually know who are dealing with challenges you help solve.
+
+That list is your pipeline. It might have 10 names. It might have 40. Either way, it\'s where you start.
+
+## Have conversations, not pitches
+
+Don\'t send a cold pitch. Don\'t DM someone: "Hey, I just became a coach! Would you like a free session?"
+
+Instead, reach out the way you\'d reach out to any friend. Be genuine. Ask how they\'re doing. Listen.
+
+Then, when the moment is right — when they share a challenge you help with — you can say:
+
+"I\'ve been working with women on exactly that. Would it be helpful to jump on a call and talk through it? No pressure, just a conversation."
+
+That\'s it. No hard sell. Just an offer of value.
+
+Most coaches are terrified to have these conversations because they don\'t want to feel salesy. But you\'re not selling. You\'re offering help to someone who genuinely needs it. That\'s different.
+
+## Offer discovery calls — and master them
+
+A discovery call is not a sales call. It\'s a real conversation where you:
+
+- Understand their situation and what\'s not working
+- Share how you help and what working together looks like
+- See if there\'s a genuine fit
+
+If there\'s a fit, you make an offer. If there isn\'t, you say so — and often refer them to someone else.
+
+Being honest about fit builds more trust than converting every call. And trust is what builds a coaching business.
+
+One thing that makes discovery calls land: ask at least twice as many questions as you answer. People should leave feeling deeply understood, not sold to.
+
+## Give value publicly before you sell anything
+
+You don\'t need a podcast or a huge following. But you do need to show people what you\'re about before they\'ll hire you.
+
+Pick one platform. Where do the women you want to work with actually spend time? LinkedIn? Instagram? A specific Facebook group? Start there.
+
+Post consistently about the problems you help solve. Not inspiration quotes — real, specific insights that show you understand the challenge.
+
+"Here\'s what I see when women feel stuck in their careers: it\'s rarely about skills. It\'s almost always about [X]..."
+
+Posts like this attract the right people. They filter out the wrong ones. And they build the trust that makes someone pick up the phone when they finally decide to get help.
+
+You don\'t need to post every day. Two or three times a week, consistently, is enough to build momentum.
+
+## Ask for referrals from people who know your work
+
+If you\'ve done any coaching at all — even free sessions, even informally — ask those people:
+
+"Do you know anyone who might benefit from what we\'ve worked on? I\'d love a warm introduction."
+
+Most coaches never ask this. It\'s awkward. It feels like you\'re imposing. But people who\'ve experienced your work want to share it. They just need the invitation.
+
+A referral from someone who knows you converts at 5-10x the rate of cold outreach. It\'s the highest-leverage thing you can do.
+
+## Be in the communities where your clients are
+
+The women you want to work with are in online communities. Facebook groups. LinkedIn communities. Slack groups. Meetups.
+
+Get into those communities. Not to pitch — to contribute.
+
+Answer questions. Share perspectives. Be genuinely helpful over weeks and months. People will notice. They\'ll look at your profile. They\'ll reach out.
+
+This is a slow burn, but it\'s reliable. Community presence is one of the most consistent client acquisition channels coaches underuse.
+
+## The timeline you should expect
+
+Your first 5 clients will probably take 4-8 weeks if you\'re actively doing the things above. Maybe longer if you\'re starting with no network in your niche.
+
+This is normal. Don\'t panic. Don\'t start running ads. Don\'t pivot your niche.
+
+Keep having conversations. Keep showing up publicly. Keep offering value. The clients come when people trust you — and trust takes a little time to build.
+
+## What happens after client 5
+
+Once you\'ve worked with 5 clients, you have:
+
+- Real testimonials (ask for them explicitly)
+- A clearer sense of who you help best
+- A more refined understanding of the transformation you deliver
+- Confidence that didn\'t exist before
+
+Now you can think about scaling. Group coaching programs. Platforms that handle enrollment. Automated systems.
+
+But before any of that: get client 1. Then client 2. Then 3, 4, 5.
+
+One relationship at a time. That\'s how every coaching business actually starts.
+
+---
+
+CollWi helps coaches run group programs without the operational headache. If you\'re ready to scale beyond 1:1, we handle enrollment, payments, and community. You just coach.`
+  },
   'benefits-of-group-coaching-for-coaches': {
     title: 'Why Group Coaching Transforms Your Business (And Your Impact)',
     author: 'CollWi Team',
