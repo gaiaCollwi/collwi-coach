@@ -6,15 +6,6 @@ import { FadeIn, StaggerContainer, StaggerItem } from '../components/AnimatedSec
 
 const blogPosts = [
   {
-    slug: 'how-to-get-first-5-coaching-clients',
-    title: 'How to Get Your First 5 Coaching Clients Without Paid Ads',
-    excerpt: 'Most new coaches wait for clients to appear. They won\'t. Here\'s the relationship-first strategy that actually fills your first program — no ad spend required.',
-    date: '2026-04-10',
-    author: 'CollWi Team',
-    readTime: '8 min read',
-    category: 'Business',
-  },
-  {
     slug: 'benefits-of-group-coaching-for-coaches',
     title: 'Why Group Coaching Transforms Your Business (And Your Impact)',
     excerpt: 'Stop struggling with 1:1 scheduling and inconsistent income. Discover why the most successful coaches are moving to group models and how it changes everything.',
