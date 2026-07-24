@@ -6,11 +6,12 @@ import {
   Sparkles, CheckCircle, ChevronDown, Zap, TrendingUp,
 } from 'lucide-react'
 import { FadeIn, StaggerContainer, StaggerItem } from '../components/AnimatedSection'
+import { MarketingFooter } from '../components/MarketingFooter'
 
 const faqs = [
   {
     q: 'How do I set my pricing?',
-    a: 'You decide your own pricing for your group coaching events or 1-to-1 sessions. The platform handles the payment processing through Stripe or PayPal. CollWi retains a 15% fee; the payment processor\'s fee is around 3%, depending on where you are in the world.',
+    a: 'You decide your own pricing for your group coaching events or 1-to-1 sessions. The platform handles payment processing through Stripe or PayPal. CollWi retains a 15% fee, and payment processor fees are typically around 3%, depending on where you are in the world.',
   },
   {
     q: 'Do I need to handle marketing?',
@@ -132,7 +133,8 @@ export default function HowItWorksPage() {
                 desc: 'Members browse programs on the platform and choose what fits their needs. You focus on creating great programs.',
                 color: 'teal',
                 glow: 'hover:shadow-glow-teal',
-                accent: 'border-t-brand-teal',
+                surface: 'from-brand-teal/14 via-white/92 to-white/85',
+                border: 'border-brand-teal/18 hover:border-brand-teal/35',
               },
               {
                 icon: <BarChart3 size={26} />,
@@ -140,7 +142,8 @@ export default function HowItWorksPage() {
                 desc: 'Create group programs that align with your expertise. Set your own pricing and schedule.',
                 color: 'purple',
                 glow: 'hover:shadow-glow-purple',
-                accent: 'border-t-brand-purple',
+                surface: 'from-brand-purple/14 via-white/92 to-white/85',
+                border: 'border-brand-purple/18 hover:border-brand-purple/35',
               },
               {
                 icon: <Zap size={26} />,
@@ -148,25 +151,30 @@ export default function HowItWorksPage() {
                 desc: 'No more managing calendars, invoices, or follow-ups. We handle it all through our platform.',
                 color: 'coral',
                 glow: 'hover:shadow-glow-coral',
-                accent: 'border-t-brand-coral',
+                surface: 'from-brand-coral/14 via-white/92 to-brand-gold/10',
+                border: 'border-brand-coral/18 hover:border-brand-coral/35',
               },
             ].map((item, i) => (
               <StaggerItem key={i}>
-                <div className={`relative bg-white/80 backdrop-blur-sm border border-white/30 border-t-4 ${item.accent} rounded-2xl p-8 ${item.glow} transition-all duration-300 card-hover h-full`}>
+                <div className={`relative h-full overflow-hidden rounded-2xl border bg-white/84 p-8 backdrop-blur-xl shadow-soft transition-all duration-300 card-hover ${item.border} ${item.glow}`}>
+                  <div className={`absolute inset-0 bg-gradient-to-br ${item.surface}`} />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.5),transparent_28%)]" />
                   <span className="absolute top-4 right-5 text-5xl font-sans font-light text-brand-navy/[0.04] select-none">
                     {String(i + 1).padStart(2, '0')}
                   </span>
-                  <div
-                    className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 ${
-                      item.color === 'teal' ? 'bg-brand-teal/10 text-brand-teal' :
-                      item.color === 'purple' ? 'bg-brand-purple/10 text-brand-purple' :
-                      'bg-brand-coral/10 text-brand-coral'
-                    }`}
-                  >
-                    {item.icon}
+                  <div className="relative z-10">
+                    <div
+                      className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 ${
+                        item.color === 'teal' ? 'bg-brand-teal/10 text-brand-teal' :
+                        item.color === 'purple' ? 'bg-brand-purple/10 text-brand-purple' :
+                        'bg-brand-coral/10 text-brand-coral'
+                      }`}
+                    >
+                      {item.icon}
+                    </div>
+                    <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                    <p className="text-brand-navy/55 leading-relaxed">{item.desc}</p>
                   </div>
-                  <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                  <p className="text-brand-navy/55 leading-relaxed">{item.desc}</p>
                 </div>
               </StaggerItem>
             ))}
@@ -304,49 +312,64 @@ export default function HowItWorksPage() {
               {
                 title: 'Scale Without Burnout',
                 desc: 'One group session reaches multiple people at once. Help more members in less time.',
-                accent: 'border-t-brand-teal',
+                surface: 'from-brand-teal/12 via-white/92 to-white/86',
+                border: 'border-brand-teal/18 hover:border-brand-teal/35',
+                dot: 'bg-brand-teal',
                 glow: 'hover:shadow-glow-teal',
               },
               {
                 title: 'Deeper Transformations',
                 desc: 'Group dynamics create peer support and accountability that enhance individual results.',
-                accent: 'border-t-brand-coral',
+                surface: 'from-brand-coral/12 via-white/92 to-brand-gold/10',
+                border: 'border-brand-coral/18 hover:border-brand-coral/35',
+                dot: 'bg-brand-coral',
                 glow: 'hover:shadow-glow-coral',
               },
               {
                 title: 'Less Marketing Stress',
                 desc: 'Your programs appear in the platform catalog where members can find you. No more cold outreach or social media hustle.',
-                accent: 'border-t-brand-purple',
+                surface: 'from-brand-purple/12 via-white/92 to-white/86',
+                border: 'border-brand-purple/18 hover:border-brand-purple/35',
+                dot: 'bg-brand-purple',
                 glow: 'hover:shadow-glow-purple',
               },
               {
                 title: 'Community of Practice',
                 desc: 'Connect with other coaches on the platform. Share experiences and grow together.',
-                accent: 'border-t-brand-teal',
+                surface: 'from-brand-teal/10 via-white/92 to-brand-purple/8',
+                border: 'border-brand-teal/18 hover:border-brand-teal/35',
+                dot: 'bg-brand-teal',
                 glow: 'hover:shadow-glow-teal',
               },
               {
                 title: 'Full Platform Support',
                 desc: 'Video hosting, member management, payments, and group chat—all handled for you.',
-                accent: 'border-t-brand-coral',
+                surface: 'from-brand-coral/12 via-white/92 to-white/86',
+                border: 'border-brand-coral/18 hover:border-brand-coral/35',
+                dot: 'bg-brand-coral',
                 glow: 'hover:shadow-glow-coral',
               },
               {
                 title: 'You Control Your Practice',
                 desc: 'Set your own pricing, schedule, and program structure. Build the practice you want.',
-                accent: 'border-t-brand-purple',
+                surface: 'from-brand-purple/12 via-white/92 to-brand-teal/8',
+                border: 'border-brand-purple/18 hover:border-brand-purple/35',
+                dot: 'bg-brand-purple',
                 glow: 'hover:shadow-glow-purple',
               },
             ].map((item, i) => (
               <StaggerItem key={i}>
-                {/* Last card is intentionally shorter (asymmetric design) */}
-                <div className={`relative bg-white/80 backdrop-blur-sm border border-white/30 border-t-4 ${item.accent} rounded-2xl p-8 shadow-soft ${item.glow} transition-all duration-300 card-hover ${i < 5 ? 'h-full' : ''}`}>
+                <div className={`relative h-full overflow-hidden rounded-2xl border bg-white/84 p-8 shadow-soft transition-all duration-300 card-hover ${item.border} ${item.glow}`}>
+                  <div className={`absolute inset-0 bg-gradient-to-br ${item.surface}`} />
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.45),transparent_28%)]" />
                   <span className="absolute top-4 right-5 text-5xl font-sans font-light text-brand-navy/[0.04] select-none">
                     {String(i + 1).padStart(2, '0')}
                   </span>
-                  <div className="w-2 h-2 rounded-full bg-brand-teal mb-4" />
-                  <h3 className="text-xl font-semibold mb-3 text-brand-navy">{item.title}</h3>
-                  <p className="text-brand-navy/60 leading-relaxed">{item.desc}</p>
+                  <div className="relative z-10">
+                    <div className={`w-2.5 h-2.5 rounded-full mb-4 ${item.dot}`} />
+                    <h3 className="text-xl font-semibold mb-3 text-brand-navy">{item.title}</h3>
+                    <p className="text-brand-navy/60 leading-relaxed">{item.desc}</p>
+                  </div>
                 </div>
               </StaggerItem>
             ))}
@@ -424,52 +447,7 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
-      {/* ─── Footer ─── */}
-      <footer className="bg-gray-50 text-gray-900 border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 pt-16 pb-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
-            {/* Brand */}
-            <div>
-              <p className="text-xl font-semibold text-brand-teal mb-3">CollWi for Coaches</p>
-              <p className="text-gray-500 text-sm leading-relaxed max-w-xs">
-                A platform built by women, for women. Scale your impact with group coaching.
-              </p>
-            </div>
-            {/* Links */}
-            <div>
-              <h4 className="text-xs font-semibold tracking-[0.15em] uppercase text-gray-400 mb-4">Platform</h4>
-              <ul className="space-y-3">
-                {[
-                  { label: 'How It Works', href: '/how-it-works' },
-                  { label: 'Coach Home', href: '/' },
-                  { label: 'For Members', href: 'https://collwi.com' },
-                ].map((link) => (
-                  <li key={link.label}>
-                    <a href={link.href} className="text-sm text-gray-500 hover:text-brand-teal transition-colors duration-200">{link.label}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            {/* Legal */}
-            <div>
-              <h4 className="text-xs font-semibold tracking-[0.15em] uppercase text-gray-400 mb-4">Legal</h4>
-              <ul className="space-y-3">
-                {[
-                  { label: 'Privacy Policy', href: '/privacy' },
-                  { label: 'Terms of Service', href: '/terms' },
-                ].map((link) => (
-                  <li key={link.label}>
-                    <a href={link.href} className="text-sm text-gray-500 hover:text-brand-teal transition-colors duration-200">{link.label}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-200 pt-8 text-center">
-            <p className="text-xs text-gray-400">© {new Date().getFullYear()} CollWi. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <MarketingFooter />
     </div>
   )
 }
