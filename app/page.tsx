@@ -1,9 +1,10 @@
 'use client'
 
 import { useRef, useEffect, useLayoutEffect, useCallback } from 'react'
-import { ArrowRight, TrendingUp, Users, Settings, Heart, Award, Shield, Target, CheckCircle, ChevronDown, Star, Sparkles, Clock, DollarSign, MessageCircle, Zap, Globe, Mail, Facebook, Linkedin, Instagram } from 'lucide-react'
+import { ArrowRight, TrendingUp, Users, Settings, Heart, Award, Shield, Target, CheckCircle, ChevronDown, Star, Sparkles, Clock, DollarSign, MessageCircle, Zap, Globe } from 'lucide-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { MarketingFooter } from './components/MarketingFooter'
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger)
@@ -262,24 +263,27 @@ function DashboardMockup() {
   }, [])
 
   return (
-    <div ref={containerRef} className="relative w-full h-full min-h-[400px]">
+    <div ref={containerRef} className="relative w-full h-full min-h-[460px]">
       {/* Background group photo */}
-      <div className="absolute inset-0 rounded-3xl overflow-hidden">
+      <div className="absolute inset-0 rounded-[2rem] overflow-hidden shadow-soft-xl">
+        <div className="absolute inset-y-6 left-6 right-24 z-10 rounded-[1.75rem] border border-white/35 bg-white/12 backdrop-blur-[1px]" />
         <img
-          src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=700&q=80"
-          alt="Women coaches"
-          className="w-full h-full object-cover opacity-60"
+          src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80"
+          alt="A coach leading a warm, collaborative group session"
+          className="w-full h-full object-cover scale-105 opacity-88"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-teal/20 to-brand-purple/20" />
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(26,31,54,0.18)_0%,rgba(26,31,54,0.05)_34%,rgba(255,255,255,0)_58%,rgba(124,92,191,0.18)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_42%,rgba(255,255,255,0.14),transparent_32%),radial-gradient(circle_at_28%_68%,rgba(78,205,196,0.18),transparent_28%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-white/28 via-white/8 to-transparent" />
       </div>
 
       {/* Session card */}
-      <div className="mockup-card-1 absolute top-[10%] left-[5%] md:left-[10%] w-[280px] rounded-2xl overflow-hidden opacity-0"
+      <div className="mockup-card-1 absolute top-[12%] left-[4%] md:left-[8%] w-[290px] rounded-2xl overflow-hidden opacity-0"
         style={{
-          background: 'rgba(255,255,255,0.15)',
-          backdropFilter: 'blur(20px)',
-          border: '1px solid rgba(255,255,255,0.25)',
-          boxShadow: '0 25px 50px -12px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.3)',
+          background: 'rgba(255,255,255,0.72)',
+          backdropFilter: 'blur(22px)',
+          border: '1px solid rgba(255,255,255,0.5)',
+          boxShadow: '0 28px 60px -18px rgba(26,31,54,0.22), inset 0 1px 0 rgba(255,255,255,0.75)',
         }}>
         <div className="p-5">
           <div className="flex items-center justify-between mb-4">
@@ -309,12 +313,12 @@ function DashboardMockup() {
       </div>
 
       {/* Review card */}
-      <div className="mockup-card-2 absolute bottom-[15%] right-[5%] md:right-[8%] w-[260px] rounded-2xl overflow-hidden opacity-0"
+      <div className="mockup-card-2 absolute bottom-[10%] right-[2%] md:right-[4%] w-[270px] rounded-2xl overflow-hidden opacity-0"
         style={{
-          background: 'rgba(255,255,255,0.12)',
-          backdropFilter: 'blur(20px)',
-          border: '1px solid rgba(255,255,255,0.2)',
-          boxShadow: '0 25px 50px -12px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.3)',
+          background: 'rgba(255,255,255,0.7)',
+          backdropFilter: 'blur(22px)',
+          border: '1px solid rgba(255,255,255,0.48)',
+          boxShadow: '0 28px 60px -18px rgba(26,31,54,0.22), inset 0 1px 0 rgba(255,255,255,0.75)',
         }}>
         <div className="p-5">
           <div className="flex gap-1 mb-3">
@@ -333,12 +337,12 @@ function DashboardMockup() {
       </div>
 
       {/* Stats badge */}
-      <div className="mockup-badge absolute top-[20%] right-[5%] md:right-[8%] rounded-full px-5 py-3 opacity-0"
+      <div className="mockup-badge absolute top-[7%] right-[3%] md:right-[6%] rounded-full px-5 py-3 opacity-0"
         style={{
-          background: 'rgba(78,205,196,0.15)',
-          backdropFilter: 'blur(20px)',
-          border: '1px solid rgba(78,205,196,0.3)',
-          boxShadow: '0 10px 30px -5px rgba(78,205,196,0.2)',
+          background: 'rgba(255,255,255,0.8)',
+          backdropFilter: 'blur(18px)',
+          border: '1px solid rgba(78,205,196,0.22)',
+          boxShadow: '0 16px 40px -12px rgba(78,205,196,0.25)',
         }}>
         <div className="flex items-center gap-2">
           <Users size={16} className="text-brand-teal" />
@@ -723,12 +727,60 @@ export default function CoachesPage() {
 
   /* Data arrays (all text content preserved exactly) */
   const forYouItems = [
-    "Delivers real transformations, but struggles to maintain a steady stream of clients",
-    "Is stuck in 1:1 sessions with no clear way to scale beyond current hours",
-    "Spends more time creating content than actually coaching clients",
-    "Is tired of the constant hustle just to keep the calendar full",
-    "Is already fully booked but wants to reach more people without working more",
-    "Is great at what they do, but exhausted from having to prove it every single day"
+    {
+      text: "Delivers real transformations, but struggles to maintain a steady stream of clients",
+      tone: 'teal',
+      surface: 'from-brand-teal/12 via-white/92 to-white/85',
+      border: 'border-brand-teal/18 hover:border-brand-teal/35',
+      badge: 'bg-brand-teal/15 text-brand-teal',
+      dot: 'bg-brand-teal/70 ring-brand-teal/15',
+      glow: 'hover:shadow-glow-teal',
+    },
+    {
+      text: "Is stuck in 1:1 sessions with no clear way to scale beyond current hours",
+      tone: 'coral',
+      surface: 'from-brand-coral/12 via-white/92 to-white/85',
+      border: 'border-brand-coral/18 hover:border-brand-coral/35',
+      badge: 'bg-brand-coral/15 text-brand-coral',
+      dot: 'bg-brand-coral/70 ring-brand-coral/15',
+      glow: 'hover:shadow-glow-coral',
+    },
+    {
+      text: "Spends more time creating content than actually coaching clients",
+      tone: 'purple',
+      surface: 'from-brand-purple/12 via-white/92 to-white/85',
+      border: 'border-brand-purple/18 hover:border-brand-purple/35',
+      badge: 'bg-brand-purple/15 text-brand-purple',
+      dot: 'bg-brand-purple/70 ring-brand-purple/15',
+      glow: 'hover:shadow-glow-purple',
+    },
+    {
+      text: "Is tired of the constant hustle just to keep the calendar full",
+      tone: 'teal',
+      surface: 'from-brand-teal/10 via-white/92 to-brand-purple/8',
+      border: 'border-brand-teal/18 hover:border-brand-teal/35',
+      badge: 'bg-brand-teal/15 text-brand-teal',
+      dot: 'bg-brand-teal/70 ring-brand-teal/15',
+      glow: 'hover:shadow-glow-teal',
+    },
+    {
+      text: "Is already fully booked but wants to reach more people without working more",
+      tone: 'coral',
+      surface: 'from-brand-coral/12 via-white/92 to-brand-gold/10',
+      border: 'border-brand-coral/18 hover:border-brand-coral/35',
+      badge: 'bg-brand-coral/15 text-brand-coral',
+      dot: 'bg-brand-coral/70 ring-brand-coral/15',
+      glow: 'hover:shadow-glow-coral',
+    },
+    {
+      text: "Is great at what they do, but exhausted from having to prove it every single day",
+      tone: 'purple',
+      surface: 'from-brand-purple/12 via-white/92 to-brand-teal/8',
+      border: 'border-brand-purple/18 hover:border-brand-purple/35',
+      badge: 'bg-brand-purple/15 text-brand-purple',
+      dot: 'bg-brand-purple/70 ring-brand-purple/15',
+      glow: 'hover:shadow-glow-purple',
+    },
   ]
 
   const whyBenefits = [
@@ -957,8 +1009,6 @@ export default function CoachesPage() {
 
             {forYouItems.map((item, i) => {
               const isLeft = i % 2 === 0
-              const accentColors = ['brand-teal', 'brand-coral', 'brand-purple', 'brand-teal', 'brand-coral', 'brand-purple']
-              const accent = accentColors[i]
               return (
                 <div
                   key={i}
@@ -967,22 +1017,28 @@ export default function CoachesPage() {
                 >
                   {/* Card */}
                   <div className={`w-full md:w-[calc(50%-2rem)] ${isLeft ? 'md:pr-0' : 'md:pl-0'}`}>
-                    <div className={`group relative rounded-2xl border border-brand-navy/[0.06] bg-white/60 backdrop-blur-sm p-8 cursor-default transition-all duration-500 hover:bg-white/80 hover:border-${accent}/30 hover:shadow-[0_8px_30px_-12px] hover:shadow-${accent}/15`}>
-                      {/* Number pill */}
-                      <div className={`inline-flex items-center justify-center w-8 h-8 rounded-full bg-${accent}/15 text-${accent} text-xs font-bold mb-4`}>
-                        {String(i + 1).padStart(2, '0')}
+                    <div className={`group relative overflow-hidden rounded-[1.75rem] border bg-white/78 p-8 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 ${item.border} ${item.glow}`}>
+                      <div className={`absolute inset-0 bg-gradient-to-br ${item.surface}`} />
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.55),transparent_28%)] opacity-90" />
+                      <div className="relative z-10">
+                        <div className="mb-4 flex items-center justify-between gap-4">
+                          <div className={`inline-flex h-9 w-9 items-center justify-center rounded-full text-xs font-bold ${item.badge}`}>
+                            {String(i + 1).padStart(2, '0')}
+                          </div>
+                          <span className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-navy/30">
+                            Coach reality
+                          </span>
+                        </div>
+                        <p className="text-lg md:text-xl text-brand-navy/65 leading-relaxed font-light transition-colors duration-500 group-hover:text-brand-navy/85">
+                          {item.text}
+                        </p>
                       </div>
-                      <p className="text-lg md:text-xl text-brand-navy/60 leading-relaxed font-light group-hover:text-brand-navy/80 transition-colors duration-500">
-                        {item}
-                      </p>
-                      {/* Bottom accent bar on hover */}
-                      <div className={`absolute bottom-0 left-0 w-0 h-[2px] bg-${accent} group-hover:w-full transition-all duration-700 ease-out rounded-b-2xl`} />
                     </div>
                   </div>
 
                   {/* Center dot (desktop) */}
                   <div className="hidden md:flex items-center justify-center w-16 flex-shrink-0">
-                    <div className={`w-3 h-3 rounded-full bg-${accent}/60 ring-4 ring-${accent}/10 transition-all duration-500`} />
+                    <div className={`h-3 w-3 rounded-full ring-4 transition-all duration-500 ${item.dot}`} />
                   </div>
 
                   {/* Spacer for other side */}
@@ -1478,78 +1534,7 @@ export default function CoachesPage() {
         </div>
       </section>
 
-      {/* ─── FOOTER — Expanded with links and gradient mesh ─── */}
-      <footer className="relative overflow-hidden" style={{
-        background: 'linear-gradient(135deg, #2E6B82 0%, #3D5A8A 30%, #2E6B82 60%, #3D5A8A 100%)',
-      }}>
-        {/* Gradient mesh background */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-[20%] w-64 h-64 bg-brand-teal/5 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-[20%] w-72 h-72 bg-brand-purple/5 rounded-full blur-3xl" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-coral/3 rounded-full blur-3xl" />
-          <div className="absolute top-0 right-[40%] w-48 h-48 bg-brand-gold/3 rounded-full blur-3xl" />
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-16">
-          {/* Top section */}
-          <div className="grid md:grid-cols-4 gap-12 mb-12">
-            {/* Brand */}
-            <div>
-              <h3 className="text-2xl font-semibold text-white mb-4">CollWi</h3>
-              <p className="text-white/50 leading-relaxed">
-                Where coaches thrive and people transform&mdash;together.
-              </p>
-            </div>
-
-            {/* Quick links */}
-            <div>
-              <h4 className="text-sm font-semibold tracking-widest uppercase text-white/40 mb-4">Quick Links</h4>
-              <div className="flex flex-col gap-3">
-                <a href="https://collwi.com/register?type=coach" className="text-white/60 hover:text-brand-teal transition-colors duration-300">Join as a Coach</a>
-                <a href="https://collwi.com" className="text-white/60 hover:text-brand-teal transition-colors duration-300">Explore Programs</a>
-                <a href="https://collwi.com/about" className="text-white/60 hover:text-brand-teal transition-colors duration-300">About CollWi</a>
-              </div>
-            </div>
-
-            {/* Legal */}
-            <div>
-              <h4 className="text-sm font-semibold tracking-widest uppercase text-white/40 mb-4">Legal</h4>
-              <div className="flex flex-col gap-3">
-                <a href="/privacy" className="text-white/60 hover:text-brand-teal transition-colors duration-300">Privacy Policy</a>
-                <a href="/terms" className="text-white/60 hover:text-brand-teal transition-colors duration-300">Terms of Service</a>
-              </div>
-            </div>
-
-            {/* Social */}
-            <div>
-              <h4 className="text-sm font-semibold tracking-widest uppercase text-white/40 mb-4">Connect</h4>
-              <div className="flex gap-4">
-                <a href="https://www.linkedin.com/company/collwi-collective-wisdom/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors duration-300">
-                  <Linkedin size={18} className="text-white/60" />
-                </a>
-                <a href="https://www.instagram.com/collwi_collective_wisdom/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors duration-300">
-                  <Instagram size={18} className="text-white/60" />
-                </a>
-                <a href="https://www.facebook.com/profile.php?id=61565171915248" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors duration-300">
-                  <Facebook size={18} className="text-white/60" />
-                </a>
-                <a href="mailto:care@collwi.com" className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors duration-300">
-                  <Mail size={18} className="text-white/60" />
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Divider */}
-          <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8" />
-
-          {/* Bottom */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-white/30 text-sm">&copy; 2026 CollWi. All rights reserved.</p>
-            <p className="text-white/20 text-xs italic">Make growth social, accessible, and transformative.</p>
-          </div>
-        </div>
-      </footer>
+      <MarketingFooter />
     </div>
   )
 }
